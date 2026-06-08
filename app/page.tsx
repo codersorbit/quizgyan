@@ -6,17 +6,10 @@ import {
   totalMcqCount,
   chapterUrl,
 } from "@/lib/content";
-import { ClassBrowseCard } from "@/components/cards";
+import { ClassImageCard } from "@/components/cards";
 import { StreakCalendar } from "@/components/StreakCalendar";
 import { ChapterSearch } from "@/components/ChapterSearch";
 import { DailyHomeCard } from "@/components/DailyHomeCard";
-
-const HERO_TILES = [
-  ["📐", "Maths", "from-cobalt to-[#5b7bff]"],
-  ["🔬", "Science", "from-green to-[#42c98a]"],
-  ["🏛️", "Social Science", "from-amber to-[#e0a64a]"],
-  ["📖", "English", "from-coral to-[#ff8aa0]"],
-] as const;
 
 export default function HomePage() {
   const chapters = allAuthoredChapters();
@@ -26,63 +19,44 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative">
-        <div className="grid items-center gap-10 lg:grid-cols-[1.25fr_1fr]">
-          <div>
-            <span className="chip bg-cobalt-soft text-cobalt">CBSE · Free · No login</span>
-            <h1 className="mt-4 max-w-2xl font-display text-4xl font-bold leading-[1.08] text-ink sm:text-5xl">
-              Every CBSE chapter as{" "}
-              <span className="text-cobalt">notes</span>,{" "}
-              <span className="text-green">a quiz</span> and{" "}
-              <span className="text-coral">practice</span>.
-            </h1>
-            <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">
-              {site.name} turns each chapter into clear notes, instant-feedback quizzes and
-              exam-style questions across Maths, Science, Social Science and English — made for
-              students who want to understand, not just memorise.
-            </p>
-            <div className="mt-6">
-              <ChapterSearch />
-              <p className="mt-2 text-sm text-muted">
-                Search any topic across{" "}
-                <strong className="font-semibold text-ink">{chapters.length}</strong> chapters — try “Pythagoras” or “osmosis”.
-              </p>
-            </div>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Link
-                href="/cbse"
-                className="rounded-full bg-cobalt px-6 py-3 font-semibold text-white shadow-sm transition hover:brightness-110"
-              >
-                Browse classes
-              </Link>
-              <Link
-                href="/daily"
-                className="rounded-full border border-line bg-white px-6 py-3 font-semibold text-ink transition hover:border-cobalt hover:text-cobalt"
-              >
-                Today’s challenge
-              </Link>
-            </div>
-          </div>
+      {/* Hero — centered welcome */}
+      <section className="text-center">
+        <span className="chip bg-cobalt-soft text-cobalt">CBSE · Free · No login</span>
+        <h1 className="mx-auto mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.1] text-ink sm:text-5xl">
+          Welcome to <span className="text-cobalt">{site.name}</span>
+        </h1>
+        <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-muted">
+          {site.name} turns every CBSE chapter into clear notes, instant-feedback quizzes and
+          exam-style questions across Maths, Science, Social Science and English — made for
+          students who want to understand, not just memorise.
+        </p>
 
-          {/* Decorative subject tiles (large screens) */}
-          <div className="relative hidden h-72 lg:block" aria-hidden>
-            <div className="absolute inset-0 grid grid-cols-2 gap-4 [transform:rotate(-4deg)]">
-              {HERO_TILES.map(([emoji, label, grad]) => (
-                <div
-                  key={label}
-                  className={`flex flex-col justify-between rounded-3xl bg-linear-to-br ${grad} p-5 text-white shadow-lg`}
-                >
-                  <span className="text-3xl">{emoji}</span>
-                  <span className="font-display text-lg font-bold">{label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="mx-auto mt-7 max-w-xl">
+          <ChapterSearch />
+          <p className="mt-2 text-sm text-muted">
+            Search any topic across{" "}
+            <strong className="font-semibold text-ink">{chapters.length}</strong> chapters — try
+            “Pythagoras” or “osmosis”.
+          </p>
+        </div>
+
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
+          <Link
+            href="/cbse"
+            className="rounded-full bg-cobalt px-6 py-3 font-semibold text-white shadow-sm transition hover:brightness-110"
+          >
+            Browse classes
+          </Link>
+          <Link
+            href="/daily"
+            className="rounded-full border border-line bg-white px-6 py-3 font-semibold text-ink transition hover:border-cobalt hover:text-cobalt"
+          >
+            Today’s challenge
+          </Link>
         </div>
 
         {/* Stat strip */}
-        <div className="mt-10 grid max-w-xl grid-cols-3 gap-3">
+        <div className="mx-auto mt-9 grid max-w-xl grid-cols-3 gap-3">
           {([
             [String(chapters.length), "chapters"],
             [`${mcqs}+`, "questions"],
@@ -96,7 +70,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      <div className="mt-8">
+      {/* Browse by class — image-topped cards */}
+      <section className="mt-14">
+        <div className="text-center">
+          <h2 className="font-display text-2xl font-bold text-ink">Browse by class</h2>
+          <p className="mx-auto mt-1 max-w-xl text-muted">
+            Pick a class to open its subjects and chapters — Maths, Science, Social Science and English.
+          </p>
+        </div>
+        <div className="mt-7 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {CLASSES.map((cls, i) => (
+            <ClassImageCard key={cls.id} cls={cls} index={i} />
+          ))}
+        </div>
+      </section>
+
+      <div className="mt-12">
         <StreakCalendar />
       </div>
 
@@ -105,30 +94,16 @@ export default function HomePage() {
         <DailyHomeCard />
       </section>
 
-      {/* Browse by class — two-level: class + its subjects */}
-      <section className="mt-14">
-        <div className="flex items-end justify-between gap-4">
-          <div>
-            <h2 className="font-display text-2xl font-bold text-ink">Browse by class</h2>
-            <p className="mt-1 text-muted">Pick a class, then jump straight into a subject.</p>
-          </div>
-          <Link href="/cbse" className="hidden shrink-0 text-sm font-semibold text-cobalt hover:underline sm:block">
-            All classes →
-          </Link>
-        </div>
-        <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {CLASSES.map((cls, i) => (
-            <ClassBrowseCard key={cls.id} cls={cls} index={i} />
-          ))}
-        </div>
-      </section>
-
       {/* Featured ready chapters */}
       {featured.length > 0 && (
         <section className="mt-14">
-          <h2 className="font-display text-2xl font-bold text-ink">Start with a ready chapter</h2>
-          <p className="mt-1 text-muted">Fully prepared — notes, worked examples and a quiz, right now.</p>
-          <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="text-center">
+            <h2 className="font-display text-2xl font-bold text-ink">Start with a ready chapter</h2>
+            <p className="mx-auto mt-1 max-w-xl text-muted">
+              Fully prepared — notes, worked examples and a quiz, right now.
+            </p>
+          </div>
+          <div className="mt-7 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {featured.map((c) => (
               <Link
                 key={`${c.classId}-${c.subject}-${c.slug}`}
@@ -148,23 +123,25 @@ export default function HomePage() {
         </section>
       )}
 
-      {/* Everything in one place — value + navigation */}
+      {/* Everything in one place */}
       <section className="mt-14">
-        <h2 className="font-display text-2xl font-bold text-ink">Everything in one place</h2>
-        <p className="mt-1 text-muted">Three ways to learn each chapter — all free, no login.</p>
-        <div className="mt-5 grid gap-4 sm:grid-cols-3">
-          <Link href="/notes" className="card group p-5 transition hover:-translate-y-0.5">
-            <span aria-hidden className="grid h-12 w-12 place-items-center rounded-2xl bg-green/15 text-2xl">📖</span>
+        <div className="text-center">
+          <h2 className="font-display text-2xl font-bold text-ink">Everything in one place</h2>
+          <p className="mx-auto mt-1 max-w-xl text-muted">Three ways to learn each chapter — all free, no login.</p>
+        </div>
+        <div className="mt-7 grid gap-5 sm:grid-cols-3">
+          <Link href="/notes" className="card group p-5 text-center transition hover:-translate-y-0.5">
+            <span aria-hidden className="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-green/15 text-2xl">📖</span>
             <h3 className="mt-3 font-display text-lg font-bold text-ink group-hover:text-cobalt">Notes</h3>
             <p className="mt-1 text-sm leading-relaxed text-muted">Concise notes, formulas and worked examples for every chapter.</p>
           </Link>
-          <Link href="/mcqs" className="card group p-5 transition hover:-translate-y-0.5">
-            <span aria-hidden className="grid h-12 w-12 place-items-center rounded-2xl bg-amber/20 text-2xl">🧠</span>
+          <Link href="/mcqs" className="card group p-5 text-center transition hover:-translate-y-0.5">
+            <span aria-hidden className="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-amber/20 text-2xl">🧠</span>
             <h3 className="mt-3 font-display text-lg font-bold text-ink group-hover:text-cobalt">Quizzes</h3>
             <p className="mt-1 text-sm leading-relaxed text-muted">MCQs with instant feedback and scoring, so you can test yourself.</p>
           </Link>
-          <Link href="/daily" className="card group p-5 transition hover:-translate-y-0.5">
-            <span aria-hidden className="grid h-12 w-12 place-items-center rounded-2xl bg-coral/15 text-2xl">🔥</span>
+          <Link href="/daily" className="card group p-5 text-center transition hover:-translate-y-0.5">
+            <span aria-hidden className="mx-auto grid h-12 w-12 place-items-center rounded-2xl bg-coral/15 text-2xl">🔥</span>
             <h3 className="mt-3 font-display text-lg font-bold text-ink group-hover:text-cobalt">Daily challenge</h3>
             <p className="mt-1 text-sm leading-relaxed text-muted">A fresh mix of questions each day — build a streak as you revise.</p>
           </Link>
@@ -173,14 +150,14 @@ export default function HomePage() {
 
       {/* Why */}
       <section className="mt-14 card p-6 sm:p-8">
-        <h2 className="font-display text-2xl font-bold text-ink">Why {site.name}?</h2>
-        <div className="mt-5 grid gap-6 sm:grid-cols-3">
+        <h2 className="text-center font-display text-2xl font-bold text-ink">Why {site.name}?</h2>
+        <div className="mt-6 grid gap-6 sm:grid-cols-3">
           {[
             ["Built around the syllabus", "Chapters follow the CBSE/NCERT order so you can study alongside your textbook."],
             ["Understand, then test", "Read the notes and worked examples first, then check yourself with the quiz."],
             ["No login, no cost", "Everything is free and works on your phone. Your streak saves automatically in your browser."],
           ].map(([title, body]) => (
-            <div key={title}>
+            <div key={title} className="text-center sm:text-left">
               <h3 className="font-display font-bold text-ink">{title}</h3>
               <p className="mt-1 text-sm leading-relaxed text-muted">{body}</p>
             </div>
@@ -189,12 +166,12 @@ export default function HomePage() {
       </section>
 
       {/* Closing CTA */}
-      <section className="mt-12 overflow-hidden rounded-[1.5rem] bg-linear-to-br from-cobalt to-[#5b7bff] p-8 text-white shadow-lg sm:p-10">
+      <section className="mt-12 overflow-hidden rounded-[1.5rem] bg-linear-to-br from-cobalt to-[#5b7bff] p-8 text-center text-white shadow-lg sm:p-10">
         <h2 className="font-display text-2xl font-bold sm:text-3xl">Ready to start?</h2>
-        <p className="mt-2 max-w-lg text-white/90">
+        <p className="mx-auto mt-2 max-w-lg text-white/90">
           Pick your class and open any chapter — notes first, then the quiz. No login, no cost.
         </p>
-        <div className="mt-5 flex flex-wrap gap-3">
+        <div className="mt-5 flex flex-wrap justify-center gap-3">
           <Link href="/cbse" className="rounded-full bg-white px-6 py-3 font-semibold text-cobalt transition hover:brightness-95">
             Browse classes
           </Link>

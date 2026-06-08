@@ -7,7 +7,7 @@ import {
   classUrl,
 } from "@/lib/content";
 import { buildMetadata, breadcrumbLd, webPageLd } from "@/lib/seo";
-import { SubjectCard } from "@/components/cards";
+import { SubjectImageCard } from "@/components/cards";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 
@@ -49,9 +49,9 @@ export default async function ClassPage({ params }: { params: Params }) {
       <h1 className="font-display text-3xl font-bold text-ink">CBSE {cls.label}</h1>
       <p className="mt-2 max-w-2xl text-muted">{cls.blurb}</p>
       <h2 className="mt-8 font-display text-xl font-bold text-ink">Subjects</h2>
-      <div className="mt-4 grid gap-4 sm:grid-cols-2">
+      <div className="mt-4 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {cls.subjects.map((s) => (
-          <SubjectCard key={s.key} classId={cls.id} subject={s} />
+          <SubjectImageCard key={s.key} classId={cls.id} subject={s} />
         ))}
       </div>
     </>
