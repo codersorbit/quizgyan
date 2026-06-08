@@ -176,6 +176,54 @@ import c10sstMoneyCredit from "./class-10-social-science-money-and-credit";
 import c10sstGlobalisation from "./class-10-social-science-globalisation-and-the-indian-economy";
 import c10sstConsumerRights from "./class-10-social-science-consumer-rights";
 
+// ===== Class 10 English (First Flight — prose) =====
+import c10engLetterToGod from "./class-10-english-a-letter-to-god";
+import c10engMandela from "./class-10-english-nelson-mandela-a-long-walk-to-freedom";
+import c10engTwoStoriesFlying from "./class-10-english-two-stories-about-flying";
+import c10engAnneFrank from "./class-10-english-from-the-diary-of-anne-frank";
+import c10engGlimpsesIndia from "./class-10-english-glimpses-of-india";
+import c10engMijbil from "./class-10-english-mijbil-the-otter";
+import c10engMadamBus from "./class-10-english-madam-rides-the-bus";
+import c10engSermonBenares from "./class-10-english-the-sermon-at-benares";
+import c10engProposal from "./class-10-english-the-proposal";
+
+// ===== Class 10 English (First Flight — poems) =====
+import c10engDustOfSnow from "./class-10-english-dust-of-snow";
+import c10engFireAndIce from "./class-10-english-fire-and-ice";
+import c10engTigerZoo from "./class-10-english-a-tiger-in-the-zoo";
+import c10engWildAnimals from "./class-10-english-how-to-tell-wild-animals";
+import c10engBallPoem from "./class-10-english-the-ball-poem";
+import c10engAmanda from "./class-10-english-amanda";
+import c10engTrees from "./class-10-english-the-trees";
+import c10engFog from "./class-10-english-fog";
+import c10engCustard from "./class-10-english-the-tale-of-custard-the-dragon";
+import c10engAnneGregory from "./class-10-english-for-anne-gregory";
+
+// ===== Class 10 English (Footprints without Feet + Grammar) =====
+import c10engTriumphSurgery from "./class-10-english-a-triumph-of-surgery";
+import c10engThiefsStory from "./class-10-english-the-thiefs-story";
+import c10engMidnightVisitor from "./class-10-english-the-midnight-visitor";
+import c10engQuestionTrust from "./class-10-english-a-question-of-trust";
+import c10engFootprints from "./class-10-english-footprints-without-feet";
+import c10engMakingScientist from "./class-10-english-the-making-of-a-scientist";
+import c10engNecklace from "./class-10-english-the-necklace";
+import c10engBholi from "./class-10-english-bholi";
+import c10engBookSavedEarth from "./class-10-english-the-book-that-saved-the-earth";
+import c10engGrammar from "./class-10-english-grammar-and-writing-skills";
+
+// ===== Class 9 Social Science (History + Geography) =====
+import c9sstFrenchRev from "./class-9-social-science-the-french-revolution";
+import c9sstRussianRev from "./class-9-social-science-socialism-in-europe-and-the-russian-revolution";
+import c9sstNazism from "./class-9-social-science-nazism-and-the-rise-of-hitler";
+import c9sstForest from "./class-9-social-science-forest-society-and-colonialism";
+import c9sstPastoralists from "./class-9-social-science-pastoralists-in-the-modern-world";
+import c9sstLocation from "./class-9-social-science-india-size-and-location";
+import c9sstPhysical from "./class-9-social-science-physical-features-of-india";
+import c9sstDrainage from "./class-9-social-science-drainage";
+import c9sstClimate from "./class-9-social-science-climate";
+import c9sstVegetation from "./class-9-social-science-natural-vegetation-and-wildlife";
+import c9sstPopulation from "./class-9-social-science-population";
+
 // Register every authored chapter here. Adding a new chapter is a 2-step job:
 // 1) create content/chapters/<file>.ts exporting a Chapter
 // 2) import it and add it to this array.
@@ -342,4 +390,48 @@ export const CHAPTERS: Chapter[] = [
   c10sstMoneyCredit,
   c10sstGlobalisation,
   c10sstConsumerRights,
+
+  // ----- Class 10 English -----
+  c10engLetterToGod,
+  c10engMandela,
+  c10engTwoStoriesFlying,
+  c10engAnneFrank,
+  c10engGlimpsesIndia,
+  c10engMijbil,
+  c10engMadamBus,
+  c10engSermonBenares,
+  c10engProposal,
+  c10engDustOfSnow,
+  c10engFireAndIce,
+  c10engTigerZoo,
+  c10engWildAnimals,
+  c10engBallPoem,
+  c10engAmanda,
+  c10engTrees,
+  c10engFog,
+  c10engCustard,
+  c10engAnneGregory,
+  c10engTriumphSurgery,
+  c10engThiefsStory,
+  c10engMidnightVisitor,
+  c10engQuestionTrust,
+  c10engFootprints,
+  c10engMakingScientist,
+  c10engNecklace,
+  c10engBholi,
+  c10engBookSavedEarth,
+  c10engGrammar,
+
+  // ----- Class 9 Social Science -----
+  c9sstFrenchRev,
+  c9sstRussianRev,
+  c9sstNazism,
+  c9sstForest,
+  c9sstPastoralists,
+  c9sstLocation,
+  c9sstPhysical,
+  c9sstDrainage,
+  c9sstClimate,
+  c9sstVegetation,
+  c9sstPopulation,
 ];
