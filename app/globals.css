@@ -13,7 +13,7 @@
   --color-green: #1faf6b;
   --color-line: #ece4d6;
 
-  --font-display: "Fredoka", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", ui-serif, Georgia, "Times New Roman", serif;
   --font-body: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
 
   --radius-xl2: 1.5rem;
