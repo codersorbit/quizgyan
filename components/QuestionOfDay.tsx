@@ -23,7 +23,7 @@ export function QuestionOfDay({ pool }: { pool: ChallengeMcq[] }) {
     if (!q) return;
     const origin = typeof window !== "undefined" ? window.location.origin : "";
     const url = `${origin}/daily`;
-    const text = `🧠 Question of the Day\n\n${q.q}\n\nCan you crack it? Practise free on Quiz Gyan:`;
+    const text = `🧠 Question of the Day\n\n${q.q}\n\nCan you crack it? Practise free on StudyMatic:`;
     const imgUrl = `${origin}/api/og?type=question&q=${encodeURIComponent(q.q)}&cls=${encodeURIComponent(
       q.classId,
     )}&sub=${encodeURIComponent(q.subject)}`;
@@ -33,9 +33,9 @@ export function QuestionOfDay({ pool }: { pool: ChallengeMcq[] }) {
         try {
           const res = await fetch(imgUrl);
           const blob = await res.blob();
-          const file = new File([blob], "quizgyan-qotd.png", { type: "image/png" });
+          const file = new File([blob], "studymatic-qotd.png", { type: "image/png" });
           if (navigator.canShare({ files: [file] })) {
-            await navigator.share({ files: [file], title: "Quiz Gyan — Question of the Day", text, url });
+            await navigator.share({ files: [file], title: "StudyMatic — Question of the Day", text, url });
             setShareState("shared");
             return;
           }
@@ -44,7 +44,7 @@ export function QuestionOfDay({ pool }: { pool: ChallengeMcq[] }) {
         }
       }
       if (typeof navigator !== "undefined" && navigator.share) {
-        await navigator.share({ title: "Quiz Gyan — Question of the Day", text, url });
+        await navigator.share({ title: "StudyMatic — Question of the Day", text, url });
         setShareState("shared");
       } else if (typeof navigator !== "undefined" && navigator.clipboard) {
         await navigator.clipboard.writeText(`${text}\n${url}`);

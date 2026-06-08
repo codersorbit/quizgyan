@@ -14,8 +14,8 @@ import { DailyHomeCard } from "@/components/DailyHomeCard";
 const HERO_TILES = [
   ["📐", "Maths", "from-cobalt to-[#5b7bff]"],
   ["🔬", "Science", "from-green to-[#42c98a]"],
-  ["💡", "Quizzes", "from-amber to-[#e0a64a]"],
-  ["✍️", "Practice", "from-coral to-[#ff8aa0]"],
+  ["🏛️", "Social Science", "from-amber to-[#e0a64a]"],
+  ["📖", "English", "from-coral to-[#ff8aa0]"],
 ] as const;
 
 export default function HomePage() {
@@ -30,7 +30,7 @@ export default function HomePage() {
       <section className="relative">
         <div className="grid items-center gap-10 lg:grid-cols-[1.25fr_1fr]">
           <div>
-            <span className="chip bg-cobalt-soft text-cobalt">CBSE · Classes 6–10 · Free</span>
+            <span className="chip bg-cobalt-soft text-cobalt">CBSE · Free · No login</span>
             <h1 className="mt-4 max-w-2xl font-display text-4xl font-bold leading-[1.08] text-ink sm:text-5xl">
               Every CBSE chapter as{" "}
               <span className="text-cobalt">notes</span>,{" "}
@@ -39,7 +39,8 @@ export default function HomePage() {
             </h1>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">
               {site.name} turns each chapter into clear notes, instant-feedback quizzes and
-              exam-style questions — made for students who want to understand, not just memorise.
+              exam-style questions across Maths, Science, Social Science and English — made for
+              students who want to understand, not just memorise.
             </p>
             <div className="mt-6">
               <ChapterSearch />

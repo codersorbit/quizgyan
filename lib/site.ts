@@ -1,10 +1,10 @@
 export const site = {
-  name: "Quiz Gyan",
-  shortName: "Quiz Gyan",
-  tagline: "CBSE Notes, MCQs, Quizzes & Practice — Classes 6 to 10",
-  url: "https://quizgyan.vercel.app",
+  name: "StudyMatic",
+  shortName: "StudyMatic",
+  tagline: "Every Chapter. Notes, Quizzes & Practice.",
+  url: "https://studymatic.in",
   description:
-    "Free CBSE learning platform for Classes 6–10. Chapter-wise notes, key formulas, solved examples, MCQ quizzes with instant feedback, and practice questions for Maths, Science and more.",
+    "Clear notes, instant-feedback quizzes and exam-style questions for every CBSE chapter — Maths, Science, Social Science and English — all in one place, and completely free.",
   locale: "en_IN",
   author: {
     name: "Aftabuddin",
@@ -12,7 +12,9 @@ export const site = {
     school: "Umeed Global School",
     schoolUrl: "https://umeed.org.in/",
   },
-  // Google Search Console verification (kept from the original site).
+  // Google Search Console verification.
+  // NOTE: this token belongs to the OLD property. For studymatic.in, add a new
+  // URL-prefix property in Search Console and paste its meta-tag token here.
   gscVerification: "RkY53r0sk-plqP-0NoFK607XbzM6tTmIWi2d6ilLa44",
 } as const;
 

@@ -70,7 +70,7 @@ export function DailyHomeCard() {
     const origin = typeof window !== "undefined" ? window.location.origin : "";
     const url = `${origin}/daily`;
     const r = rec!;
-    const text = `I scored ${r.score}/${r.total} (${r.percent}%) on today's Quiz Gyan daily challenge${
+    const text = `I scored ${r.score}/${r.total} (${r.percent}%) on today's StudyMatic daily challenge${
       streak > 0 ? ` — ${streak}-day streak` : ""
     }! Try it:`;
     const full = `${origin}${imgUrl}`;
@@ -79,9 +79,9 @@ export function DailyHomeCard() {
         try {
           const res = await fetch(full);
           const blob = await res.blob();
-          const file = new File([blob], "quizgyan-daily.png", { type: "image/png" });
+          const file = new File([blob], "studymatic-daily.png", { type: "image/png" });
           if (navigator.canShare({ files: [file] })) {
-            await navigator.share({ files: [file], title: "Quiz Gyan — Daily Challenge", text, url });
+            await navigator.share({ files: [file], title: "StudyMatic — Daily Challenge", text, url });
             setShareState("shared");
             return;
           }
@@ -90,7 +90,7 @@ export function DailyHomeCard() {
         }
       }
       if (typeof navigator !== "undefined" && navigator.share) {
-        await navigator.share({ title: "Quiz Gyan — Daily Challenge", text, url });
+        await navigator.share({ title: "StudyMatic — Daily Challenge", text, url });
         setShareState("shared");
       } else if (typeof navigator !== "undefined" && navigator.clipboard) {
         await navigator.clipboard.writeText(`${text} ${url}`);

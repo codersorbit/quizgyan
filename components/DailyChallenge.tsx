@@ -159,7 +159,7 @@ export function DailyChallenge({
     async function shareResult() {
       const origin = typeof window !== "undefined" ? window.location.origin : "";
       const url = `${origin}/daily`;
-      const text = `I scored ${score}/${total} (${percent}%) on today's Quiz Gyan daily challenge${
+      const text = `I scored ${score}/${total} (${percent}%) on today's StudyMatic daily challenge${
         streak > 0 ? ` — ${streak}-day streak` : ""
       }! Try it:`;
       const imgUrl = `${origin}/api/og?type=result&score=${score}&total=${total}&pct=${percent}&streak=${streak}&best=${best}`;
@@ -169,11 +169,11 @@ export function DailyChallenge({
           try {
             const res = await fetch(imgUrl);
             const blob = await res.blob();
-            const file = new File([blob], "quizgyan-daily.png", { type: "image/png" });
+            const file = new File([blob], "studymatic-daily.png", { type: "image/png" });
             if (navigator.canShare({ files: [file] })) {
               await navigator.share({
                 files: [file],
-                title: "Quiz Gyan — Daily Challenge",
+                title: "StudyMatic — Daily Challenge",
                 text,
                 url,
               });
@@ -185,7 +185,7 @@ export function DailyChallenge({
           }
         }
         if (typeof navigator !== "undefined" && navigator.share) {
-          await navigator.share({ title: "Quiz Gyan — Daily Challenge", text, url });
+          await navigator.share({ title: "StudyMatic — Daily Challenge", text, url });
           setShareState("shared");
         } else if (typeof navigator !== "undefined" && navigator.clipboard) {
           await navigator.clipboard.writeText(`${text} ${url}`);

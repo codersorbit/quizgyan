@@ -115,6 +115,53 @@ import c6LivingCreatures from "./class-6-science-living-creatures-exploring-thei
 import c6NaturesTreasures from "./class-6-science-natures-treasures";
 import c6BeyondEarth from "./class-6-science-beyond-earth";
 
+// ===== Class 7 (new NCERT: Ganita Prakash) =====
+import c7LargeNumbers from "./class-7-maths-large-numbers-around-us";
+import c7ArithExpr from "./class-7-maths-arithmetic-expressions";
+import c7PeekPoint from "./class-7-maths-a-peek-beyond-the-point";
+import c7LetterNumbers from "./class-7-maths-expressions-using-letter-numbers";
+import c7ParallelLines from "./class-7-maths-parallel-and-intersecting-lines";
+import c7NumberPlay from "./class-7-maths-number-play";
+import c7ThreeLines from "./class-7-maths-a-tale-of-three-intersecting-lines";
+import c7WorkingFractions from "./class-7-maths-working-with-fractions";
+import c7GeometricTwins from "./class-7-maths-geometric-twins";
+import c7Integers from "./class-7-maths-operations-with-integers";
+import c7CommonGround from "./class-7-maths-finding-common-ground";
+import c7AnotherPeek from "./class-7-maths-another-peek-beyond-the-point";
+import c7ConnectingDots from "./class-7-maths-connecting-the-dots";
+import c7Constructions from "./class-7-maths-constructions-and-tilings";
+import c7FindingUnknown from "./class-7-maths-finding-the-unknown";
+
+// Class 7 Science (new NCERT: Curiosity)
+import c7sEvolvingScience from "./class-7-science-the-ever-evolving-world-of-science";
+import c7sAcidsBases from "./class-7-science-exploring-substances-acidic-basic-and-neutral";
+import c7sElectricity from "./class-7-science-electricity-circuits-and-their-components";
+import c7sMetalsNonmetals from "./class-7-science-the-world-of-metals-and-non-metals";
+import c7sChanges from "./class-7-science-changes-around-us-physical-and-chemical";
+import c7sAdolescence from "./class-7-science-adolescence-a-stage-of-growth-and-change";
+import c7sHeat from "./class-7-science-heat-transfer-in-nature";
+import c7sTimeMotion from "./class-7-science-measurement-of-time-and-motion";
+import c7sAnimalsLife from "./class-7-science-life-processes-in-animals";
+import c7sPlantsLife from "./class-7-science-life-processes-in-plants";
+import c7sLight from "./class-7-science-light-shadows-and-reflections";
+import c7sEarthMoonSun from "./class-7-science-earth-moon-and-the-sun";
+
+// ===== Class 10 Social Science (History strand) =====
+import c10sstNationalismEurope from "./class-10-social-science-the-rise-of-nationalism-in-europe";
+import c10sstNationalismIndia from "./class-10-social-science-nationalism-in-india";
+import c10sstGlobalWorld from "./class-10-social-science-the-making-of-a-global-world";
+import c10sstIndustrialisation from "./class-10-social-science-the-age-of-industrialisation";
+import c10sstPrintCulture from "./class-10-social-science-print-culture-and-the-modern-world";
+
+// ===== Class 10 Social Science (Geography strand) =====
+import c10sstResources from "./class-10-social-science-resources-and-development";
+import c10sstForestWildlife from "./class-10-social-science-forest-and-wildlife-resources";
+import c10sstWater from "./class-10-social-science-water-resources";
+import c10sstAgriculture from "./class-10-social-science-agriculture";
+import c10sstMinerals from "./class-10-social-science-minerals-and-energy-resources";
+import c10sstManufacturing from "./class-10-social-science-manufacturing-industries";
+import c10sstLifelines from "./class-10-social-science-lifelines-of-national-economy";
+
 // Register every authored chapter here. Adding a new chapter is a 2-step job:
 // 1) create content/chapters/<file>.ts exporting a Chapter
 // 2) import it and add it to this array.
@@ -226,4 +273,49 @@ export const CHAPTERS: Chapter[] = [
   c6LivingCreatures,
   c6NaturesTreasures,
   c6BeyondEarth,
+
+  // ----- Class 7 Maths -----
+  c7LargeNumbers,
+  c7ArithExpr,
+  c7PeekPoint,
+  c7LetterNumbers,
+  c7ParallelLines,
+  c7NumberPlay,
+  c7ThreeLines,
+  c7WorkingFractions,
+  c7GeometricTwins,
+  c7Integers,
+  c7CommonGround,
+  c7AnotherPeek,
+  c7ConnectingDots,
+  c7Constructions,
+  c7FindingUnknown,
+
+  // ----- Class 7 Science -----
+  c7sEvolvingScience,
+  c7sAcidsBases,
+  c7sElectricity,
+  c7sMetalsNonmetals,
+  c7sChanges,
+  c7sAdolescence,
+  c7sHeat,
+  c7sTimeMotion,
+  c7sAnimalsLife,
+  c7sPlantsLife,
+  c7sLight,
+  c7sEarthMoonSun,
+
+  // ----- Class 10 Social Science -----
+  c10sstNationalismEurope,
+  c10sstNationalismIndia,
+  c10sstGlobalWorld,
+  c10sstIndustrialisation,
+  c10sstPrintCulture,
+  c10sstResources,
+  c10sstForestWildlife,
+  c10sstWater,
+  c10sstAgriculture,
+  c10sstMinerals,
+  c10sstManufacturing,
+  c10sstLifelines,
 ];

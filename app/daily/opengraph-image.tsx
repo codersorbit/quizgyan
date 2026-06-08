@@ -3,7 +3,7 @@ import { allChallengeMcqs } from "@/lib/content";
 import { pickOne, todayStrTz } from "@/lib/daily";
 import { questionCard, OG_SIZE } from "@/lib/og";
 
-export const alt = "Quiz Gyan — Question of the Day";
+export const alt = "StudyMatic — Question of the Day";
 export const size = OG_SIZE;
 export const contentType = "image/png";
 // Rendered at request time so the preview shows the actual question for the day.
