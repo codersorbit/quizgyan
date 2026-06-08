@@ -16,9 +16,8 @@ const IMG_CARD =
   "shadow-[0_1px_2px_rgba(31,36,48,0.05),0_16px_32px_-22px_rgba(31,36,48,0.32)] " +
   "transition duration-200 hover:-translate-y-1 hover:shadow-[0_22px_44px_-20px_rgba(31,36,48,0.38)]";
 
-/** Image-topped class card: illustrated banner on top, bold title + subtitle below. */
-export function ClassImageCard({ cls, index }: { cls: ClassDef; index: number }) {
-  const grad = GRADIENTS[index % GRADIENTS.length];
+/** Image-topped class card: per-class SVG banner on top, bold title + subtitle below. */
+export function ClassImageCard({ cls }: { cls: ClassDef; index: number }) {
   const authored = cls.subjects.reduce(
     (n, s) => n + getAuthoredInSubject(cls.id, s.key).length,
     0,
@@ -26,33 +25,19 @@ export function ClassImageCard({ cls, index }: { cls: ClassDef; index: number })
   const total = cls.subjects.reduce((n, s) => n + s.chapters.length, 0);
   return (
     <Link href={classUrl(cls.id)} className={IMG_CARD}>
-      <div
-        className={`relative flex h-32 items-center justify-center overflow-hidden bg-linear-to-br ${grad}`}
-      >
-        <span
-          aria-hidden
-          className="font-display text-[3.25rem] font-extrabold leading-none text-white/95 drop-shadow-sm"
-        >
-          {cls.roman}
-        </span>
-        {/* decorative shapes */}
-        <span aria-hidden className="pointer-events-none absolute -right-6 -top-9 h-24 w-24 rounded-full bg-white/10" />
-        <span aria-hidden className="pointer-events-none absolute -bottom-10 -left-6 h-28 w-28 rounded-full bg-black/5" />
+      <div className="relative aspect-[16/9] w-full overflow-hidden bg-cream">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`/cards/class-${cls.id}.svg`}
+          alt=""
+          loading="lazy"
+          className="h-full w-full object-cover"
+        />
         {authored > 0 && (
           <span className="absolute right-3 top-3 rounded-full bg-white/90 px-2.5 py-0.5 text-xs font-bold text-green shadow-sm">
             {authored} ready
           </span>
         )}
-        <div className="absolute inset-x-0 bottom-2.5 flex justify-center gap-1.5" aria-hidden>
-          {cls.subjects.map((s) => (
-            <span
-              key={s.key}
-              className="grid h-7 w-7 place-items-center rounded-lg bg-white/20 text-base backdrop-blur-sm"
-            >
-              {s.icon}
-            </span>
-          ))}
-        </div>
       </div>
       <div className="p-4 text-center">
         <h3 className="font-display text-lg font-bold text-ink group-hover:text-cobalt">{cls.label}</h3>

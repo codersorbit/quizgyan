@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-label="">
+  <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#7ec0ff"/><stop offset="1" stop-color="#4aa3ff"/>
+  </linearGradient></defs>
+  <rect width="320" height="180" fill="url(#g1)"/>
+  <circle cx="270" cy="34" r="58" fill="#ffffff" opacity="0.12"/>
+  <circle cx="36" cy="170" r="46" fill="#000000" opacity="0.06"/>
+  <g fill="#ffffff" opacity="0.5"><circle cx="52" cy="40" r="2.6"/><circle cx="68" cy="30" r="1.6"/><circle cx="250" cy="150" r="2.3"/><circle cx="236" cy="44" r="1.6"/></g>
+  <circle cx="160" cy="84" r="40" fill="#ffffff" opacity="0.16"/>
+  <path d="M160.0,56.0 L165.9,71.9 L182.8,72.6 L169.5,83.1 L174.1,99.4 L160.0,90.0 L145.9,99.4 L150.5,83.1 L137.2,72.6 L154.1,71.9 Z" fill="#ffd54a" stroke="#f0a500" stroke-width="2" stroke-linejoin="round"/>
+  <g transform="rotate(32 150 108)"><rect x="145" y="96" width="9" height="26" rx="4" fill="#ff8aa0"/><polygon points="145,96 154,96 149.5,88" fill="#ffe0e6"/></g>
+  <g>
+    <rect x="130" y="150" width="60" height="8" rx="3" fill="#fbf6ee"/>
+    <rect x="135" y="143" width="50" height="8" rx="3" fill="#ffffff"/>
+    <rect x="130" y="156.4" width="60" height="2" rx="1" fill="#ffb300" opacity="0.85"/>
+    <rect x="135" y="149.4" width="50" height="2" rx="1" fill="#3257f0" opacity="0.8"/>
+  </g>
+</svg>
