@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CLASSES } from "@/lib/content";
 import { buildMetadata, breadcrumbLd, webPageLd } from "@/lib/seo";
-import { ClassCard } from "@/components/cards";
+import { ClassBrowseCard } from "@/components/cards";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 
@@ -26,9 +26,9 @@ export default function CbseHub() {
         Choose a class to see its subjects and chapters. We&apos;re starting with Classes 6–10,
         where most CBSE exam preparation happens.
       </p>
-      <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+      <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {CLASSES.map((cls, i) => (
-          <ClassCard key={cls.id} cls={cls} index={i} />
+          <ClassBrowseCard key={cls.id} cls={cls} index={i} />
         ))}
       </div>
     </>

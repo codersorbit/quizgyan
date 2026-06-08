@@ -37,6 +37,52 @@ export function ClassCard({ cls, index }: { cls: ClassDef; index: number }) {
   );
 }
 
+export function ClassBrowseCard({ cls, index }: { cls: ClassDef; index: number }) {
+  const grad = GRADIENTS[index % GRADIENTS.length];
+  const authored = cls.subjects.reduce(
+    (n, s) => n + getAuthoredInSubject(cls.id, s.key).length,
+    0,
+  );
+  const totalChapters = cls.subjects.reduce((n, s) => n + s.chapters.length, 0);
+  return (
+    <div className="card relative overflow-hidden p-5">
+      <div className="flex items-center gap-3">
+        <div
+          className={`grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-linear-to-br ${grad} font-display text-lg font-bold text-white shadow-sm`}
+        >
+          {cls.roman}
+        </div>
+        <div className="min-w-0">
+          <Link href={classUrl(cls.id)} className="font-display text-lg font-bold text-ink hover:text-cobalt">
+            {cls.label}
+          </Link>
+          <p className="text-xs text-muted">
+            {authored > 0
+              ? `${authored} of ${totalChapters} chapters ready`
+              : `${totalChapters} chapters · coming soon`}
+          </p>
+        </div>
+      </div>
+      <div className="mt-4 flex flex-wrap gap-2">
+        {cls.subjects.map((s) => {
+          const ready = getAuthoredInSubject(cls.id, s.key).length;
+          return (
+            <Link
+              key={s.key}
+              href={subjectUrl(cls.id, s.key)}
+              className="chip border border-line bg-white text-ink transition hover:border-cobalt hover:text-cobalt"
+            >
+              <span aria-hidden>{s.icon}</span>
+              {s.name}
+              {ready > 0 && <span className="font-bold text-green">· {ready}</span>}
+            </Link>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 export function SubjectCard({ classId, subject }: { classId: string; subject: SubjectDef }) {
   const ready = getAuthoredInSubject(classId, subject.key).length;
   return (
