@@ -246,6 +246,16 @@ import c9engReachTop from "./class-9-english-reach-for-the-top";
 import c9engKathmandu from "./class-9-english-kathmandu";
 import c9engIfIWereYou from "./class-9-english-if-i-were-you";
 
+// ===== Class 9 English (Beehive — poems) =====
+import c9engRoadNotTaken from "./class-9-english-the-road-not-taken";
+import c9engWind from "./class-9-english-wind";
+import c9engRainRoof from "./class-9-english-rain-on-the-roof";
+import c9engInnisfree from "./class-9-english-the-lake-isle-of-innisfree";
+import c9engNorthland from "./class-9-english-a-legend-of-the-northland";
+import c9engNoMenForeign from "./class-9-english-no-men-are-foreign";
+import c9engKillingTree from "./class-9-english-on-killing-a-tree";
+import c9engSlumber from "./class-9-english-a-slumber-did-my-spirit-seal";
+
 // Register every authored chapter here. Adding a new chapter is a 2-step job:
 // 1) create content/chapters/<file>.ts exporting a Chapter
 // 2) import it and add it to this array.
@@ -476,4 +486,12 @@ export const CHAPTERS: Chapter[] = [
   c9engReachTop,
   c9engKathmandu,
   c9engIfIWereYou,
+  c9engRoadNotTaken,
+  c9engWind,
+  c9engRainRoof,
+  c9engInnisfree,
+  c9engNorthland,
+  c9engNoMenForeign,
+  c9engKillingTree,
+  c9engSlumber,
 ];
