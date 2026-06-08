@@ -162,6 +162,20 @@ import c10sstMinerals from "./class-10-social-science-minerals-and-energy-resour
 import c10sstManufacturing from "./class-10-social-science-manufacturing-industries";
 import c10sstLifelines from "./class-10-social-science-lifelines-of-national-economy";
 
+// ===== Class 10 Social Science (Civics strand) =====
+import c10sstPowerSharing from "./class-10-social-science-power-sharing";
+import c10sstFederalism from "./class-10-social-science-federalism";
+import c10sstGenderReligionCaste from "./class-10-social-science-gender-religion-and-caste";
+import c10sstPoliticalParties from "./class-10-social-science-political-parties";
+import c10sstOutcomesDemocracy from "./class-10-social-science-outcomes-of-democracy";
+
+// ===== Class 10 Social Science (Economics strand) =====
+import c10sstDevelopment from "./class-10-social-science-development";
+import c10sstSectors from "./class-10-social-science-sectors-of-the-indian-economy";
+import c10sstMoneyCredit from "./class-10-social-science-money-and-credit";
+import c10sstGlobalisation from "./class-10-social-science-globalisation-and-the-indian-economy";
+import c10sstConsumerRights from "./class-10-social-science-consumer-rights";
+
 // Register every authored chapter here. Adding a new chapter is a 2-step job:
 // 1) create content/chapters/<file>.ts exporting a Chapter
 // 2) import it and add it to this array.
@@ -318,4 +332,14 @@ export const CHAPTERS: Chapter[] = [
   c10sstMinerals,
   c10sstManufacturing,
   c10sstLifelines,
+  c10sstPowerSharing,
+  c10sstFederalism,
+  c10sstGenderReligionCaste,
+  c10sstPoliticalParties,
+  c10sstOutcomesDemocracy,
+  c10sstDevelopment,
+  c10sstSectors,
+  c10sstMoneyCredit,
+  c10sstGlobalisation,
+  c10sstConsumerRights,
 ];
