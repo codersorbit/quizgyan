@@ -256,6 +256,18 @@ import c9engNoMenForeign from "./class-9-english-no-men-are-foreign";
 import c9engKillingTree from "./class-9-english-on-killing-a-tree";
 import c9engSlumber from "./class-9-english-a-slumber-did-my-spirit-seal";
 
+// ===== Class 9 English (Moments + grammar) =====
+import c9engLostChild from "./class-9-english-the-lost-child";
+import c9engToto from "./class-9-english-the-adventures-of-toto";
+import c9engIswaran from "./class-9-english-iswaran-the-storyteller";
+import c9engKingdomFools from "./class-9-english-in-the-kingdom-of-fools";
+import c9engHappyPrince from "./class-9-english-the-happy-prince";
+import c9engErsama from "./class-9-english-weathering-the-storm-in-ersama";
+import c9engLastLeaf from "./class-9-english-the-last-leaf";
+import c9engHouseNotHome from "./class-9-english-a-house-is-not-a-home";
+import c9engBeggar from "./class-9-english-the-beggar";
+import c9engGrammar from "./class-9-english-grammar-and-writing-skills";
+
 // Register every authored chapter here. Adding a new chapter is a 2-step job:
 // 1) create content/chapters/<file>.ts exporting a Chapter
 // 2) import it and add it to this array.
@@ -494,4 +506,14 @@ export const CHAPTERS: Chapter[] = [
   c9engNoMenForeign,
   c9engKillingTree,
   c9engSlumber,
+  c9engLostChild,
+  c9engToto,
+  c9engIswaran,
+  c9engKingdomFools,
+  c9engHappyPrince,
+  c9engErsama,
+  c9engLastLeaf,
+  c9engHouseNotHome,
+  c9engBeggar,
+  c9engGrammar,
 ];
