@@ -224,6 +224,28 @@ import c9sstClimate from "./class-9-social-science-climate";
 import c9sstVegetation from "./class-9-social-science-natural-vegetation-and-wildlife";
 import c9sstPopulation from "./class-9-social-science-population";
 
+// ===== Class 9 Social Science (Civics + Economics) =====
+import c9sstDemocracy from "./class-9-social-science-what-is-democracy-why-democracy";
+import c9sstConstitution from "./class-9-social-science-constitutional-design";
+import c9sstElectoral from "./class-9-social-science-electoral-politics";
+import c9sstInstitutions from "./class-9-social-science-working-of-institutions";
+import c9sstRights from "./class-9-social-science-democratic-rights";
+import c9sstPalampur from "./class-9-social-science-the-story-of-village-palampur";
+import c9sstPeopleResource from "./class-9-social-science-people-as-resource";
+import c9sstPoverty from "./class-9-social-science-poverty-as-a-challenge";
+import c9sstFoodSecurity from "./class-9-social-science-food-security-in-india";
+
+// ===== Class 9 English (Beehive — prose) =====
+import c9engFunTheyHad from "./class-9-english-the-fun-they-had";
+import c9engSoundOfMusic from "./class-9-english-the-sound-of-music";
+import c9engLittleGirl from "./class-9-english-the-little-girl";
+import c9engBeautifulMind from "./class-9-english-a-truly-beautiful-mind";
+import c9engSnakeMirror from "./class-9-english-the-snake-and-the-mirror";
+import c9engMyChildhood from "./class-9-english-my-childhood";
+import c9engReachTop from "./class-9-english-reach-for-the-top";
+import c9engKathmandu from "./class-9-english-kathmandu";
+import c9engIfIWereYou from "./class-9-english-if-i-were-you";
+
 // Register every authored chapter here. Adding a new chapter is a 2-step job:
 // 1) create content/chapters/<file>.ts exporting a Chapter
 // 2) import it and add it to this array.
@@ -434,4 +456,24 @@ export const CHAPTERS: Chapter[] = [
   c9sstClimate,
   c9sstVegetation,
   c9sstPopulation,
+  c9sstDemocracy,
+  c9sstConstitution,
+  c9sstElectoral,
+  c9sstInstitutions,
+  c9sstRights,
+  c9sstPalampur,
+  c9sstPeopleResource,
+  c9sstPoverty,
+  c9sstFoodSecurity,
+
+  // ----- Class 9 English -----
+  c9engFunTheyHad,
+  c9engSoundOfMusic,
+  c9engLittleGirl,
+  c9engBeautifulMind,
+  c9engSnakeMirror,
+  c9engMyChildhood,
+  c9engReachTop,
+  c9engKathmandu,
+  c9engIfIWereYou,
 ];
