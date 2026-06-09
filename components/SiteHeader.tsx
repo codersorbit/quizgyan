@@ -9,11 +9,12 @@ export function SiteHeader() {
         <Link href="/" className="flex items-center justify-center gap-2">
           <span
             aria-hidden
-            className="grid h-9 w-9 place-items-center rounded-2xl bg-linear-to-br from-cobalt to-violet text-lg shadow-md shadow-cobalt/25"
+            className="relative grid h-9 w-9 place-items-center rounded-full bg-pink-soft text-lg text-pink"
           >
-            💡
+            ✦
+            <span className="absolute -right-0.5 -top-0.5 h-3 w-3 rounded-full border-2 border-white bg-sun" />
           </span>
-          <span className="font-display text-xl font-bold brand-gradient">{site.name}</span>
+          <span className="font-fun text-2xl brand-gradient">{site.name}</span>
           <span className="hidden text-xs font-medium text-muted sm:inline">
             · {site.tagline}
           </span>

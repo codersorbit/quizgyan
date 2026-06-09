@@ -28,8 +28,8 @@ export default function HomePage() {
           <div className="animate-float absolute left-[13%] top-44 grid h-12 w-12 place-items-center rounded-2xl glass text-xl shadow-lg" style={{ animationDelay: "3s" }}>🌍</div>
           <div className="animate-float absolute right-[13%] top-48 grid h-12 w-12 place-items-center rounded-2xl glass text-xl shadow-lg" style={{ animationDelay: "2.3s" }}>✏️</div>
         </div>
-        <span className="chip glass text-cobalt shadow-sm">✨ CBSE · Free · No login</span>
-        <h1 className="mx-auto mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.1] text-ink sm:text-5xl">
+        <span className="chip bg-white text-pink shadow-sm">✨ CBSE · WBBPE · Free · No login</span>
+        <h1 className="mx-auto mt-4 max-w-3xl font-fun text-5xl leading-[1.05] text-ink sm:text-6xl">
           Welcome to <span className="brand-gradient">{site.name}</span>
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-muted">
@@ -48,18 +48,8 @@ export default function HomePage() {
         </div>
 
         <div className="mt-6 flex flex-wrap justify-center gap-3">
-          <Link
-            href="/cbse"
-            className="rounded-full bg-linear-to-r from-cobalt to-violet px-6 py-3 font-semibold text-white shadow-lg shadow-cobalt/25 transition hover:-translate-y-0.5 hover:brightness-110"
-          >
-            Browse classes
-          </Link>
-          <Link
-            href="/daily"
-            className="rounded-full border border-white/60 bg-white/55 px-6 py-3 font-semibold text-ink backdrop-blur transition hover:-translate-y-0.5 hover:text-cobalt"
-          >
-            Today’s challenge
-          </Link>
+          <Link href="/cbse" className="btn-candy cobalt">Browse classes</Link>
+          <Link href="/daily" className="btn-candy ghost">Today’s challenge</Link>
         </div>
 
         {/* Stat strip */}

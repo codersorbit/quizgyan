@@ -1,42 +1,42 @@
 @import "tailwindcss";
 
-/* ---- Brand design tokens (StudyMatic) ---- */
+/* ---- Brand design tokens (StudyMatic · “Playful” calibrated theme) ---- */
 @theme {
-  --color-cream: #f7f2ea;
+  --color-cream: #fffdf6;        /* warm paper canvas */
   --color-card: #ffffff;
-  --color-ink: #1b2030;
-  --color-muted: #5c6273;
-  --color-cobalt: #3257f0;
+  --color-ink: #1a1a1a;
+  --color-muted: #5b6072;
+  --color-cobalt: #3257f0;       /* primary action (trust) */
   --color-cobalt-soft: #eaf0ff;
   --color-amber: #ffb300;
   --color-coral: #ff5d73;
   --color-green: #1faf6b;
   --color-violet: #7b54d3;
-  --color-line: #e7ddcd;
+  --color-sun: #ffd500;          /* playful hero accent */
+  --color-pink: #ff6fb5;         /* playful accent */
+  --color-pink-soft: #ffe9f2;
+  --color-line: #1a1a1a14;       /* soft ink hairline */
 
-  --font-display: "Playfair Display", ui-serif, Georgia, "Times New Roman", serif;
-  --font-body: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  /* Rounded, friendly type — Fredoka everywhere, Bagel for the one fun moment,
+     Hind Siliguri auto-picks up Bengali glyphs in every family. */
+  --font-display: "Fredoka", "Hind Siliguri", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Fredoka", "Hind Siliguri", ui-sans-serif, system-ui, sans-serif;
+  --font-fun: "Bagel Fat One", "Fredoka", cursive;
+  --font-script: "Pacifico", cursive;
 
-  --radius-xl2: 1.5rem;
+  --radius-xl2: 1.75rem;
 }
 
-:root {
-  color-scheme: light;
-}
-
-html {
-  scroll-behavior: smooth;
-}
+:root { color-scheme: light; }
+html { scroll-behavior: smooth; }
 
 body {
   background-color: var(--color-cream);
-  /* Soft aurora mesh so frosted-glass surfaces have colour to refract */
+  /* Gentle, calibrated warmth — a soft sun glow up top, a whisper of pink.
+     Far calmer than a full aurora mesh, so upper-class pages stay grown-up. */
   background-image:
-    radial-gradient(42rem 42rem at 6% -8%, rgba(50, 87, 240, 0.16), transparent 60%),
-    radial-gradient(38rem 38rem at 102% 2%, rgba(255, 179, 0, 0.14), transparent 58%),
-    radial-gradient(44rem 44rem at 104% 102%, rgba(31, 175, 107, 0.13), transparent 60%),
-    radial-gradient(40rem 40rem at -8% 106%, rgba(255, 93, 115, 0.14), transparent 58%),
-    radial-gradient(36rem 36rem at 50% 50%, rgba(123, 84, 211, 0.06), transparent 70%);
+    radial-gradient(46rem 26rem at 50% -14%, rgba(255, 213, 0, 0.16), transparent 62%),
+    radial-gradient(36rem 26rem at 108% -2%, rgba(255, 111, 181, 0.10), transparent 58%);
   background-attachment: fixed;
   background-repeat: no-repeat;
   color: var(--color-ink);
@@ -48,62 +48,81 @@ body {
 
 h1, h2, h3, h4, .font-display {
   font-family: var(--font-display);
-  letter-spacing: -0.015em;
-  font-optical-sizing: auto;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
-/* Gradient wordmark / accent text */
+.font-fun { font-family: var(--font-fun); letter-spacing: 0.01em; }
+.font-script { font-family: var(--font-script); }
+
+/* Playful wordmark gradient: trust-blue into friendly-pink */
 .brand-gradient {
-  background: linear-gradient(120deg, var(--color-cobalt), var(--color-violet) 55%, var(--color-coral));
+  background: linear-gradient(100deg, var(--color-cobalt), var(--color-pink) 85%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-/* Frosted-glass surface (used site-wide via .card) */
+/* Chunky, friendly card with a soft “candy” drop — used site-wide via .card */
 .card {
-  background: rgba(255, 255, 255, 0.64);
-  backdrop-filter: blur(18px) saturate(140%);
-  -webkit-backdrop-filter: blur(18px) saturate(140%);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: var(--color-card);
+  border: 2px solid var(--color-line);
   border-radius: var(--radius-xl2);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.65),
-    0 10px 30px -14px rgba(27, 32, 48, 0.20),
-    0 30px 64px -34px rgba(27, 32, 48, 0.26);
-  transition: transform 0.28s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.28s ease, background 0.28s ease;
+    0 10px 0 -4px rgba(26, 26, 26, 0.05),
+    0 22px 40px -28px rgba(26, 26, 26, 0.34);
+  transition: transform 0.2s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.card:hover {
+  box-shadow:
+    0 12px 0 -4px rgba(26, 26, 26, 0.06),
+    0 28px 50px -28px rgba(26, 26, 26, 0.4);
 }
 
-/* Stronger glass for chrome (header / footer / floating bars) */
+/* Solid, friendly chrome for header / footer (replaces frosted glass) */
 .glass {
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(22px) saturate(150%);
-  -webkit-backdrop-filter: blur(22px) saturate(150%);
-  border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-color: var(--color-line);
 }
 
 .chip {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.4rem;
   border-radius: 999px;
-  padding: 0.25rem 0.75rem;
-  font-size: 0.78rem;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.8rem;
   font-weight: 600;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
 }
+
+/* Candy pill button helper */
+.btn-candy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border-radius: 999px;
+  padding: 0.8rem 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--color-pink);
+  box-shadow: 0 8px 0 -2px #e14e98;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+.btn-candy:hover { transform: translateY(-2px); filter: brightness(1.03); }
+.btn-candy.sun { background: var(--color-sun); color: #3a2a00; box-shadow: 0 8px 0 -2px #d8b500; }
+.btn-candy.cobalt { background: var(--color-cobalt); box-shadow: 0 8px 0 -2px #2440c8; }
+.btn-candy.ghost { background: #fff; color: var(--color-ink); box-shadow: 0 8px 0 -2px rgba(26,26,26,0.08); border: 2px solid var(--color-line); }
 
 .prose-block p { margin-bottom: 0.75rem; line-height: 1.75; }
 
-/* Focus visibility for keyboard users */
 :where(a, button):focus-visible {
   outline: 3px solid color-mix(in srgb, var(--color-cobalt) 55%, white);
   outline-offset: 2px;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
-/* Subtle one-time pop for the "new best streak" badge */
 @keyframes qg-pop {
   0% { transform: scale(0.85); opacity: 0; }
   60% { transform: scale(1.04); }
@@ -111,14 +130,12 @@ h1, h2, h3, h4, .font-display {
 }
 .animate-pop { animation: qg-pop 0.45s ease-out both; }
 
-/* Gentle float for decorative hero visuals */
 @keyframes qg-float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
 .animate-float { animation: qg-float 6s ease-in-out infinite; }
 
-/* "New best" celebration glow for the homepage daily card */
 @keyframes qg-glow {
   0%, 100% { box-shadow: 0 0 0 2px rgba(255, 179, 0, 0.45), 0 10px 34px rgba(255, 179, 0, 0.28); }
   50% { box-shadow: 0 0 0 3px rgba(255, 179, 0, 0.65), 0 12px 44px rgba(255, 179, 0, 0.42); }
@@ -131,5 +148,5 @@ h1, h2, h3, h4, .font-display {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .card { transition: none; }
-  .animate-float, .animate-pop, .glow-best { animation: none; }
+  .animate-float, .animate-pop, .glow-best, .btn-candy { animation: none; transition: none; }
 }

@@ -211,7 +211,7 @@ export function ChapterRow({
 
   if (!authored) {
     return (
-      <div className="flex items-center gap-3 rounded-2xl border border-white/50 bg-white/40 px-4 py-3 opacity-70 backdrop-blur">
+      <div className="flex items-center gap-3 rounded-2xl border-2 border-line bg-white/60 px-4 py-3 opacity-70">
         {inner}
       </div>
     );
@@ -219,7 +219,7 @@ export function ChapterRow({
   return (
     <Link
       href={chapterUrl(classId, subjectKey, chapter.slug, board)}
-      className="flex items-center gap-3 rounded-2xl border border-white/60 bg-white/55 px-4 py-3 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:border-cobalt hover:bg-white/80"
+      className="flex items-center gap-3 rounded-2xl border-2 border-line bg-white px-4 py-3 shadow-[0_6px_0_-3px_rgba(26,26,26,0.05)] transition hover:-translate-y-0.5 hover:border-pink hover:shadow-[0_8px_0_-3px_rgba(255,111,181,0.25)]"
     >
       {inner}
     </Link>

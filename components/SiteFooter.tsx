@@ -8,8 +8,8 @@ export function SiteFooter() {
     <footer className="mt-24 glass border-t">
       <div className="mx-auto max-w-5xl px-4 py-12 text-center">
         <Link href="/" className="inline-flex items-center gap-2">
-          <span aria-hidden className="grid h-8 w-8 place-items-center rounded-xl bg-linear-to-br from-cobalt to-violet text-base">💡</span>
-          <span className="font-display text-lg font-bold brand-gradient">{site.name}</span>
+          <span aria-hidden className="relative grid h-8 w-8 place-items-center rounded-full bg-pink-soft text-base text-pink">✦<span className="absolute -right-0.5 -top-0.5 h-2.5 w-2.5 rounded-full border-2 border-white bg-sun" /></span>
+          <span className="font-fun text-xl brand-gradient">{site.name}</span>
         </Link>
         <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted">{site.description}</p>
 
