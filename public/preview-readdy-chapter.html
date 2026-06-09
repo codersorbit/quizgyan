@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<title>জীববৈচিত্র্য — StudyMatic “Playful” preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Bagel+Fat+One&family=Pacifico&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --sun:#FFD500; --pink:#FF6FB5; --pink-soft:#FFE9F2; --ink:#1A1A1A; --ink-soft:#3a3a40;
+    --mint:#23C9A1; --mint-soft:#D6F7EE; --sky:#3AA9FF; --sky-soft:#DCEEFF; --lav:#9B7BFF; --lav-soft:#EEE8FF;
+    --paper:#FFFDF6; --line:#1a1a1a14;
+    --disp:"Bagel Fat One",system-ui,cursive; --round:"Fredoka",system-ui,sans-serif;
+    --script:"Pacifico",cursive; --bn:"Hind Siliguri",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:var(--round);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  .disp{font-family:var(--disp)} .script{font-family:var(--script)} .bn{font-family:var(--bn)}
+
+  .pvbar{background:var(--ink);color:#fff;font-size:13px;font-weight:500}
+  .pvbar .wrap{display:flex;gap:10px;align-items:center;justify-content:center;padding:7px 22px;flex-wrap:wrap}
+  .pvbar a{color:var(--sun);font-weight:600}
+
+  header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+  header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .badge{width:40px;height:40px;border-radius:50%;background:var(--pink-soft);color:var(--pink);display:grid;place-items:center;font-size:20px;position:relative}
+  .badge::after{content:"";position:absolute;top:-2px;right:-2px;width:13px;height:13px;border-radius:50%;background:var(--sun);border:2px solid #fff}
+  .brand .name{font-family:var(--disp);font-size:26px}
+  nav.top{display:flex;gap:24px;font-weight:500;color:var(--ink-soft)}
+  nav.top a:hover{color:var(--ink)}
+
+  .topband{background:var(--sun);border-bottom:4px solid #1a1a1a12}
+  .topband .wrap{padding:26px 22px 30px}
+  .crumb{font-weight:600;font-size:13.5px;color:#6a5200}
+  .crumb a:hover{color:var(--ink)}
+  .chip{display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:999px;padding:7px 15px;font-weight:600;font-size:13.5px;box-shadow:0 6px 0 -2px #00000012;margin-top:12px}
+  .chip .d{width:9px;height:9px;border-radius:50%;background:var(--mint)}
+  h1.ct{font-family:var(--bn);font-weight:700;font-size:42px;margin:14px 0 6px;line-height:1.18}
+  .ct-meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+  .ct-meta span{background:#ffffffba;border-radius:999px;padding:6px 13px;font-weight:600;font-size:13px}
+
+  .layout{display:grid;grid-template-columns:1fr 350px;gap:34px;padding:34px 0 64px;align-items:start}
+  .block{background:#fff;border:2px solid #1a1a1a0d;border-radius:24px;padding:24px 26px;margin-bottom:18px}
+  .kicker{display:inline-flex;align-items:center;gap:7px;font-family:var(--script);font-size:18px;margin-bottom:10px}
+  .k-blue{color:var(--sky)} .k-pink{color:var(--pink)} .k-mint{color:var(--mint)} .k-lav{color:var(--lav)}
+  .block h2{font-family:var(--bn);font-weight:700;font-size:24px;margin:0 0 12px}
+  .block h3{font-family:var(--bn);font-weight:600;font-size:18px;margin:16px 0 6px;color:var(--ink)}
+  .prose p{font-family:var(--bn);font-size:17px;line-height:1.9;color:#33333b;margin:0 0 10px}
+  .deflist{display:flex;flex-direction:column;gap:12px}
+  .def{background:var(--lav-soft);border-radius:16px;padding:13px 16px}
+  .def .t{font-family:var(--bn);font-weight:700;display:block;margin-bottom:2px}
+  .def .m{font-family:var(--bn);color:var(--ink-soft);font-size:15px}
+  ul.take{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+  ul.take li{font-family:var(--bn);font-size:16.5px;display:flex;gap:12px;align-items:flex-start;line-height:1.6}
+  ul.take li .c{flex:none;width:26px;height:26px;border-radius:50%;background:var(--mint);color:#fff;display:grid;place-items:center;font-size:14px;margin-top:1px}
+
+  .rail{position:sticky;top:90px;display:flex;flex-direction:column;gap:16px}
+  .qcard{background:#fff;border:2px solid var(--pink);border-radius:26px;padding:22px;box-shadow:0 14px 0 -4px var(--pink-soft)}
+  .qcard .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+  .qcard .tag{font-family:var(--disp);font-size:14px;color:var(--pink)}
+  .qcard .count{font-weight:600;font-size:13px;color:var(--ink-soft);background:var(--pink-soft);padding:4px 11px;border-radius:999px}
+  .qcard h3{font-family:var(--bn);font-weight:600;font-size:18px;line-height:1.5;margin:0 0 14px}
+  .opt{display:flex;align-items:center;justify-content:space-between;border:2px solid #1a1a1a12;border-radius:16px;padding:12px 15px;font-family:var(--bn);font-size:15.5px;margin-bottom:10px;cursor:pointer;transition:transform .12s,border-color .12s}
+  .opt:hover{transform:translateX(2px);border-color:#1a1a1a25}
+  .opt .k{font-weight:700;color:var(--ink-soft);margin-right:9px}
+  .opt.correct{border-color:var(--mint);background:var(--mint-soft);color:#0c6b4e;font-weight:600}
+  .opt.correct .ck{width:24px;height:24px;border-radius:50%;background:var(--mint);color:#fff;display:grid;place-items:center;font-size:13px}
+  .expl{font-family:var(--bn);font-size:14.5px;color:#0c6b4e;background:var(--mint-soft);border-radius:14px;padding:12px 14px;line-height:1.6}
+  .prog{display:flex;align-items:center;gap:10px;font-weight:600;font-size:12.5px;color:var(--ink-soft);margin-top:14px}
+  .bar{flex:1;height:8px;border-radius:999px;background:#1a1a1a12;overflow:hidden}
+  .bar span{display:block;height:100%;width:20%;background:var(--pink);border-radius:999px}
+
+  footer{background:var(--ink);color:#fff;margin-top:14px}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;padding:20px 22px;font-weight:500;font-size:13.5px;color:#ffffffab;flex-wrap:wrap;gap:8px}
+  :where(a,button)::focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:14px}
+  @media (max-width:860px){.layout{grid-template-columns:1fr}.rail{position:static}h1.ct{font-size:32px}}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="pvbar"><div class="wrap"><span>🎨 <b>Design preview</b> — chapter page in the “Playful” direction.</span><a href="preview-readdy.html">← preview home</a> · <a href="/">live site</a></div></div>
+
+<header class="site"><div class="wrap">
+  <a class="brand" href="preview-readdy.html"><span class="badge">✦</span><span class="name">StudyMatic</span></a>
+  <nav class="top"><a href="preview-readdy.html#boards">Boards</a><a href="preview-readdy.html#classes">Classes</a><a href="preview-readdy.html#how">How it works</a></nav>
+</div></header>
+
+<div class="topband"><div class="wrap">
+  <div class="crumb"><a href="preview-readdy.html">WBBPE</a> · <span class="bn">পঞ্চম শ্রেণি</span> · <span class="bn">পরিবেশ</span></div>
+  <span class="chip"><span class="d"></span><span class="bn">পরিবেশ · অধ্যায় ৫</span></span>
+  <h1 class="ct">জীববৈচিত্র্য</h1>
+  <div class="ct-meta"><span>📝 5 MCQ</span><span>💡 3 ধারণা</span><span>📖 Notes + Quiz</span><span>WBBPE · Class 5</span></div>
+</div></div>
+
+<div class="wrap">
+  <div class="layout">
+    <div class="prose">
+      <div class="block">
+        <span class="kicker script k-blue">এক নজরে</span>
+        <p>এই অধ্যায়ে আমরা জীববৈচিত্র্য শিখব — চারপাশের নানা রকম জীব, পরিবেশে তাদের ভূমিকা এবং কেন তাদের রক্ষা করা দরকার।</p>
+      </div>
+
+      <div class="block">
+        <span class="kicker script k-pink">মূল ধারণা</span>
+        <h3>জীববৈচিত্র্য কী</h3>
+        <p>চারপাশে নানা রকম গাছপালা, পশুপাখি ও পোকামাকড় দেখা যায়। এই নানা রকম জীবের বৈচিত্র্যকে জীববৈচিত্র্য বলে।</p>
+        <h3>সবার ভূমিকা</h3>
+        <p>প্রতিটি জীব পরিবেশে কোনো না কোনো কাজ করে — যেমন মৌমাছি ফুলে ফুলে পরাগ ছড়ায়, কেঁচো মাটি আলগা করে।</p>
+        <h3>রক্ষা</h3>
+        <p>গাছ কাটা, দূষণ ও বাসস্থান নষ্ট হলে জীববৈচিত্র্য কমে যায়; তাই গাছ ও প্রাণী রক্ষা করা দরকার।</p>
+      </div>
+
+      <div class="block">
+        <span class="kicker script k-lav">শব্দার্থ</span>
+        <div class="deflist">
+          <div class="def"><span class="t">জীববৈচিত্র্য</span><span class="m">চারপাশের নানা রকম জীবের বৈচিত্র্য।</span></div>
+          <div class="def"><span class="t">কেঁচো</span><span class="m">মাটি আলগা ও উর্বর করে এমন প্রাণী।</span></div>
+        </div>
+      </div>
+
+      <div class="block">
+        <span class="kicker script k-mint">মনে রাখি</span>
+        <ul class="take">
+          <li><span class="c">✓</span>জীববৈচিত্র্য = নানা রকম জীবের বৈচিত্র্য।</li>
+          <li><span class="c">✓</span>প্রতিটি জীবের পরিবেশে ভূমিকা আছে।</li>
+          <li><span class="c">✓</span>গাছ ও প্রাণী রক্ষা করে জীববৈচিত্র্য বাঁচাই।</li>
+        </ul>
+      </div>
+    </div>
+
+    <aside class="rail">
+      <div class="qcard">
+        <div class="top"><span class="tag">QUIZ</span><span class="count bn">প্রশ্ন ১ / ৫</span></div>
+        <h3>মৌমাছি পরিবেশে কী কাজ করে?</h3>
+        <div class="opt correct"><span><span class="k">ক</span>ফুলে ফুলে পরাগ ছড়ায়</span><span class="ck">✓</span></div>
+        <div class="opt"><span><span class="k">খ</span>মাটি খায়</span></div>
+        <div class="opt"><span><span class="k">গ</span>জল শুকোয়</span></div>
+        <div class="expl">🎉 ঠিক! মৌমাছি পরাগ ছড়িয়ে ফল-ফুল তৈরিতে সাহায্য করে।</div>
+        <div class="prog"><span>20%</span><span class="bar"><span></span></span><span class="bn">১ / ৫</span></div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer><div class="wrap"><span>Built with 💛 by Aftabuddin</span><span>studymatic.in</span></div></footer>
+
+</body>
+</html>

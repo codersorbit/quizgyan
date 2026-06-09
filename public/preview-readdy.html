@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<title>StudyMatic — “Playful” (Readdy-style) preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Bagel+Fat+One&family=Pacifico&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --sun:#FFD500; --pink:#FF6FB5; --pink-soft:#FFE9F2; --ink:#1A1A1A; --ink-soft:#3a3a40;
+    --mint:#23C9A1; --mint-soft:#D6F7EE; --sky:#3AA9FF; --sky-soft:#DCEEFF; --lav:#9B7BFF; --lav-soft:#EEE8FF;
+    --coral:#FF8A5C; --paper:#FFFDF6; --line:#1a1a1a14;
+    --disp:"Bagel Fat One",system-ui,cursive; --round:"Fredoka",system-ui,sans-serif;
+    --script:"Pacifico",cursive; --bn:"Hind Siliguri",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:var(--round);color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+  .disp{font-family:var(--disp)} .script{font-family:var(--script)} .bn{font-family:var(--bn)}
+
+  .pvbar{background:var(--ink);color:#fff;font-size:13px;font-weight:500}
+  .pvbar .wrap{display:flex;gap:10px;align-items:center;justify-content:center;padding:7px 22px;flex-wrap:wrap}
+  .pvbar a{color:var(--sun);font-weight:600}
+
+  header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+  header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .badge{width:40px;height:40px;border-radius:50%;background:var(--pink-soft);color:var(--pink);display:grid;place-items:center;font-size:20px;position:relative}
+  .badge::after{content:"";position:absolute;top:-2px;right:-2px;width:13px;height:13px;border-radius:50%;background:var(--sun);border:2px solid #fff}
+  .brand .name{font-family:var(--disp);font-size:26px;letter-spacing:.01em}
+  nav.top{display:flex;align-items:center;gap:26px;font-weight:500;color:var(--ink-soft)}
+  nav.top a:hover{color:var(--ink)}
+  .btn{font-family:var(--round);font-weight:600;border:0;border-radius:999px;padding:12px 22px;cursor:pointer;transition:transform .15s,box-shadow .15s;font-size:15px}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-pink{background:var(--pink);color:#fff;box-shadow:0 10px 0 -2px #e14e98}
+  .btn-pink:hover{box-shadow:0 12px 0 -2px #e14e98}
+  .btn-ink{background:var(--ink);color:#fff}
+  .btn-sun{background:var(--sun);color:#3a2a00;box-shadow:0 10px 0 -2px #d8b500}
+  .btn-white{background:#fff;color:var(--ink);box-shadow:0 8px 0 -2px #00000018}
+
+  /* HERO */
+  .hero{background:var(--sun);position:relative;overflow:hidden;border-bottom:4px solid #1a1a1a12}
+  .hero .blob{position:absolute;border-radius:50%;opacity:.5;filter:blur(2px)}
+  .hero .b1{width:200px;height:200px;background:var(--pink);left:-50px;top:40px;opacity:.35}
+  .hero .b2{width:150px;height:150px;background:#fff;right:8%;top:30px;opacity:.5}
+  .hero .b3{width:120px;height:120px;background:var(--mint);right:20%;bottom:-30px;opacity:.5}
+  .hero .star{position:absolute;font-size:30px}
+  .hero .wrap{position:relative;text-align:center;padding:64px 22px 88px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff;border-radius:999px;padding:8px 16px;font-weight:600;font-size:14px;box-shadow:0 6px 0 -2px #00000012}
+  .eyebrow .dot{width:9px;height:9px;border-radius:50%;background:var(--pink)}
+  h1.hero-h{font-family:var(--disp);font-size:64px;line-height:1.02;margin:22px 0 6px;letter-spacing:.005em}
+  h1.hero-h .pink{color:var(--pink)} h1.hero-h .wh{color:#fff;-webkit-text-stroke:2px var(--ink)}
+  .hero .script-tag{font-family:var(--script);font-size:26px;color:#7a5a00;margin:0 0 18px}
+  .hero p.sub{max-width:32em;margin:0 auto 26px;font-size:18px;color:#5a4500;font-weight:500}
+  .hsearch{display:flex;gap:8px;max-width:480px;margin:0 auto 18px;background:#fff;border-radius:999px;padding:8px 8px 8px 20px;align-items:center;box-shadow:0 12px 0 -3px #00000012}
+  .hsearch input{flex:1;border:0;outline:0;font-family:var(--round);font-size:16px;background:transparent;color:var(--ink)}
+  .hchips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:26px}
+  .hchip{background:#fff;border-radius:18px;padding:12px 18px;font-weight:600;box-shadow:0 8px 0 -3px #00000010}
+  .hchip b{font-family:var(--disp);font-size:22px;display:block;line-height:1}
+  .hchip span{font-size:12.5px;color:var(--ink-soft)}
+
+  section{padding:66px 0}
+  .sec-head{text-align:center;max-width:36em;margin:0 auto 38px}
+  .sec-head .script{font-family:var(--script);color:var(--pink);font-size:22px}
+  .sec-head h2{font-family:var(--disp);font-size:38px;margin:4px 0 8px}
+  .sec-head p{color:var(--ink-soft);font-size:17px;font-weight:500;margin:0}
+
+  .boards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .board{border-radius:28px;padding:28px;color:var(--ink);position:relative;overflow:hidden;transition:transform .18s}
+  .board:hover{transform:translateY(-4px)}
+  .board.cbse{background:var(--pink-soft)} .board.wb{background:var(--mint-soft)}
+  .board .ic{width:56px;height:56px;border-radius:18px;display:grid;place-items:center;font-family:var(--disp);font-size:26px;color:#fff;margin-bottom:14px}
+  .board.cbse .ic{background:var(--pink)} .board.wb .ic{background:var(--mint)}
+  .board h3{font-family:var(--disp);font-size:24px;margin:0 0 6px}
+  .board p{margin:0 0 14px;font-weight:500;color:var(--ink-soft)}
+  .board .meta{font-weight:600;display:inline-flex;align-items:center;gap:6px}
+
+  .classes{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .cc{border-radius:24px;padding:22px;position:relative;transition:transform .18s;border:2px solid #1a1a1a0d}
+  .cc:hover{transform:translateY(-5px) rotate(-1deg)}
+  .cc .num{font-family:var(--disp);font-size:34px;line-height:1}
+  .cc h3{font-family:var(--round);font-weight:700;font-size:18px;margin:8px 0 10px}
+  .cc .dots{display:flex;gap:6px;margin-bottom:12px}
+  .cc .dots span{width:11px;height:11px;border-radius:50%}
+  .cc .cnt{font-weight:600;font-size:13.5px;color:var(--ink-soft)}
+  .cc.k1{background:var(--sky-soft)} .cc.k2{background:var(--pink-soft)} .cc.k3{background:var(--mint-soft)}
+  .cc.k4{background:var(--lav-soft)} .cc.k5{background:#FFF3CC} .cc.k6{background:var(--sky-soft)}
+
+  .feats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .feat{background:#fff;border-radius:24px;padding:26px;text-align:center;border:2px solid #1a1a1a0d}
+  .feat .fi{width:64px;height:64px;border-radius:20px;display:grid;place-items:center;font-size:30px;margin:0 auto 14px;color:#fff}
+  .feat h3{font-family:var(--disp);font-size:20px;margin:0 0 6px}
+  .feat p{color:var(--ink-soft);font-weight:500;margin:0}
+
+  .ctaband{background:var(--pink);color:#fff;border-radius:34px;padding:46px;text-align:center;position:relative;overflow:hidden}
+  .ctaband h2{font-family:var(--disp);font-size:38px;margin:0 0 8px}
+  .ctaband p{font-weight:500;margin:0 0 22px;opacity:.95}
+
+  footer{background:var(--ink);color:#fff;margin-top:20px}
+  footer .wrap{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:26px;padding:52px 22px 28px}
+  footer .brand .name{color:#fff} footer .badge{background:#ffffff1a;color:var(--sun)}
+  footer p.tg{color:#ffffff9c;font-weight:500;max-width:24em;margin:14px 0 0}
+  footer h4{font-family:var(--disp);font-size:16px;margin:0 0 14px}
+  footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;color:#ffffffab;font-weight:500}
+  footer ul a:hover{color:#fff}
+  .fbase{border-top:1px solid #ffffff1f} .fbase .wrap{display:flex;justify-content:space-between;padding:16px 22px;color:#ffffff8a;font-size:13px;font-weight:500;flex-wrap:wrap;gap:8px}
+
+  :where(a,button,input):focus-visible{outline:3px solid #1a1a1a;outline-offset:3px;border-radius:14px}
+  @media (max-width:900px){.classes{grid-template-columns:1fr 1fr}.feats,.boards,footer .wrap{grid-template-columns:1fr}h1.hero-h{font-size:44px}}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="pvbar"><div class="wrap"><span>🎨 <b>Design preview</b> — the “Playful” direction, derived from your Readdy template. Live site unchanged.</span><a href="/">← live site</a></div></div>
+
+<header class="site"><div class="wrap">
+  <a class="brand" href="#"><span class="badge">✦</span><span class="name">StudyMatic</span></a>
+  <nav class="top">
+    <a href="#boards">Boards</a><a href="#classes">Classes</a><a href="#how">How it works</a><a href="#">Daily</a>
+    <button class="btn btn-pink">Start learning</button>
+  </nav>
+</div></header>
+
+<section class="hero" style="padding:0">
+  <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+  <span class="star" style="left:14%;top:120px">⭐</span><span class="star" style="right:12%;bottom:90px">✨</span><span class="star" style="left:8%;bottom:60px;font-size:22px">🔵</span>
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>Free · No login · CBSE &amp; বাংলা</span>
+    <h1 class="hero-h">Learn it. <span class="pink">Quiz</span> it. <span class="wh">Love</span> it.</h1>
+    <p class="script-tag">your friendly study buddy</p>
+    <p class="sub">Clear notes and fun instant-feedback quizzes for every chapter — from Class 1 right up to board exams.</p>
+    <div class="hsearch">
+      <span style="font-size:18px">🔎</span>
+      <input placeholder="Find a topic — “photosynthesis” or “জীববৈচিত্র্য”" />
+      <button class="btn btn-pink">Go</button>
+    </div>
+    <div class="hchips">
+      <div class="hchip"><b>396</b><span>chapters</span></div>
+      <div class="hchip"><b>3,169</b><span>questions</span></div>
+      <div class="hchip"><b>11</b><span>classes</span></div>
+      <div class="hchip"><b>2</b><span>boards</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="boards">
+  <div class="wrap">
+    <div class="sec-head"><div class="script">step one</div><h2>Pick your board</h2><p>Notes &amp; quizzes made for your exact syllabus.</p></div>
+    <div class="boards">
+      <a class="board cbse" href="#classes"><div class="ic">C</div><h3>CBSE</h3><p>NCERT-aligned notes &amp; quizzes — Maths, Science, Social Science &amp; English.</p><span class="meta">6 classes · 234 chapters →</span></a>
+      <a class="board wb" href="#classes"><div class="ic">প</div><h3>WBBPE · পশ্চিমবঙ্গ</h3><p class="bn">বাংলা, ইংরেজি, গণিত ও পরিবেশ — প্রথম থেকে পঞ্চম শ্রেণি।</p><span class="meta">5 classes · 162 chapters →</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="classes" style="padding-top:6px">
+  <div class="wrap">
+    <div class="sec-head"><div class="script">browse</div><h2>Your classes</h2><p>Tap a class to open its subjects, notes and quizzes.</p></div>
+    <div class="classes">
+      <a class="cc k1" href="#"><div class="num">6</div><h3>Class 6</h3><div class="dots"><span style="background:var(--coral)"></span><span style="background:var(--mint)"></span><span style="background:var(--sky)"></span><span style="background:var(--lav)"></span></div><div class="cnt">4 subjects · 38 ch</div></a>
+      <a class="cc k2" href="#"><div class="num">7</div><h3>Class 7</h3><div class="dots"><span style="background:var(--coral)"></span><span style="background:var(--mint)"></span><span style="background:var(--sky)"></span><span style="background:var(--lav)"></span></div><div class="cnt">4 subjects · 40 ch</div></a>
+      <a class="cc k3" href="#"><div class="num">8</div><h3>Class 8</h3><div class="dots"><span style="background:var(--coral)"></span><span style="background:var(--mint)"></span><span style="background:var(--sky)"></span><span style="background:var(--lav)"></span></div><div class="cnt">4 subjects · 42 ch</div></a>
+      <a class="cc k4" href="#"><div class="num">9</div><h3>Class 9</h3><div class="dots"><span style="background:var(--coral)"></span><span style="background:var(--mint)"></span><span style="background:var(--sky)"></span><span style="background:var(--lav)"></span></div><div class="cnt">4 subjects · 47 ch</div></a>
+      <a class="cc k5" href="preview-readdy-chapter.html"><div class="num">10</div><h3>Class 10</h3><div class="dots"><span style="background:var(--coral)"></span><span style="background:var(--mint)"></span><span style="background:var(--sky)"></span><span style="background:var(--lav)"></span></div><div class="cnt">4 subjects · 49 ch</div></a>
+      <a class="cc k6" href="preview-readdy-chapter.html"><div class="num bn" style="font-family:var(--bn)">৫</div><h3 class="bn" style="font-family:var(--bn)">পঞ্চম শ্রেণি</h3><div class="dots"><span style="background:var(--lav)"></span><span style="background:var(--mint)"></span></div><div class="cnt bn" style="font-family:var(--bn)">৪টি বিষয় · ৩৬ অধ্যায়</div></a>
+    </div>
+  </div>
+</section>
+
+<section id="how" style="padding-top:6px">
+  <div class="wrap">
+    <div class="sec-head"><div class="script">why it’s fun</div><h2>Every chapter, three ways</h2></div>
+    <div class="feats">
+      <div class="feat"><div class="fi" style="background:var(--sky)">📖</div><h3>Read</h3><p>Short, clear notes in your own language — English or বাংলা.</p></div>
+      <div class="feat"><div class="fi" style="background:var(--pink)">✅</div><h3>Quiz</h3><p>Instant feedback on every question, so you learn as you go.</p></div>
+      <div class="feat"><div class="fi" style="background:var(--mint)">🔥</div><h3>Streak</h3><p>One daily question keeps your learning streak alive.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:6px">
+  <div class="wrap"><div class="ctaband"><h2>Ready to start?</h2><p>Pick your class and open your first chapter — it’s free, forever.</p><button class="btn btn-sun">Browse classes →</button></div></div>
+</section>
+
+<footer><div class="wrap">
+  <div><a class="brand" href="#"><span class="badge">✦</span><span class="name">StudyMatic</span></a><p class="tg">A free, friendly study space for CBSE &amp; West Bengal board students — notes, quizzes &amp; daily practice in English and বাংলা.</p></div>
+  <div><h4>Boards</h4><ul><li><a href="#">CBSE</a></li><li><a href="#">WBBPE</a></li><li><a href="#">Daily challenge</a></li></ul></div>
+  <div><h4>Classes</h4><ul><li><a href="#">Class 6–10</a></li><li><a href="#">প্রথম–পঞ্চম</a></li><li><a href="#">All subjects</a></li></ul></div>
+  <div><h4>About</h4><ul><li><a href="#">What is StudyMatic</a></li><li><a href="#">How quizzes work</a></li><li><a href="#">Contact</a></li></ul></div>
+</div><div class="fbase"><div class="wrap"><span>Built with 💛 by Aftabuddin</span><span>studymatic.in</span></div></div></footer>
+
+</body>
+</html>
