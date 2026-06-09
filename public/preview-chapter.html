@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<title>জীববৈচিত্র্য — StudyMatic “Lab” preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<style>
+  :root{
+    --paper:#fbfaf6; --ink:#14161f; --ink-soft:#272b3a; --muted:#5b6072; --line:#e9e5db;
+    --indigo:#3257f0; --amber:#ffb300; --green:#1faf6b; --coral:#ff5d73; --violet:#7b54d3;
+    --disp:"Space Grotesk",system-ui,sans-serif; --body:"Inter",system-ui,sans-serif;
+    --bn:"Hind Siliguri",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+    --r:16px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;color:var(--ink);font-family:var(--body);background:var(--paper);
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:26px 26px;-webkit-font-smoothing:antialiased;line-height:1.5}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+  .bn{font-family:var(--bn)} .mono{font-family:var(--mono);font-variant-numeric:tabular-nums} .disp{font-family:var(--disp)}
+
+  .pvbar{background:var(--ink);color:#fff;font-size:13px}
+  .pvbar .wrap{display:flex;gap:10px;align-items:center;justify-content:center;padding:7px 20px;flex-wrap:wrap}
+  .pvbar b{font-weight:600}.pvbar a{color:var(--amber);font-weight:600}
+
+  header.site{position:sticky;top:0;z-index:20;background:rgba(251,250,246,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  header.site .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .brand{display:flex;align-items:center;gap:10px;font-family:var(--disp);font-weight:600;font-size:19px}
+  .mark{width:30px;height:30px;border-radius:9px;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:var(--disp);font-weight:700;font-size:16px;position:relative;overflow:hidden}
+  .mark::after{content:"";position:absolute;right:4px;bottom:4px;width:7px;height:7px;border-radius:50%;background:var(--amber)}
+  nav.top{display:flex;gap:22px;font-size:14px;color:var(--muted);font-weight:500}
+  nav.top a:hover{color:var(--ink)}
+
+  .crumb{font-family:var(--mono);font-size:12.5px;color:var(--muted);padding:22px 0 0}
+  .crumb a:hover{color:var(--ink)} .crumb .bn{font-family:var(--bn)}
+  .chead{padding:10px 0 26px;border-bottom:1px solid var(--line)}
+  .chip{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:#1f7d51;background:#e8f7ef;border:1px solid #c7ebd7;padding:5px 12px;border-radius:999px}
+  .chip .d{width:8px;height:8px;border-radius:50%;background:var(--green)}
+  h1.ct{font-family:var(--bn);font-weight:700;font-size:38px;letter-spacing:-.01em;margin:14px 0 10px;line-height:1.2}
+  .ct-meta{display:flex;gap:18px;font-family:var(--mono);font-size:12.5px;color:var(--muted);flex-wrap:wrap}
+  .ct-meta b{color:var(--ink-soft);font-weight:600}
+
+  .layout{display:grid;grid-template-columns:1fr 340px;gap:36px;padding:34px 0 60px;align-items:start}
+  .prose .bn,.prose{font-family:var(--bn)}
+  .block{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;margin-bottom:16px}
+  .block.flush{border-left:4px solid var(--indigo)}
+  .kicker{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--indigo);margin-bottom:8px}
+  .block h2{font-family:var(--bn);font-weight:700;font-size:21px;margin:0 0 12px}
+  .block h3{font-family:var(--bn);font-weight:600;font-size:17px;margin:16px 0 6px;color:var(--ink-soft)}
+  .prose p{font-family:var(--bn);font-size:16.5px;line-height:1.85;color:#2c3040;margin:0 0 10px}
+  .deflist{display:flex;flex-direction:column;gap:10px}
+  .def{display:flex;gap:12px;align-items:baseline;border-top:1px dashed var(--line);padding-top:10px}
+  .def:first-child{border-top:0;padding-top:0}
+  .def .t{font-family:var(--bn);font-weight:700;color:var(--ink);min-width:9em}
+  .def .m{font-family:var(--bn);color:var(--muted);font-size:15px}
+  ul.take{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+  ul.take li{font-family:var(--bn);font-size:16px;display:flex;gap:10px;align-items:flex-start;line-height:1.7}
+  ul.take li svg{flex:none;color:var(--green);margin-top:4px}
+
+  /* quiz rail */
+  .rail{position:sticky;top:84px;display:flex;flex-direction:column;gap:16px}
+  .qcard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 24px 50px -34px rgba(20,22,31,.5)}
+  .qcard .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+  .qcard .tag{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--indigo);background:#eef1ff;padding:4px 9px;border-radius:7px}
+  .qcard .count{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+  .qcard h3{font-family:var(--bn);font-weight:600;font-size:16.5px;line-height:1.5;margin:0 0 14px}
+  .opt{display:flex;align-items:center;justify-content:space-between;border:1.5px solid var(--line);border-radius:11px;padding:11px 13px;font-family:var(--bn);font-size:15px;margin-bottom:9px;cursor:pointer;transition:border-color .15s,background .15s}
+  .opt:hover{border-color:#c9c3b6}
+  .opt .k{font-family:var(--mono);font-size:12px;color:var(--muted);margin-right:9px}
+  .opt.correct{border-color:var(--green);background:#eafaf2;color:#0c6b43;font-weight:600}
+  .opt.correct svg{color:var(--green)}
+  .expl{font-family:var(--bn);font-size:14px;color:#0c6b43;background:#eafaf2;border-radius:10px;padding:11px 13px;line-height:1.6;margin-top:2px}
+  .prog{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:14px}
+  .bar{flex:1;height:6px;border-radius:999px;background:#efece3;overflow:hidden}
+  .bar span{display:block;height:100%;width:20%;background:var(--indigo);border-radius:999px}
+
+  footer{border-top:1px solid var(--line);background:#fff;margin-top:10px}
+  footer .wrap{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;font-size:13px;color:var(--muted);flex-wrap:wrap;gap:8px}
+  footer .mono{color:var(--ink-soft)}
+  :where(a,button):focus-visible{outline:3px solid color-mix(in srgb,var(--indigo) 55%,white);outline-offset:2px;border-radius:8px}
+  @media (max-width:860px){.layout{grid-template-columns:1fr}.rail{position:static}h1.ct{font-size:30px}}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="pvbar"><div class="wrap"><span>🧪 <b>Design preview</b> — chapter page in the “Lab” direction.</span><a href="preview.html">← preview home</a> · <a href="/">live site</a></div></div>
+
+<header class="site"><div class="wrap">
+  <a class="brand" href="preview.html"><span class="mark">S</span> StudyMatic</a>
+  <nav class="top"><a href="preview.html#boards">Boards</a><a href="preview.html#classes">Classes</a><a href="preview.html#daily">Daily</a></nav>
+</div></header>
+
+<div class="wrap">
+  <div class="crumb"><a href="preview.html">WBBPE</a> / <span class="bn">পঞ্চম শ্রেণি</span> / <span class="bn">পরিবেশ</span> / <span class="bn" style="color:var(--ink-soft)">জীববৈচিত্র্য</span></div>
+  <div class="chead">
+    <span class="chip"><span class="d"></span><span class="bn">পরিবেশ · অধ্যায় ৫</span></span>
+    <h1 class="ct">জীববৈচিত্র্য</h1>
+    <div class="ct-meta"><span><b>5</b> MCQ</span><span><b>3</b> ধারণা</span><span><b>Notes + Quiz</b></span><span>WBBPE · Class 5</span></div>
+  </div>
+
+  <div class="layout">
+    <div class="prose">
+      <div class="block flush">
+        <div class="kicker">এক নজরে</div>
+        <p>এই অধ্যায়ে আমরা জীববৈচিত্র্য শিখব — চারপাশের নানা রকম জীব, পরিবেশে তাদের ভূমিকা এবং কেন তাদের রক্ষা করা দরকার।</p>
+      </div>
+
+      <div class="block">
+        <h2>মূল ধারণা</h2>
+        <h3>জীববৈচিত্র্য কী</h3>
+        <p>চারপাশে নানা রকম গাছপালা, পশুপাখি ও পোকামাকড় দেখা যায়। এই নানা রকম জীবের বৈচিত্র্যকে জীববৈচিত্র্য বলে।</p>
+        <h3>সবার ভূমিকা</h3>
+        <p>প্রতিটি জীব পরিবেশে কোনো না কোনো কাজ করে — যেমন মৌমাছি ফুলে ফুলে পরাগ ছড়ায়, কেঁচো মাটি আলগা করে।</p>
+        <h3>রক্ষা</h3>
+        <p>গাছ কাটা, দূষণ ও বাসস্থান নষ্ট হলে জীববৈচিত্র্য কমে যায়; তাই গাছ ও প্রাণী রক্ষা করা দরকার।</p>
+      </div>
+
+      <div class="block">
+        <div class="kicker">শব্দার্থ</div>
+        <div class="deflist">
+          <div class="def"><span class="t">জীববৈচিত্র্য</span><span class="m">চারপাশের নানা রকম জীবের বৈচিত্র্য।</span></div>
+          <div class="def"><span class="t">কেঁচো</span><span class="m">মাটি আলগা ও উর্বর করে এমন প্রাণী।</span></div>
+        </div>
+      </div>
+
+      <div class="block">
+        <div class="kicker">মনে রাখি</div>
+        <ul class="take">
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 4 4 10-10"/></svg>জীববৈচিত্র্য = নানা রকম জীবের বৈচিত্র্য।</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 4 4 10-10"/></svg>প্রতিটি জীবের পরিবেশে ভূমিকা আছে।</li>
+          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m5 12 4 4 10-10"/></svg>গাছ ও প্রাণী রক্ষা করে জীববৈচিত্র্য বাঁচাই।</li>
+        </ul>
+      </div>
+    </div>
+
+    <aside class="rail">
+      <div class="qcard">
+        <div class="top"><span class="tag">QUIZ</span><span class="count">প্রশ্ন ১ / ৫</span></div>
+        <h3>মৌমাছি পরিবেশে কী কাজ করে?</h3>
+        <div class="opt correct"><span><span class="k">ক</span>ফুলে ফুলে পরাগ ছড়ায়</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.3 2.3 4.7-4.7"/></svg></div>
+        <div class="opt"><span><span class="k">খ</span>মাটি খায়</span></div>
+        <div class="opt"><span><span class="k">গ</span>জল শুকোয়</span></div>
+        <div class="expl">✓ মৌমাছি পরাগ ছড়িয়ে ফল-ফুল তৈরিতে সাহায্য করে।</div>
+        <div class="prog"><span>20%</span><span class="bar"><span></span></span><span>১ / ৫</span></div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer><div class="wrap"><span>Built by Aftabuddin · free for every student</span><span class="mono">studymatic.in</span></div></footer>
+
+</body>
+</html>
