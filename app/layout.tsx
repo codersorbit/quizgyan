@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { site } from "@/lib/site";
-import { SiteHeader } from "@/components/SiteHeader";
-import { SiteFooter } from "@/components/SiteFooter";
 import { JsonLd } from "@/components/JsonLd";
 import { organizationLd, websiteLd } from "@/lib/seo";
 import { StreakMigration } from "@/components/StreakMigration";
@@ -39,13 +37,15 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
           rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Bagel+Fat+One&family=Pacifico&family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Bagel+Fat+One&family=Chewy&family=Pacifico&family=Hind+Siliguri:wght@400;500;600;700&display=swap"
+        />
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css"
         />
         <JsonLd data={[websiteLd(), organizationLd()]} />
         <StreakMigration />
-        <SiteHeader />
-        <main className="mx-auto max-w-5xl px-4 py-8">{children}</main>
-        <SiteFooter />
+        {children}
       </body>
     </html>
   );
