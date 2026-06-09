@@ -4,13 +4,15 @@ import { allAuthoredChapters } from "@/lib/content";
 
 /** Two-card board selector (CBSE available, WBBPE coming soon). */
 export function BoardChooser() {
-  // All current authored content belongs to CBSE.
-  const cbseChapters = allAuthoredChapters().length;
+  // Count authored chapters per board so each card shows its own total.
+  const all = allAuthoredChapters();
+  const countFor = (key: string) => all.filter((c) => (c.board ?? "cbse") === key).length;
 
   return (
     <div className="grid gap-4 sm:grid-cols-2">
       {BOARDS.map((b) => {
         const available = b.status === "available";
+        const chapters = countFor(b.key);
         return (
           <Link
             key={b.key}
@@ -45,7 +47,7 @@ export function BoardChooser() {
                 <p className="mt-0.5 text-sm font-semibold text-cobalt">{b.medium}</p>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{b.blurb}</p>
                 <p className="mt-3 text-sm font-semibold text-ink">
-                  {available ? `${cbseChapters} chapters ready →` : "See what's coming →"}
+                  {available ? `${chapters} chapters ready →` : "See what's coming →"}
                 </p>
               </div>
             </div>

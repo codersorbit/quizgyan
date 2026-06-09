@@ -312,6 +312,127 @@ import w1engSentences from "./class-1-english-simple-sentences";
 import w1engDays from "./class-1-english-days-of-the-week";
 import w1engReading from "./class-1-english-reading-aloud";
 
+// ===================== WBBPE Class 2 — গণিত (Amar Boi) =====================
+import w2ganitNum100 from "./class-2-maths-numbers-to-100";
+import w2ganitPV from "./class-2-maths-place-value";
+import w2ganitCompare from "./class-2-maths-compare-and-order";
+import w2ganitAdd from "./class-2-maths-addition";
+import w2ganitSub from "./class-2-maths-subtraction";
+import w2ganitMul from "./class-2-maths-multiplication-intro";
+import w2ganitTables from "./class-2-maths-multiplication-tables";
+import w2ganitDiv from "./class-2-maths-division-intro";
+import w2ganitMeasure from "./class-2-maths-measurement";
+import w2ganitMoney from "./class-2-maths-money";
+import w2ganitTime from "./class-2-maths-time-and-calendar";
+
+// ===================== WBBPE Class 2 — বাংলা (Amar Boi) =====================
+import w2banConjuncts from "./class-2-bengali-conjuncts";
+import w2banMeanings from "./class-2-bengali-word-meanings";
+import w2banOpposites from "./class-2-bengali-opposite-words";
+import w2banNumber from "./class-2-bengali-singular-plural";
+import w2banNaming from "./class-2-bengali-naming-words";
+import w2banSentences from "./class-2-bengali-making-sentences";
+import w2banPunct from "./class-2-bengali-punctuation";
+import w2banComp from "./class-2-bengali-reading-comprehension";
+
+// ===================== WBBPE Class 2 — ইংরেজি (Amar Boi) =====================
+import w2engNaming from "./class-2-english-naming-words";
+import w2engArticles from "./class-2-english-a-an-the";
+import w2engThisThat from "./class-2-english-this-and-that";
+import w2engPlural from "./class-2-english-singular-and-plural";
+import w2engVerbs from "./class-2-english-action-words";
+import w2engSentences from "./class-2-english-making-sentences";
+import w2engMonths from "./class-2-english-months-of-the-year";
+import w2engComp from "./class-2-english-reading-comprehension";
+
+// ===================== WBBPE Class 3 — বাংলা (Patabahar) =====================
+import w3banSyn from "./class-3-bengali-synonyms";
+import w3banAnt from "./class-3-bengali-antonyms";
+import w3banWS from "./class-3-bengali-word-meanings-spelling";
+import w3banGender from "./class-3-bengali-gender";
+import w3banWordTypes from "./class-3-bengali-word-types";
+import w3banParts from "./class-3-bengali-sentence-parts";
+import w3banSentences from "./class-3-bengali-making-sentences";
+import w3banComp from "./class-3-bengali-reading-comprehension";
+
+// ===================== WBBPE Class 3 — ইংরেজি (Butterfly) =====================
+import w3engDesc from "./class-3-english-describing-words";
+import w3engPron from "./class-3-english-pronouns";
+import w3engBe from "./class-3-english-am-is-are";
+import w3engHas from "./class-3-english-has-and-have";
+import w3engOpp from "./class-3-english-opposite-words";
+import w3engDays from "./class-3-english-days-of-the-week";
+import w3engSent from "./class-3-english-making-sentences";
+import w3engComp from "./class-3-english-reading-comprehension";
+
+// ===================== WBBPE Class 3 — গণিত (Amar Gonit) =====================
+import w3ganitNum from "./class-3-maths-numbers-to-1000";
+import w3ganitPV from "./class-3-maths-place-value";
+import w3ganitCmp from "./class-3-maths-compare-and-order";
+import w3ganitAdd from "./class-3-maths-addition";
+import w3ganitSub from "./class-3-maths-subtraction";
+import w3ganitMul from "./class-3-maths-multiplication";
+import w3ganitDiv from "./class-3-maths-division";
+import w3ganitFrac from "./class-3-maths-fractions";
+import w3ganitMeas from "./class-3-maths-measurement";
+import w3ganitMoney from "./class-3-maths-money";
+import w3ganitTime from "./class-3-maths-time-and-calendar";
+
+// ===================== WBBPE Class 3 — পরিবেশ (Amader Poribesh) =====================
+import w3evsBody from "./class-3-evs-our-body";
+import w3evsFood from "./class-3-evs-our-food";
+import w3evsCloth from "./class-3-evs-our-clothing";
+import w3evsHome from "./class-3-evs-our-home";
+import w3evsFamily from "./class-3-evs-our-family";
+import w3evsPlants from "./class-3-evs-plants";
+import w3evsAnimals from "./class-3-evs-animals";
+import w3evsWaterAir from "./class-3-evs-water-and-air";
+import w3evsHealth from "./class-3-evs-health-and-cleanliness";
+
+// ===================== WBBPE Class 4 — বাংলা (Patabahar) =====================
+import w4banNounPro from "./class-4-bengali-noun-pronoun";
+import w4banAdjVerb from "./class-4-bengali-adjective-verb";
+import w4banGenNum from "./class-4-bengali-gender-number";
+import w4banSynAnt from "./class-4-bengali-synonyms-antonyms";
+import w4banIdioms from "./class-4-bengali-idioms";
+import w4banConj from "./class-4-bengali-conjuncts-spelling";
+import w4banSentTypes from "./class-4-bengali-sentence-types";
+import w4banComp from "./class-4-bengali-reading-comprehension";
+
+// ===================== WBBPE Class 4 — ইংরেজি (Butterfly) =====================
+import w4engNouns from "./class-4-english-nouns";
+import w4engPoss from "./class-4-english-possessives";
+import w4engAdj from "./class-4-english-adjectives";
+import w4engTense from "./class-4-english-verbs-tense";
+import w4engAdv from "./class-4-english-adverbs";
+import w4engPrep from "./class-4-english-prepositions";
+import w4engWasWere from "./class-4-english-was-were";
+import w4engComp from "./class-4-english-reading-comprehension";
+
+// ===================== WBBPE Class 4 — গণিত (Amar Gonit) =====================
+import w4ganitLarge from "./class-4-maths-large-numbers";
+import w4ganitPV from "./class-4-maths-place-value";
+import w4ganitAddSub from "./class-4-maths-addition-subtraction";
+import w4ganitMul from "./class-4-maths-multiplication";
+import w4ganitDiv from "./class-4-maths-division";
+import w4ganitMF from "./class-4-maths-multiples-factors";
+import w4ganitFrac from "./class-4-maths-fractions";
+import w4ganitMeas from "./class-4-maths-measurement";
+import w4ganitMoney from "./class-4-maths-money";
+import w4ganitTime from "./class-4-maths-time-and-calendar";
+import w4ganitGeo from "./class-4-maths-geometry";
+
+// ===================== WBBPE Class 4 — পরিবেশ (Amader Poribesh) =====================
+import w4evsLNL from "./class-4-evs-living-and-nonliving";
+import w4evsAnimals from "./class-4-evs-animal-variety";
+import w4evsPlants from "./class-4-evs-plant-variety";
+import w4evsMatter from "./class-4-evs-matter";
+import w4evsTeeth from "./class-4-evs-teeth-and-digestion";
+import w4evsBreath from "./class-4-evs-breathing";
+import w4evsWeather from "./class-4-evs-weather";
+import w4evsSky from "./class-4-evs-sky";
+import w4evsRes from "./class-4-evs-resources-and-livelihood";
+
 // Register every authored chapter here. Adding a new chapter is a 2-step job:
 // 1) create content/chapters/<file>.ts exporting a Chapter
 // 2) import it and add it to this array.
@@ -596,4 +717,103 @@ export const CHAPTERS: Chapter[] = [
   w1engSentences,
   w1engDays,
   w1engReading,
+  w2ganitNum100,
+  w2ganitPV,
+  w2ganitCompare,
+  w2ganitAdd,
+  w2ganitSub,
+  w2ganitMul,
+  w2ganitTables,
+  w2ganitDiv,
+  w2ganitMeasure,
+  w2ganitMoney,
+  w2ganitTime,
+  w2banConjuncts,
+  w2banMeanings,
+  w2banOpposites,
+  w2banNumber,
+  w2banNaming,
+  w2banSentences,
+  w2banPunct,
+  w2banComp,
+  w2engNaming,
+  w2engArticles,
+  w2engThisThat,
+  w2engPlural,
+  w2engVerbs,
+  w2engSentences,
+  w2engMonths,
+  w2engComp,
+  w3banSyn,
+  w3banAnt,
+  w3banWS,
+  w3banGender,
+  w3banWordTypes,
+  w3banParts,
+  w3banSentences,
+  w3banComp,
+  w3engDesc,
+  w3engPron,
+  w3engBe,
+  w3engHas,
+  w3engOpp,
+  w3engDays,
+  w3engSent,
+  w3engComp,
+  w3ganitNum,
+  w3ganitPV,
+  w3ganitCmp,
+  w3ganitAdd,
+  w3ganitSub,
+  w3ganitMul,
+  w3ganitDiv,
+  w3ganitFrac,
+  w3ganitMeas,
+  w3ganitMoney,
+  w3ganitTime,
+  w3evsBody,
+  w3evsFood,
+  w3evsCloth,
+  w3evsHome,
+  w3evsFamily,
+  w3evsPlants,
+  w3evsAnimals,
+  w3evsWaterAir,
+  w3evsHealth,
+  w4banNounPro,
+  w4banAdjVerb,
+  w4banGenNum,
+  w4banSynAnt,
+  w4banIdioms,
+  w4banConj,
+  w4banSentTypes,
+  w4banComp,
+  w4engNouns,
+  w4engPoss,
+  w4engAdj,
+  w4engTense,
+  w4engAdv,
+  w4engPrep,
+  w4engWasWere,
+  w4engComp,
+  w4ganitLarge,
+  w4ganitPV,
+  w4ganitAddSub,
+  w4ganitMul,
+  w4ganitDiv,
+  w4ganitMF,
+  w4ganitFrac,
+  w4ganitMeas,
+  w4ganitMoney,
+  w4ganitTime,
+  w4ganitGeo,
+  w4evsLNL,
+  w4evsAnimals,
+  w4evsPlants,
+  w4evsMatter,
+  w4evsTeeth,
+  w4evsBreath,
+  w4evsWeather,
+  w4evsSky,
+  w4evsRes,
 ];

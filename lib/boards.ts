@@ -36,9 +36,9 @@ export const BOARDS: Board[] = [
     fullName: "West Bengal Board of Primary Education",
     medium: "Bengali medium · বাংলা মাধ্যম",
     href: "/wbbpe",
-    status: "coming-soon",
+    status: "available",
     blurb:
-      "প্রাথমিক বাংলা মাধ্যম — primary classes starting from Class 1. Chapters are being prepared.",
+      "প্রাথমিক বাংলা মাধ্যম — notes, quizzes and practice for primary classes in Bengali (বাংলা, গণিত ও ইংরেজি), built from আমার বই.",
     accent: "#1faf6b",
     emoji: "📗",
   },

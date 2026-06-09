@@ -1,35 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { boardClasses, getAuthoredInSubject } from "@/lib/content";
 import { buildMetadata, breadcrumbLd, webPageLd } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 
 const PATH = "/wbbpe";
-const TITLE = "WBBPE Bengali Medium — Primary Classes (Class 1 fully live — আমার বই)";
+const TITLE = "WBBPE Bengali Medium — Primary Classes 1 & 2 (আমার বই)";
 const DESC =
-  "West Bengal Board of Primary Education (WBBPE) Bengali-medium study material on StudyMatic — notes, quizzes and practice starting from Class 1 — বাংলা, গণিত ও ইংরেজি, all now live.";
+  "West Bengal Board of Primary Education (WBBPE) Bengali-medium study material on StudyMatic — notes, quizzes and practice for Classes 1 and 2, with বাংলা, গণিত ও ইংরেজি from the integrated book আমার বই.";
 
 export const metadata: Metadata = buildMetadata({ title: TITLE, description: DESC, path: PATH });
 
-const PLANNED = [
-  {
-    name: "বাংলা",
-    en: "Bangla (First language)",
-    emoji: "📖",
-    ready: true,
-    href: "/wbbpe/class-1/bengali",
-  },
-  {
-    name: "গণিত",
-    en: "Ganit / Mathematics",
-    emoji: "➗",
-    ready: true,
-    href: "/wbbpe/class-1/maths",
-  },
-  { name: "ইংরেজি", en: "English (Second language)", emoji: "✏️", ready: true, href: "/wbbpe/class-1/english" },
-];
-
 export default function WbbpeHub() {
+  const classes = boardClasses("wbbpe");
   const crumbs = [
     { name: "Home", path: "/" },
     { name: "WBBPE", path: PATH },
@@ -53,16 +37,16 @@ export default function WbbpeHub() {
             পশ্চিমবঙ্গ প্রাথমিক শিক্ষা পর্ষদ
           </p>
           <p className="mx-auto mt-3 max-w-2xl text-muted">
-            We&apos;re expanding StudyMatic to the West Bengal Board of Primary Education, in
-            Bengali medium, starting from Class 1 — built from the integrated book ‘আমার বই’
-            (Amar Boi), which combines Bangla, English and Ganit — all three subjects are now live.
+            StudyMatic for the West Bengal Board of Primary Education, in Bengali medium — built
+            from the integrated book ‘আমার বই’ (Amar Boi), which combines Bangla, English and
+            Ganit. Pick a class to start.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <Link
-              href="/wbbpe/class-1/maths"
+              href="/wbbpe/class-1"
               className="rounded-full bg-linear-to-r from-cobalt to-violet px-6 py-3 font-semibold text-white shadow-lg shadow-cobalt/25 transition hover:-translate-y-0.5 hover:brightness-110"
             >
-              শুরু করো — Class 1 গণিত
+              শুরু করো — Class 1
             </Link>
             <Link
               href="/cbse"
@@ -76,39 +60,45 @@ export default function WbbpeHub() {
 
       <section className="mt-10">
         <div className="text-center">
-          <h2 className="font-display text-2xl font-bold text-ink">Class 1 — all subjects live (আমার বই)</h2>
+          <h2 className="font-display text-2xl font-bold text-ink">Classes (আমার বই)</h2>
           <p className="mx-auto mt-1 max-w-xl text-muted">
-            শ্রেণি ১ · বাংলা, গণিত ও ইংরেজি — তিনটি বিষয়ই এখন পড়া যাবে।
+            শ্রেণি বেছে নাও — প্রতিটি বিষয়ে নোট ও কুইজ।
           </p>
         </div>
-        <div className="mt-7 grid gap-4 sm:grid-cols-3">
-          {PLANNED.map((s) =>
-            s.ready && s.href ? (
-              <Link
-                key={s.en}
-                href={s.href}
-                className="card group p-5 text-center transition hover:-translate-y-1"
-              >
-                <div className="text-3xl" aria-hidden>{s.emoji}</div>
-                <div className="mt-2 font-display text-lg font-bold text-ink group-hover:text-cobalt">
-                  {s.name}
-                </div>
-                <div className="text-sm text-muted">{s.en}</div>
-                <span className="chip mt-3 inline-flex bg-green/15 text-green">তৈরি · পড়া যাবে</span>
-              </Link>
-            ) : (
-              <div key={s.en} className="card p-5 text-center opacity-90">
-                <div className="text-3xl" aria-hidden>{s.emoji}</div>
-                <div className="mt-2 font-display text-lg font-bold text-ink">{s.name}</div>
-                <div className="text-sm text-muted">{s.en}</div>
-                <span className="chip mt-3 inline-flex bg-amber/20 text-ink">Coming soon</span>
+        <div className="mt-7 grid gap-5 sm:grid-cols-2">
+          {classes.map((cls) => (
+            <Link
+              key={cls.id}
+              href={`/wbbpe/class-${cls.id}`}
+              className="card group p-6 transition hover:-translate-y-1"
+            >
+              <div className="flex items-center justify-between gap-3">
+                <h3 className="font-display text-xl font-bold text-ink group-hover:text-cobalt">
+                  WBBPE {cls.label}
+                </h3>
+                <span aria-hidden className="text-muted transition group-hover:text-cobalt">→</span>
               </div>
-            ),
-          )}
+              <div className="mt-3 flex flex-wrap gap-2">
+                {cls.subjects.map((s) => {
+                  const ready = getAuthoredInSubject(cls.id, s.key, "wbbpe").length;
+                  return (
+                    <span
+                      key={s.key}
+                      className={`chip ${ready > 0 ? "bg-green/15 text-green" : "bg-amber/20 text-ink"}`}
+                    >
+                      <span aria-hidden className="mr-1">{s.icon}</span>
+                      {s.name}
+                      {ready > 0 ? ` · ${ready}` : " · শীঘ্রই"}
+                    </span>
+                  );
+                })}
+              </div>
+            </Link>
+          ))}
         </div>
         <p className="mt-8 text-center text-sm text-muted">
-          More primary classes will follow Class 1, all in the same notes-plus-quiz format — in
-          Bengali.
+          More primary classes and subjects are being added, all in the same notes-plus-quiz
+          format — in Bengali.
         </p>
       </section>
     </>
