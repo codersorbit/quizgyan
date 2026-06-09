@@ -142,7 +142,7 @@ export function Quiz({
         )}
         <button
           onClick={restart}
-          className="mt-5 rounded-full bg-linear-to-r from-cobalt to-violet px-6 py-2.5 font-semibold text-white shadow-sm shadow-cobalt/20 transition hover:brightness-110"
+          className="mt-5 btn-candy cobalt"
         >
           Retake quiz
         </button>
@@ -210,7 +210,7 @@ export function Quiz({
           <button
             onClick={next}
             disabled={!answered}
-            className="rounded-full bg-linear-to-r from-cobalt to-violet px-6 py-2.5 font-semibold text-white shadow-sm shadow-cobalt/20 transition enabled:hover:brightness-110 disabled:opacity-40"
+            className="btn-candy cobalt disabled:opacity-40"
           >
             {i + 1 < mcqs.length ? "Next question" : "See result"}
           </button>

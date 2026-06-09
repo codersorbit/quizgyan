@@ -20,47 +20,52 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero — centered welcome */}
+      {/* Hero — sunny band */}
       <section className="relative text-center">
-        <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 -z-10 hidden h-full md:block">
-          <div className="animate-float absolute left-[7%] top-1 grid h-14 w-14 place-items-center rounded-2xl glass text-2xl shadow-lg">📐</div>
-          <div className="animate-float absolute right-[9%] top-8 grid h-14 w-14 place-items-center rounded-2xl glass text-2xl shadow-lg" style={{ animationDelay: "1.6s" }}>⚛️</div>
-          <div className="animate-float absolute left-[13%] top-44 grid h-12 w-12 place-items-center rounded-2xl glass text-xl shadow-lg" style={{ animationDelay: "3s" }}>🌍</div>
-          <div className="animate-float absolute right-[13%] top-48 grid h-12 w-12 place-items-center rounded-2xl glass text-xl shadow-lg" style={{ animationDelay: "2.3s" }}>✏️</div>
-        </div>
-        <span className="chip bg-white text-pink shadow-sm">✨ CBSE · WBBPE · Free · No login</span>
-        <h1 className="mx-auto mt-4 max-w-3xl font-fun text-5xl leading-[1.05] text-ink sm:text-6xl">
-          Welcome to <span className="brand-gradient">{site.name}</span>
-        </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-muted">
-          {site.name} turns every chapter into clear notes, instant-feedback quizzes and
-          exam-style questions across multiple boards — made for students who want to understand,
-          not just memorise.
-        </p>
-
-        <div className="mx-auto mt-7 max-w-xl">
-          <ChapterSearch />
-          <p className="mt-2 text-sm text-muted">
-            Search any topic across{" "}
-            <strong className="font-semibold text-ink">{chapters.length}</strong> chapters — try
-            “Pythagoras” or “osmosis”.
+        <div
+          className="relative overflow-hidden rounded-[2.75rem] border-2 border-line px-6 py-14 shadow-[0_14px_0_-6px_rgba(26,26,26,0.06),0_44px_72px_-42px_rgba(255,179,0,0.55)]"
+          style={{ background: "radial-gradient(125% 130% at 50% -12%, #ffe069 0%, #ffeda1 40%, #fff7df 100%)" }}
+        >
+          <div aria-hidden className="pointer-events-none absolute inset-0 hidden md:block">
+            <div className="animate-float absolute left-[6%] top-6 grid h-14 w-14 place-items-center rounded-2xl bg-white text-2xl shadow-lg">📐</div>
+            <div className="animate-float absolute right-[7%] top-10 grid h-14 w-14 place-items-center rounded-2xl bg-white text-2xl shadow-lg" style={{ animationDelay: "1.6s" }}>⚛️</div>
+            <div className="animate-float absolute left-[10%] bottom-8 grid h-12 w-12 place-items-center rounded-2xl bg-white text-xl shadow-lg" style={{ animationDelay: "3s" }}>🌍</div>
+            <div className="animate-float absolute right-[11%] bottom-10 grid h-12 w-12 place-items-center rounded-2xl bg-white text-xl shadow-lg" style={{ animationDelay: "2.3s" }}>✏️</div>
+          </div>
+          <span className="chip bg-white text-pink shadow-sm">✨ CBSE · WBBPE · Free · No login</span>
+          <h1 className="mx-auto mt-4 max-w-3xl font-fun text-5xl leading-[1.05] text-ink sm:text-6xl">
+            Welcome to <span className="brand-gradient">{site.name}</span>
+          </h1>
+          <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-ink/75">
+            {site.name} turns every chapter into clear notes, instant-feedback quizzes and
+            exam-style questions across multiple boards — made for students who want to understand,
+            not just memorise.
           </p>
+
+          <div className="relative mx-auto mt-7 max-w-xl">
+            <ChapterSearch />
+            <p className="mt-2 text-sm text-ink/60">
+              Search any topic across{" "}
+              <strong className="font-semibold text-ink">{chapters.length}</strong> chapters — try
+              “Pythagoras” or “osmosis”.
+            </p>
+          </div>
+
+          <div className="mt-6 flex flex-wrap justify-center gap-3">
+            <Link href="/cbse" className="btn-candy cobalt">Browse classes</Link>
+            <Link href="/daily" className="btn-candy ghost">Today’s challenge</Link>
+          </div>
         </div>
 
-        <div className="mt-6 flex flex-wrap justify-center gap-3">
-          <Link href="/cbse" className="btn-candy cobalt">Browse classes</Link>
-          <Link href="/daily" className="btn-candy ghost">Today’s challenge</Link>
-        </div>
-
-        {/* Stat strip */}
-        <div className="mx-auto mt-9 grid max-w-xl grid-cols-3 gap-3">
+        {/* Stat strip — sits on the paper, just below the band */}
+        <div className="mx-auto mt-6 grid max-w-xl grid-cols-3 gap-3">
           {([
             [String(chapters.length), "chapters"],
             [`${mcqs}+`, "questions"],
             [String(CLASSES.length), "classes"],
           ] as const).map(([n, label]) => (
             <div key={label} className="card px-4 py-3 text-center">
-              <div className="font-display text-2xl font-bold text-ink">{n}</div>
+              <div className="font-fun text-2xl text-ink">{n}</div>
               <div className="text-xs text-muted">{label}</div>
             </div>
           ))}
