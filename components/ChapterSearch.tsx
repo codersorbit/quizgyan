@@ -106,7 +106,7 @@ export function ChapterSearch() {
           onBlur={() => {
             blurTimer.current = setTimeout(() => setOpen(false), 150);
           }}
-          className="w-full rounded-full border border-line bg-white py-3 pl-11 pr-4 text-ink shadow-sm outline-none transition placeholder:text-muted focus:border-cobalt focus:ring-2 focus:ring-cobalt/20"
+          className="w-full rounded-full border border-white/60 bg-white/70 py-3 pl-11 pr-4 text-ink shadow-sm outline-none backdrop-blur transition placeholder:text-muted focus:border-cobalt focus:ring-2 focus:ring-cobalt/20"
         />
       </div>
 

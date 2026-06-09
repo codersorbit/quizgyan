@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import type { MCQ } from "@/lib/types";
 import { localDayStr } from "@/lib/daily";
+import { Confetti } from "@/components/Confetti";
 
 /* --------------------------- localStorage utils -------------------------- */
 function readJSON<T>(key: string, fallback: T): T {
@@ -126,6 +127,11 @@ export function Quiz({
       percent >= 80 ? "Excellent! 🎉" : percent >= 50 ? "Good effort 👍" : "Keep practising 💪";
     return (
       <div className="card p-6 text-center">
+        {percent >= 80 ? (
+          <Confetti />
+        ) : percent >= 60 ? (
+          <Confetti count={70} duration={1700} />
+        ) : null}
         <p className="text-sm font-semibold uppercase tracking-wide text-muted">Quiz complete</p>
         <p className="mt-2 font-display text-5xl font-bold text-cobalt">{percent}%</p>
         <p className="mt-1 text-muted">
@@ -136,7 +142,7 @@ export function Quiz({
         )}
         <button
           onClick={restart}
-          className="mt-5 rounded-full bg-cobalt px-6 py-2.5 font-semibold text-white transition hover:brightness-110"
+          className="mt-5 rounded-full bg-linear-to-r from-cobalt to-violet px-6 py-2.5 font-semibold text-white shadow-sm shadow-cobalt/20 transition hover:brightness-110"
         >
           Retake quiz
         </button>
@@ -146,16 +152,16 @@ export function Quiz({
 
   return (
     <div className="card overflow-hidden">
-      <div className="flex items-center justify-between border-b border-line px-5 py-3 text-sm">
+      <div className="flex items-center justify-between border-b border-white/50 px-5 py-3 text-sm">
         <span className="font-semibold text-ink">
           Question {i + 1} <span className="text-muted">of {mcqs.length}</span>
         </span>
         <span className="chip bg-cobalt-soft text-cobalt">Score {score}</span>
       </div>
 
-      <div className="h-1.5 w-full bg-line">
+      <div className="h-1.5 w-full bg-white/50">
         <div
-          className="h-full bg-amber transition-all"
+          className="h-full bg-linear-to-r from-amber to-coral transition-all"
           style={{ width: `${(i / mcqs.length) * 100}%` }}
         />
       </div>
@@ -167,18 +173,18 @@ export function Quiz({
             const isCorrect = idx === q.answer;
             const isPicked = idx === picked;
             let cls =
-              "border-line bg-white hover:border-cobalt hover:bg-cobalt-soft/50";
-            if (answered && isCorrect) cls = "border-green bg-green/10 text-ink";
-            else if (answered && isPicked) cls = "border-coral bg-coral/10 text-ink";
-            else if (answered) cls = "border-line bg-white opacity-70";
+              "border-white/60 bg-white/55 backdrop-blur hover:border-cobalt hover:bg-white/80";
+            if (answered && isCorrect) cls = "border-green/70 bg-green/15 text-ink";
+            else if (answered && isPicked) cls = "border-coral/70 bg-coral/15 text-ink";
+            else if (answered) cls = "border-white/50 bg-white/35 opacity-70";
             return (
               <button
                 key={idx}
                 onClick={() => choose(idx)}
                 disabled={answered}
-                className={`flex items-center gap-3 rounded-2xl border px-4 py-3 text-left transition ${cls}`}
+                className={`flex items-center gap-3 rounded-2xl border px-4 py-3 text-left shadow-sm transition ${cls}`}
               >
-                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-lg bg-cream text-xs font-bold text-muted">
+                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-lg bg-white/70 text-xs font-bold text-muted">
                   {idx + 1}
                 </span>
                 <span className="text-[0.95rem]">{opt}</span>
@@ -188,8 +194,12 @@ export function Quiz({
         </div>
 
         {answered && (
-          <div className="mt-4 rounded-2xl bg-cobalt-soft/60 p-4 text-sm leading-relaxed text-ink">
-            <span className="font-bold">
+          <div
+            className={`mt-4 rounded-2xl border bg-white/55 p-4 text-sm leading-relaxed text-ink backdrop-blur ${
+              picked === q.answer ? "border-green/50" : "border-coral/50"
+            }`}
+          >
+            <span className={`font-bold ${picked === q.answer ? "text-green" : "text-coral"}`}>
               {picked === q.answer ? "Correct. " : "Not quite. "}
             </span>
             {q.explanation}
@@ -200,7 +210,7 @@ export function Quiz({
           <button
             onClick={next}
             disabled={!answered}
-            className="rounded-full bg-cobalt px-6 py-2.5 font-semibold text-white transition enabled:hover:brightness-110 disabled:opacity-40"
+            className="rounded-full bg-linear-to-r from-cobalt to-violet px-6 py-2.5 font-semibold text-white shadow-sm shadow-cobalt/20 transition enabled:hover:brightness-110 disabled:opacity-40"
           >
             {i + 1 < mcqs.length ? "Next question" : "See result"}
           </button>

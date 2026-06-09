@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 88" role="img" aria-label="">
+  <defs>
+    <linearGradient id="c_bengali" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9a78e6"/><stop offset="1" stop-color="#7b54d3"/></linearGradient>
+    <clipPath id="r_bengali"><rect width="88" height="88" rx="22"/></clipPath>
+  </defs>
+  <g clip-path="url(#r_bengali)">
+    <rect width="88" height="88" fill="url(#c_bengali)"/>
+    <circle cx="64" cy="20" r="30" fill="#ffffff" opacity="0.14"/>
+    <circle cx="46" cy="44" r="26" fill="#ffffff" opacity="0.15"/>
+    <text x="44" y="60" text-anchor="middle" font-family="'Noto Sans Bengali','Vrinda','Nikosh',sans-serif" font-size="46" font-weight="700" fill="#ffffff">অ</text>
+  </g>
+</svg>

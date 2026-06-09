@@ -27,7 +27,32 @@ const COLOR = {
   english: "#1faf6b",
 } as const;
 
-export const CLASSES: ClassDef[] = [
+const CBSE_DEFS: Omit<ClassDef, "board">[] = [
+  {
+    id: "1",
+    roman: "I",
+    label: "Class 1",
+    blurb: "Class 1 CBSE — new NCERT Mridang (English). More subjects coming soon.",
+    subjects: [
+      {
+        key: "english",
+        name: "English",
+        icon: ICON.english,
+        color: COLOR.english,
+        chapters: chapters([
+          [1, "Two Little Hands"],
+          [2, "Greetings"],
+          [3, "Picture Time"],
+          [4, "The Cap-seller and the Monkeys"],
+          [5, "A Farm"],
+          [6, "Fun with Pictures"],
+          [7, "The Food We Eat"],
+          [8, "The Four Seasons"],
+          [9, "Anandi's Rainbow"],
+        ]),
+      },
+    ],
+  },
   {
     id: "6",
     roman: "VI",
@@ -407,3 +432,81 @@ export const CLASSES: ClassDef[] = [
     ],
   },
 ];
+
+/** CBSE classes, tagged with their board. */
+export const CBSE_CLASSES: ClassDef[] = CBSE_DEFS.map((c) => ({ ...c, board: "cbse" }));
+
+/**
+ * WBBPE (West Bengal Board of Primary Education) — Bengali medium.
+ * Skeleton only: subjects are defined but chapters are authored later,
+ * once the WB textbooks are available.
+ */
+export const WBBPE_CLASSES: ClassDef[] = [
+  {
+    board: "wbbpe",
+    id: "1",
+    roman: "I",
+    label: "Class 1",
+    blurb:
+      "WBBPE Class 1 — Bengali medium (বাংলা মাধ্যম), from the integrated book ‘আমার বই’ (Amar Boi): Bangla, English & Ganit.",
+    subjects: [
+      {
+        key: "bengali",
+        name: "বাংলা",
+        icon: "📖",
+        color: "#7b54d3",
+        chapters: [
+          { order: 1, title: "স্বরবর্ণ চেনা", slug: "vowels" },
+          { order: 2, title: "ব্যঞ্জনবর্ণ চেনা", slug: "consonants" },
+          { order: 3, title: "কার-চিহ্ন", slug: "vowel-signs" },
+          { order: 4, title: "বর্ণ জুড়ে শব্দ", slug: "forming-words" },
+          { order: 5, title: "ছবি দেখে শব্দ চেনা", slug: "picture-words" },
+          { order: 6, title: "ছড়া পড়ি", slug: "rhymes" },
+          { order: 7, title: "ছোটো গল্প পড়ি", slug: "story-reading" },
+          { order: 8, title: "যুক্তবর্ণ পরিচয়", slug: "conjunct-letters" },
+        ],
+      },
+      {
+        key: "english",
+        name: "ইংরেজি",
+        icon: "✏️",
+        color: "#1faf6b",
+        chapters: [
+          { order: 1, title: "The English Alphabet", slug: "the-alphabet" },
+          { order: 2, title: "Capital and Small Letters", slug: "capital-and-small-letters" },
+          { order: 3, title: "Beginning Sounds", slug: "beginning-sounds" },
+          { order: 4, title: "Words Around Us", slug: "words-around-us" },
+          { order: 5, title: "Naming Animals", slug: "naming-animals" },
+          { order: 6, title: "Simple Sentences", slug: "simple-sentences" },
+          { order: 7, title: "Days of the Week", slug: "days-of-the-week" },
+          { order: 8, title: "Reading Aloud", slug: "reading-aloud" },
+        ],
+      },
+      {
+        key: "maths",
+        name: "গণিত",
+        icon: "➗",
+        color: "#ff5d73",
+        chapters: [
+          { order: 1, title: "সংখ্যা চেনা (১–৯)", slug: "numbers-1-to-9" },
+          { order: 2, title: "শূন্য (০)", slug: "zero" },
+          { order: 3, title: "গোনা ও মেলানো", slug: "counting-and-matching" },
+          { order: 4, title: "ছোটো-বড়ো, কম-বেশি", slug: "compare-big-small" },
+          { order: 5, title: "ক্রম: আগে ও পরে", slug: "order-before-after" },
+          { order: 6, title: "সংখ্যা: ১০ থেকে ২০", slug: "numbers-10-to-20" },
+          { order: 7, title: "দশক ও একক", slug: "tens-and-units" },
+          { order: 8, title: "যোগ", slug: "addition" },
+          { order: 9, title: "বিয়োগ", slug: "subtraction" },
+          { order: 10, title: "আকার ও আকৃতি", slug: "shapes" },
+          { order: 11, title: "প্যাটার্ন", slug: "patterns" },
+        ],
+      },
+    ],
+  },
+];
+
+/** Every class across every board. */
+export const ALL_CLASSES: ClassDef[] = [...CBSE_CLASSES, ...WBBPE_CLASSES];
+
+/** Back-compat alias: existing CBSE-only views import `CLASSES`. */
+export const CLASSES: ClassDef[] = CBSE_CLASSES;

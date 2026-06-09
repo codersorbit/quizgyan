@@ -92,14 +92,23 @@ export default async function ChapterPage({ params }: { params: Params }) {
       />
       <Breadcrumbs crumbs={crumbs} />
 
-      <header>
-        <span className="chip bg-cobalt-soft text-cobalt">
-          Class {ch.classId} · {subj.name} · Chapter {ch.order}
-        </span>
-        <h1 className="mt-3 font-display text-4xl font-bold leading-tight text-ink">
-          {ch.title}
-        </h1>
-        <p className="mt-3 max-w-2xl text-lg leading-relaxed text-muted">{ch.overview}</p>
+      <header className="flex items-start gap-4">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`/cards/crest-${subj.key}.svg`}
+          alt=""
+          aria-hidden
+          className="h-14 w-14 shrink-0 rounded-2xl shadow-md shadow-cobalt/15"
+        />
+        <div className="min-w-0">
+          <span className="chip glass text-cobalt">
+            Class {ch.classId} · {subj.name} · Chapter {ch.order}
+          </span>
+          <h1 className="mt-3 font-display text-4xl font-bold leading-tight text-ink">
+            {ch.title}
+          </h1>
+          <p className="mt-3 max-w-2xl text-lg leading-relaxed text-muted">{ch.overview}</p>
+        </div>
       </header>
 
       {/* On-page nav */}
@@ -114,7 +123,7 @@ export default async function ChapterPage({ params }: { params: Params }) {
           <a
             key={href}
             href={href}
-            className="chip border border-line bg-white text-muted hover:border-cobalt hover:text-cobalt"
+            className="chip glass text-muted transition hover:text-cobalt"
           >
             {label}
           </a>
@@ -166,7 +175,7 @@ export default async function ChapterPage({ params }: { params: Params }) {
         <Section title="Key definitions">
           <dl className="grid gap-3">
             {ch.definitions.map((d, i) => (
-              <div key={i} className="rounded-2xl border border-line bg-white p-4">
+              <div key={i} className="rounded-2xl border border-white/60 bg-white/55 p-4 shadow-sm backdrop-blur">
                 <dt className="font-display font-bold text-ink">{d.term}</dt>
                 <dd className="mt-0.5 leading-relaxed text-muted">{d.meaning}</dd>
               </div>
@@ -281,7 +290,7 @@ function PracticeGroup({
       <h3 className="font-display text-lg font-bold text-ink">{title}</h3>
       <div className="mt-2 grid gap-2.5">
         {items.map((it, i) => (
-          <details key={i} className="rounded-2xl border border-line bg-white p-4 [&_summary]:cursor-pointer">
+          <details key={i} className="rounded-2xl border border-white/60 bg-white/55 p-4 shadow-sm backdrop-blur [&_summary]:cursor-pointer">
             <summary className="font-semibold text-ink">{it.q}</summary>
             <p className="mt-2 leading-relaxed text-muted">{it.a}</p>
           </details>

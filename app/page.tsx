@@ -7,6 +7,7 @@ import {
   chapterUrl,
 } from "@/lib/content";
 import { ClassImageCard } from "@/components/cards";
+import { BoardChooser } from "@/components/BoardChooser";
 import { StreakCalendar } from "@/components/StreakCalendar";
 import { ChapterSearch } from "@/components/ChapterSearch";
 import { DailyHomeCard } from "@/components/DailyHomeCard";
@@ -20,15 +21,21 @@ export default function HomePage() {
   return (
     <>
       {/* Hero — centered welcome */}
-      <section className="text-center">
-        <span className="chip bg-cobalt-soft text-cobalt">CBSE · Free · No login</span>
+      <section className="relative text-center">
+        <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 -z-10 hidden h-full md:block">
+          <div className="animate-float absolute left-[7%] top-1 grid h-14 w-14 place-items-center rounded-2xl glass text-2xl shadow-lg">📐</div>
+          <div className="animate-float absolute right-[9%] top-8 grid h-14 w-14 place-items-center rounded-2xl glass text-2xl shadow-lg" style={{ animationDelay: "1.6s" }}>⚛️</div>
+          <div className="animate-float absolute left-[13%] top-44 grid h-12 w-12 place-items-center rounded-2xl glass text-xl shadow-lg" style={{ animationDelay: "3s" }}>🌍</div>
+          <div className="animate-float absolute right-[13%] top-48 grid h-12 w-12 place-items-center rounded-2xl glass text-xl shadow-lg" style={{ animationDelay: "2.3s" }}>✏️</div>
+        </div>
+        <span className="chip glass text-cobalt shadow-sm">✨ CBSE · Free · No login</span>
         <h1 className="mx-auto mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.1] text-ink sm:text-5xl">
-          Welcome to <span className="text-cobalt">{site.name}</span>
+          Welcome to <span className="brand-gradient">{site.name}</span>
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-muted">
-          {site.name} turns every CBSE chapter into clear notes, instant-feedback quizzes and
-          exam-style questions across Maths, Science, Social Science and English — made for
-          students who want to understand, not just memorise.
+          {site.name} turns every chapter into clear notes, instant-feedback quizzes and
+          exam-style questions across multiple boards — made for students who want to understand,
+          not just memorise.
         </p>
 
         <div className="mx-auto mt-7 max-w-xl">
@@ -43,13 +50,13 @@ export default function HomePage() {
         <div className="mt-6 flex flex-wrap justify-center gap-3">
           <Link
             href="/cbse"
-            className="rounded-full bg-cobalt px-6 py-3 font-semibold text-white shadow-sm transition hover:brightness-110"
+            className="rounded-full bg-linear-to-r from-cobalt to-violet px-6 py-3 font-semibold text-white shadow-lg shadow-cobalt/25 transition hover:-translate-y-0.5 hover:brightness-110"
           >
             Browse classes
           </Link>
           <Link
             href="/daily"
-            className="rounded-full border border-line bg-white px-6 py-3 font-semibold text-ink transition hover:border-cobalt hover:text-cobalt"
+            className="rounded-full border border-white/60 bg-white/55 px-6 py-3 font-semibold text-ink backdrop-blur transition hover:-translate-y-0.5 hover:text-cobalt"
           >
             Today’s challenge
           </Link>
@@ -70,10 +77,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Browse by class — image-topped cards */}
+      {/* Choose your board */}
+      <section id="boards" className="mt-14 scroll-mt-24">
+        <div className="text-center">
+          <h2 className="font-display text-2xl font-bold text-ink">Choose your board</h2>
+          <p className="mx-auto mt-1 max-w-xl text-muted">
+            Pick your education board to get notes, quizzes and practice made for your syllabus.
+          </p>
+        </div>
+        <div className="mx-auto mt-7 max-w-3xl">
+          <BoardChooser />
+        </div>
+      </section>
+
+      {/* Browse CBSE by class — image-topped cards */}
       <section className="mt-14">
         <div className="text-center">
-          <h2 className="font-display text-2xl font-bold text-ink">Browse by class</h2>
+          <h2 className="font-display text-2xl font-bold text-ink">Browse CBSE by class</h2>
           <p className="mx-auto mt-1 max-w-xl text-muted">
             Pick a class to open its subjects and chapters — Maths, Science, Social Science and English.
           </p>
@@ -111,7 +131,14 @@ export default function HomePage() {
                 className="card group p-5 transition hover:-translate-y-0.5"
               >
                 <span className="chip bg-cobalt-soft text-cobalt">
-                  Class {c.classId} · {c.subject === "maths" ? "Maths" : "Science"}
+                  Class {c.classId} ·{" "}
+                  {c.subject === "maths"
+                    ? "Maths"
+                    : c.subject === "science"
+                      ? "Science"
+                      : c.subject === "social-science"
+                        ? "Social Science"
+                        : "English"}
                 </span>
                 <h3 className="mt-3 font-display text-lg font-bold text-ink group-hover:text-cobalt">
                   {c.title}

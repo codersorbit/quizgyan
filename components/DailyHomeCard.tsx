@@ -151,7 +151,7 @@ export function DailyHomeCard() {
           </button>
           <Link
             href="/daily"
-            className="rounded-full border border-line bg-white px-5 py-2.5 text-center font-semibold text-ink transition hover:border-cobalt hover:text-cobalt"
+            className="rounded-full border border-white/60 bg-white/55 px-5 py-2.5 text-center font-semibold text-ink backdrop-blur transition hover:text-cobalt"
           >
             Practise again
           </Link>

@@ -42,10 +42,12 @@ export interface ChapterRef {
   classId: string;
   subject: string;
   slug: string;
+  board?: string; // defaults to "cbse"
 }
 
 /** A fully-authored chapter page. This is the unit that ranks in Google. */
 export interface Chapter {
+  board?: string; // "cbse" (default) | "wbbpe" | …
   classId: string; // "10"
   subject: string; // "maths"
   slug: string; // "quadratic-equations"
@@ -86,6 +88,7 @@ export interface SubjectDef {
 }
 
 export interface ClassDef {
+  board: string; // "cbse" | "wbbpe" | …
   id: string; // "10"
   roman: string; // "X"
   label: string; // "Class 10"

@@ -3,9 +3,9 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import type { ChallengeMcq } from "@/lib/content";
-import { pickOne, todayStr, prettyDate } from "@/lib/daily";
+import { pickOne, todayStr, prettyDate, subjectLabel } from "@/lib/daily";
 
-export function QuestionOfDay({ pool }: { pool: ChallengeMcq[] }) {
+export function QuestionOfDay({ pool, board = "cbse" }: { pool: ChallengeMcq[]; board?: string }) {
   const [today, setToday] = useState<string | null>(null);
   const [revealed, setRevealed] = useState(false);
   const [shareState, setShareState] = useState<"idle" | "copied" | "shared">("idle");
@@ -15,8 +15,8 @@ export function QuestionOfDay({ pool }: { pool: ChallengeMcq[] }) {
   }, []);
 
   const q = useMemo(
-    () => (today ? pickOne(pool, `qotd:${today}`) : null),
-    [pool, today],
+    () => (today ? pickOne(pool, board === "cbse" ? `qotd:${today}` : `qotd:${board}:${today}`) : null),
+    [pool, today, board],
   );
 
   async function share() {
@@ -82,14 +82,14 @@ export function QuestionOfDay({ pool }: { pool: ChallengeMcq[] }) {
             const isCorrect = idx === q.answer;
             const cls =
               revealed && isCorrect
-                ? "border-green bg-green/10 text-ink"
-                : "border-line bg-white text-ink";
+                ? "border-green/70 bg-green/15 text-ink"
+                : "border-white/60 bg-white/55 backdrop-blur text-ink";
             return (
               <li
                 key={idx}
-                className={`flex items-center gap-2.5 rounded-2xl border px-3.5 py-2.5 text-[0.95rem] ${cls}`}
+                className={`flex items-center gap-2.5 rounded-2xl border px-3.5 py-2.5 text-[0.95rem] shadow-sm ${cls}`}
               >
-                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-lg bg-cream text-xs font-bold text-muted">
+                <span className="grid h-6 w-6 shrink-0 place-items-center rounded-lg bg-white/70 text-xs font-bold text-muted">
                   {letters[idx] ?? idx + 1}
                 </span>
                 <span>{opt}</span>
@@ -102,12 +102,13 @@ export function QuestionOfDay({ pool }: { pool: ChallengeMcq[] }) {
         </ul>
 
         {revealed && (
-          <div className="mt-4 rounded-2xl bg-cobalt-soft/60 p-4 text-sm leading-relaxed text-ink">
-            <span className="font-bold">Answer: {letters[q.answer]}. </span>
+          <div className="mt-4 rounded-2xl border border-cobalt/30 bg-white/55 p-4 text-sm leading-relaxed text-ink backdrop-blur">
+            <span className="font-bold text-cobalt">Answer: {letters[q.answer]}. </span>
             {q.explanation}
             <Link href={q.url} className="mt-2 block font-semibold text-cobalt hover:underline">
               From: {q.chapterTitle} — Class {q.classId} ·{" "}
-              {q.subject === "maths" ? "Maths" : "Science"} →
+              {subjectLabel(board, q.subject)}{" "}
+              →
             </Link>
           </div>
         )}
@@ -115,13 +116,13 @@ export function QuestionOfDay({ pool }: { pool: ChallengeMcq[] }) {
         <div className="mt-5 flex flex-wrap gap-3">
           <button
             onClick={() => setRevealed((r) => !r)}
-            className="rounded-full border border-line bg-white px-5 py-2.5 font-semibold text-ink transition hover:border-cobalt hover:text-cobalt"
+            className="rounded-full border border-white/60 bg-white/55 px-5 py-2.5 font-semibold text-ink backdrop-blur transition hover:text-cobalt"
           >
             {revealed ? "Hide answer" : "Reveal answer"}
           </button>
           <button
             onClick={share}
-            className="rounded-full bg-cobalt px-5 py-2.5 font-semibold text-white transition hover:brightness-110"
+            className="rounded-full bg-linear-to-r from-cobalt to-violet px-5 py-2.5 font-semibold text-white shadow-sm shadow-cobalt/20 transition hover:brightness-110"
           >
             {shareState === "copied"
               ? "Link copied ✓"

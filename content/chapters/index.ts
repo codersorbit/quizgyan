@@ -268,6 +268,50 @@ import c9engHouseNotHome from "./class-9-english-a-house-is-not-a-home";
 import c9engBeggar from "./class-9-english-the-beggar";
 import c9engGrammar from "./class-9-english-grammar-and-writing-skills";
 
+// ===== Class 1 English (Mridang) =====
+import c1engHands from "./class-1-english-two-little-hands";
+import c1engGreetings from "./class-1-english-greetings";
+import c1engPictureTime from "./class-1-english-picture-time";
+import c1engCapseller from "./class-1-english-the-cap-seller-and-the-monkeys";
+import c1engFarm from "./class-1-english-a-farm";
+import c1engFunPictures from "./class-1-english-fun-with-pictures";
+import c1engFoodWeEat from "./class-1-english-the-food-we-eat";
+import c1engSeasons from "./class-1-english-the-four-seasons";
+import c1engRainbow from "./class-1-english-anandi-s-rainbow";
+
+// ===================== WBBPE Class 1 — গণিত (Amar Boi) =====================
+import w1ganitNumbers from "./class-1-maths-numbers-1-to-9";
+import w1ganitZero from "./class-1-maths-zero";
+import w1ganitCounting from "./class-1-maths-counting-and-matching";
+import w1ganitCompare from "./class-1-maths-compare-big-small";
+import w1ganitOrder from "./class-1-maths-order-before-after";
+import w1ganit1020 from "./class-1-maths-numbers-10-to-20";
+import w1ganitPlaceValue from "./class-1-maths-tens-and-units";
+import w1ganitAdd from "./class-1-maths-addition";
+import w1ganitSub from "./class-1-maths-subtraction";
+import w1ganitShapes from "./class-1-maths-shapes";
+import w1ganitPatterns from "./class-1-maths-patterns";
+
+// ===================== WBBPE Class 1 — বাংলা (Amar Boi) =====================
+import w1banVowels from "./class-1-bengali-vowels";
+import w1banConsonants from "./class-1-bengali-consonants";
+import w1banVowelSigns from "./class-1-bengali-vowel-signs";
+import w1banWords from "./class-1-bengali-forming-words";
+import w1banPicture from "./class-1-bengali-picture-words";
+import w1banRhymes from "./class-1-bengali-rhymes";
+import w1banStory from "./class-1-bengali-story-reading";
+import w1banConjunct from "./class-1-bengali-conjunct-letters";
+
+// ===================== WBBPE Class 1 — ইংরেজি (Amar Boi) =====================
+import w1engAlphabet from "./class-1-english-the-alphabet";
+import w1engCase from "./class-1-english-capital-and-small-letters";
+import w1engSounds from "./class-1-english-beginning-sounds";
+import w1engWordsAround from "./class-1-english-words-around-us";
+import w1engAnimals from "./class-1-english-naming-animals";
+import w1engSentences from "./class-1-english-simple-sentences";
+import w1engDays from "./class-1-english-days-of-the-week";
+import w1engReading from "./class-1-english-reading-aloud";
+
 // Register every authored chapter here. Adding a new chapter is a 2-step job:
 // 1) create content/chapters/<file>.ts exporting a Chapter
 // 2) import it and add it to this array.
@@ -516,4 +560,40 @@ export const CHAPTERS: Chapter[] = [
   c9engHouseNotHome,
   c9engBeggar,
   c9engGrammar,
+  c1engHands,
+  c1engGreetings,
+  c1engPictureTime,
+  c1engCapseller,
+  c1engFarm,
+  c1engFunPictures,
+  c1engFoodWeEat,
+  c1engSeasons,
+  c1engRainbow,
+  w1ganitNumbers,
+  w1ganitZero,
+  w1ganitCounting,
+  w1ganitCompare,
+  w1ganitOrder,
+  w1ganit1020,
+  w1ganitPlaceValue,
+  w1ganitAdd,
+  w1ganitSub,
+  w1ganitShapes,
+  w1ganitPatterns,
+  w1banVowels,
+  w1banConsonants,
+  w1banVowelSigns,
+  w1banWords,
+  w1banPicture,
+  w1banRhymes,
+  w1banStory,
+  w1banConjunct,
+  w1engAlphabet,
+  w1engCase,
+  w1engSounds,
+  w1engWordsAround,
+  w1engAnimals,
+  w1engSentences,
+  w1engDays,
+  w1engReading,
 ];

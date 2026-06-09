@@ -10,11 +10,8 @@ const GRADIENTS = [
   "from-[#7b54d3] to-[#a07ee8]",
 ];
 
-// Shared classes for the image-topped card shell (visual banner on top, title below).
-const IMG_CARD =
-  "group flex flex-col overflow-hidden rounded-2xl border border-line bg-card " +
-  "shadow-[0_1px_2px_rgba(31,36,48,0.05),0_16px_32px_-22px_rgba(31,36,48,0.32)] " +
-  "transition duration-200 hover:-translate-y-1 hover:shadow-[0_22px_44px_-20px_rgba(31,36,48,0.38)]";
+// Shared classes for the image-topped card shell (frosted glass + visual banner on top).
+const IMG_CARD = "group card flex flex-col overflow-hidden hover:-translate-y-1.5";
 
 /** Image-topped class card: per-class SVG banner on top, bold title + subtitle below. */
 export function ClassImageCard({ cls }: { cls: ClassDef; index: number }) {
@@ -31,10 +28,10 @@ export function ClassImageCard({ cls }: { cls: ClassDef; index: number }) {
           src={`/cards/class-${cls.id}.svg`}
           alt=""
           loading="lazy"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
         />
         {authored > 0 && (
-          <span className="absolute right-3 top-3 rounded-full bg-white/90 px-2.5 py-0.5 text-xs font-bold text-green shadow-sm">
+          <span className="absolute right-3 top-3 rounded-full bg-white/90 px-2.5 py-0.5 text-xs font-bold text-green shadow-sm backdrop-blur">
             {authored} ready
           </span>
         )}
@@ -55,16 +52,18 @@ export function SubjectImageCard({ classId, subject }: { classId: string; subjec
   const total = subject.chapters.length;
   return (
     <Link href={subjectUrl(classId, subject.key)} className={IMG_CARD}>
-      <div
-        className="relative flex h-28 items-center justify-center overflow-hidden"
-        style={{ backgroundColor: subject.color }}
-      >
-        <span aria-hidden className="text-5xl drop-shadow-sm">{subject.icon}</span>
-        <span aria-hidden className="pointer-events-none absolute -right-6 -top-9 h-24 w-24 rounded-full bg-white/10" />
-        <span aria-hidden className="pointer-events-none absolute -bottom-10 -left-6 h-28 w-28 rounded-full bg-black/10" />
+      <div className="relative aspect-[16/9] w-full overflow-hidden bg-cream">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={`/cards/subject-${subject.key}.svg`}
+          alt=""
+          aria-hidden
+          loading="lazy"
+          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.04]"
+        />
         {ready > 0 && (
           <span
-            className="absolute right-3 top-3 rounded-full bg-white/90 px-2.5 py-0.5 text-xs font-bold shadow-sm"
+            className="absolute right-3 top-3 rounded-full bg-white/90 px-2.5 py-0.5 text-xs font-bold shadow-sm backdrop-blur"
             style={{ color: subject.color }}
           >
             {ready} ready
@@ -186,11 +185,13 @@ export function ChapterRow({
   subjectKey,
   chapter,
   authored,
+  board = "cbse",
 }: {
   classId: string;
   subjectKey: string;
   chapter: ChapterStub;
   authored: boolean;
+  board?: string;
 }) {
   const inner = (
     <>
@@ -210,15 +211,15 @@ export function ChapterRow({
 
   if (!authored) {
     return (
-      <div className="flex items-center gap-3 rounded-2xl border border-line bg-white/50 px-4 py-3 opacity-70">
+      <div className="flex items-center gap-3 rounded-2xl border border-white/50 bg-white/40 px-4 py-3 opacity-70 backdrop-blur">
         {inner}
       </div>
     );
   }
   return (
     <Link
-      href={chapterUrl(classId, subjectKey, chapter.slug)}
-      className="flex items-center gap-3 rounded-2xl border border-line bg-white px-4 py-3 transition hover:border-cobalt hover:bg-cobalt-soft/40"
+      href={chapterUrl(classId, subjectKey, chapter.slug, board)}
+      className="flex items-center gap-3 rounded-2xl border border-white/60 bg-white/55 px-4 py-3 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:border-cobalt hover:bg-white/80"
     >
       {inner}
     </Link>

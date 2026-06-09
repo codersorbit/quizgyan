@@ -4,7 +4,7 @@ export const site = {
   tagline: "Every Chapter. Notes, Quizzes & Practice.",
   url: "https://studymatic.in",
   description:
-    "Clear notes, instant-feedback quizzes and exam-style questions for every CBSE chapter — Maths, Science, Social Science and English — all in one place, and completely free.",
+    "Clear notes, instant-feedback quizzes and exam-style questions for every chapter — across school boards, all in one place, and completely free.",
   locale: "en_IN",
   author: {
     name: "Aftabuddin",

@@ -78,3 +78,43 @@ export function pickOne(pool: ChallengeMcq[], seedStr: string): ChallengeMcq | n
   const rng = mulberry32(hashStr(seedStr));
   return pool[Math.floor(rng() * pool.length)];
 }
+
+/* ------------------------------ board helpers ----------------------------- */
+export type DailyBoard = { key: string; label: string; sublabel?: string };
+
+/** Boards offered in the Daily Challenge picker. */
+export const DAILY_BOARDS: DailyBoard[] = [
+  { key: "cbse", label: "CBSE", sublabel: "Class 1 & 6–10" },
+  { key: "wbbpe", label: "WBBPE", sublabel: "বাংলা মাধ্যম" },
+];
+
+/**
+ * localStorage key for a day's record. CBSE keeps the original key
+ * (`qg:daily:<date>`) for back-compat with the homepage card; other boards
+ * get a board-scoped key so each board's daily is independent.
+ */
+export function dailyKey(board: string, date: string): string {
+  return board === "cbse" ? `qg:daily:${date}` : `qg:daily:${board}:${date}`;
+}
+
+/** Seed for the daily pick — CBSE keeps the original date-only seed. */
+export function dailySeed(board: string, date: string): string {
+  return board === "cbse" ? date : `${board}:${date}`;
+}
+
+/** Human label for a subject, aware of the board's medium. */
+export function subjectLabel(board: string, subject: string): string {
+  if (board === "wbbpe") {
+    return (
+      { maths: "গণিত", bengali: "বাংলা", english: "ইংরেজি" } as Record<string, string>
+    )[subject] ?? subject;
+  }
+  return (
+    {
+      maths: "Maths",
+      science: "Science",
+      "social-science": "Social Science",
+      english: "English",
+    } as Record<string, string>
+  )[subject] ?? "English";
+}

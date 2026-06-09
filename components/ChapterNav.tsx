@@ -17,7 +17,7 @@ export function ChapterNav({
         <div className="grid gap-3 sm:grid-cols-2">
           {prev ? (
             <Link
-              href={chapterUrl(prev.classId, prev.subject, prev.slug)}
+              href={chapterUrl(prev.classId, prev.subject, prev.slug, prev.board)}
               className="card group p-4 transition hover:border-cobalt"
             >
               <span className="text-xs font-semibold uppercase tracking-wide text-muted">← Previous</span>
@@ -30,7 +30,7 @@ export function ChapterNav({
           )}
           {next && (
             <Link
-              href={chapterUrl(next.classId, next.subject, next.slug)}
+              href={chapterUrl(next.classId, next.subject, next.slug, next.board)}
               className="card group p-4 text-right transition hover:border-cobalt"
             >
               <span className="text-xs font-semibold uppercase tracking-wide text-muted">Next →</span>
@@ -49,7 +49,7 @@ export function ChapterNav({
             {related.map((r) => (
               <Link
                 key={r.slug}
-                href={chapterUrl(r.classId, r.subject, r.slug)}
+                href={chapterUrl(r.classId, r.subject, r.slug, r.board)}
                 className="card p-4 transition hover:border-cobalt"
               >
                 <span className="font-display font-semibold text-ink">{r.title}</span>
