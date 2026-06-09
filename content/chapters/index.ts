@@ -433,6 +433,50 @@ import w4evsWeather from "./class-4-evs-weather";
 import w4evsSky from "./class-4-evs-sky";
 import w4evsRes from "./class-4-evs-resources-and-livelihood";
 
+// ===================== WBBPE Class 5 — বাংলা (Patabahar) =====================
+import w5banPada from "./class-5-bengali-parts-of-speech";
+import w5banTense from "./class-5-bengali-verb-tense";
+import w5banSandhi from "./class-5-bengali-sandhi";
+import w5banPratyay from "./class-5-bengali-prefix-suffix";
+import w5banPunct from "./class-5-bengali-punctuation";
+import w5banSubPred from "./class-5-bengali-subject-predicate";
+import w5banProverbs from "./class-5-bengali-proverbs";
+import w5banComp from "./class-5-bengali-reading-comprehension";
+
+// ===================== WBBPE Class 5 — ইংরেজি (Butterfly) =====================
+import w5engSubPred from "./class-5-english-subject-predicate";
+import w5engNouns from "./class-5-english-nouns";
+import w5engPron from "./class-5-english-pronouns";
+import w5engPast from "./class-5-english-past-tense";
+import w5engFuture from "./class-5-english-future-tense";
+import w5engArticles from "./class-5-english-articles";
+import w5engConj from "./class-5-english-conjunctions";
+import w5engComp from "./class-5-english-reading-comprehension";
+
+// ===================== WBBPE Class 5 — গণিত (Amar Gonit) =====================
+import w5ganitLarge from "./class-5-maths-large-numbers";
+import w5ganitAddSub from "./class-5-maths-addition-subtraction";
+import w5ganitMul from "./class-5-maths-multiplication";
+import w5ganitDiv from "./class-5-maths-division";
+import w5ganitMF from "./class-5-maths-multiples-factors";
+import w5ganitFrac from "./class-5-maths-fractions";
+import w5ganitDec from "./class-5-maths-decimals";
+import w5ganitMeas from "./class-5-maths-measurement";
+import w5ganitPeri from "./class-5-maths-perimeter-area";
+import w5ganitGeo from "./class-5-maths-geometry";
+import w5ganitMoney from "./class-5-maths-money";
+
+// ===================== WBBPE Class 5 — পরিবেশ (Amader Poribesh) =====================
+import w5evsSkeleton from "./class-5-evs-skeleton";
+import w5evsHealth from "./class-5-evs-health-and-disease";
+import w5evsSoil from "./class-5-evs-soil";
+import w5evsWater from "./class-5-evs-water-and-wetlands";
+import w5evsBiodiv from "./class-5-evs-biodiversity";
+import w5evsPollution from "./class-5-evs-pollution-conservation";
+import w5evsState from "./class-5-evs-our-state";
+import w5evsAgri from "./class-5-evs-agriculture-fishery";
+import w5evsForest from "./class-5-evs-forests-wildlife";
+
 // Register every authored chapter here. Adding a new chapter is a 2-step job:
 // 1) create content/chapters/<file>.ts exporting a Chapter
 // 2) import it and add it to this array.
@@ -816,4 +860,40 @@ export const CHAPTERS: Chapter[] = [
   w4evsWeather,
   w4evsSky,
   w4evsRes,
+  w5banPada,
+  w5banTense,
+  w5banSandhi,
+  w5banPratyay,
+  w5banPunct,
+  w5banSubPred,
+  w5banProverbs,
+  w5banComp,
+  w5engSubPred,
+  w5engNouns,
+  w5engPron,
+  w5engPast,
+  w5engFuture,
+  w5engArticles,
+  w5engConj,
+  w5engComp,
+  w5ganitLarge,
+  w5ganitAddSub,
+  w5ganitMul,
+  w5ganitDiv,
+  w5ganitMF,
+  w5ganitFrac,
+  w5ganitDec,
+  w5ganitMeas,
+  w5ganitPeri,
+  w5ganitGeo,
+  w5ganitMoney,
+  w5evsSkeleton,
+  w5evsHealth,
+  w5evsSoil,
+  w5evsWater,
+  w5evsBiodiv,
+  w5evsPollution,
+  w5evsState,
+  w5evsAgri,
+  w5evsForest,
 ];
