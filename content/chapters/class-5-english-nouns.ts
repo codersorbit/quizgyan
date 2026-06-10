@@ -6,7 +6,7 @@ const chapter: Chapter = {
   subject: "english",
   slug: "nouns",
   title: "Kinds of Nouns",
-  order: 2,
+  order: 14,
   seoTitle: "Kinds of Nouns — WBBPE Class 5 English (Butterfly) | StudyMatic",
   metaDescription:
     "WBBPE Class 5 English: common, proper and collective nouns — a collective noun names a group (team, herd, bunch). Notes and a quiz.",

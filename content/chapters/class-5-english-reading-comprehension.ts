@@ -6,7 +6,7 @@ const chapter: Chapter = {
   subject: "english",
   slug: "reading-comprehension",
   title: "Reading a Passage",
-  order: 8,
+  order: 20,
   seoTitle: "Reading a Passage — WBBPE Class 5 English (Butterfly) | StudyMatic",
   metaDescription:
     "WBBPE Class 5 English: read a short passage carefully and answer who/what/when/where/why questions. Notes and a quiz.",

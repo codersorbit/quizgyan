@@ -6,7 +6,7 @@ const chapter: Chapter = {
   subject: "english",
   slug: "articles",
   title: "Articles: a, an, the",
-  order: 6,
+  order: 18,
   seoTitle: "Articles: a, an, the — WBBPE Class 5 English (Butterfly) | StudyMatic",
   metaDescription:
     "WBBPE Class 5 English: articles a, an, the — a/an for any one (an before a vowel sound), the for a particular one. Notes and a quiz.",

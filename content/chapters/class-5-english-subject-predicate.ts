@@ -6,7 +6,7 @@ const chapter: Chapter = {
   subject: "english",
   slug: "subject-predicate",
   title: "Subject & Predicate",
-  order: 1,
+  order: 13,
   seoTitle: "Subject & Predicate — WBBPE Class 5 English (Butterfly) | StudyMatic",
   metaDescription:
     "WBBPE Class 5 English: a sentence has two parts — the subject (who/what it is about) and the predicate (what is said about the subject). Notes and a quiz.",

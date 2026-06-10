@@ -55,6 +55,7 @@ export interface Chapter {
   order: number; // position within the subject
   seoTitle: string;
   metaDescription: string;
+  lessonPlanPdf?: string; // optional teacher lesson-plan PDF under /public
   overview: string;
   objectives: string[];
   concepts: Concept[];
