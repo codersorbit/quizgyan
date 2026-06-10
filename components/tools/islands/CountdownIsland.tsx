@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { timeLeft, studyHours } from "@/lib/tools/logic/age";
-import { LangToggle, ErrorText, ResultActions, useLang, useUrlSync } from "./_shared";
+import { LangToggle, ErrorText, ResultActions, useLang, useT, useUrlSync } from "./_shared";
 
 /**
  * TODO (maintainer): fill these in once official date sheets are published.
@@ -35,7 +35,7 @@ export default function CountdownIsland() {
     return () => clearInterval(id);
   }, []);
 
-  const t = (en: string, bn: string) => (lang === "bn" ? bn : en);
+  const t = useT(lang);
   const cd = useMemo(() => timeLeft(date, now), [date, now]);
   const show = date !== "" && cd.ok;
   const hours = studyHours(cd.days, Number(perDay) || 2);

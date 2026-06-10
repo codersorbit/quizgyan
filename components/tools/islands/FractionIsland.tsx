@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { computeFraction, simplifyFraction, type Op } from "@/lib/tools/logic/fraction";
-import { LangToggle, ErrorText, ResultActions, useLang, useUrlSync } from "./_shared";
+import { LangToggle, ErrorText, ResultActions, useLang, useT, useUrlSync } from "./_shared";
 
 const OPS: { id: Op; sym: string }[] = [
   { id: "add", sym: "+" },
@@ -29,7 +29,7 @@ export default function FractionIsland() {
     },
   );
 
-  const t = (en: string, bn: string) => (lang === "bn" ? bn : en);
+  const t = useT(lang);
   const toFrac = (f: { w: string; n: string; d: string }) => ({
     whole: f.w.trim() === "" ? 0 : Number(f.w),
     num: f.n.trim() === "" ? 0 : Number(f.n),

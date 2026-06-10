@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { ageOn } from "@/lib/tools/logic/age";
-import { LangToggle, ErrorText, ResultActions, useLang, useUrlSync } from "./_shared";
+import { LangToggle, ErrorText, ResultActions, useLang, useT, useUrlSync } from "./_shared";
 
 function admissionYear(): number {
   // Next admission cycle: if we're past June, assume next calendar year.
@@ -23,7 +23,7 @@ export default function AgeIsland() {
     if (c != null) setCutoff(c);
   });
 
-  const t = (en: string, bn: string) => (lang === "bn" ? bn : en);
+  const t = useT(lang);
   const res = useMemo(() => ageOn(dob, cutoff), [dob, cutoff]);
   const show = dob !== "" && res.ok;
 

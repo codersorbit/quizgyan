@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { classResult, resultCsv } from "@/lib/tools/logic/teacher";
-import { LangToggle, NumberField, ErrorText, ResultActions, useLang, useUrlSync } from "./_shared";
+import { LangToggle, NumberField, ErrorText, ResultActions, useLang, useT, useUrlSync } from "./_shared";
 
 export default function ResultIsland() {
   const [lang, setLang] = useLang();
@@ -18,7 +18,7 @@ export default function ResultIsland() {
     if (p != null) setPass(p);
   });
 
-  const t = (en: string, bn: string) => (lang === "bn" ? bn : en);
+  const t = useT(lang);
   const res = useMemo(() => classResult(raw, Number(max), Number(pass) || 33), [raw, max, pass]);
   const show = res.ok;
   const maxBar = show ? Math.max(1, ...res.distribution.map((d) => d.count)) : 1;

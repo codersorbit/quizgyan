@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { CATEGORIES, getCategory, convert, type Category } from "@/lib/tools/logic/units";
-import { LangToggle, ErrorText, ResultActions, useLang, useUrlSync } from "./_shared";
+import { LangToggle, ErrorText, ResultActions, useLang, useT, useUrlSync } from "./_shared";
 
 export default function UnitConverterIsland() {
   const [lang, setLang] = useLang();
@@ -23,7 +23,7 @@ export default function UnitConverterIsland() {
     if (v != null) setValue(v);
   });
 
-  const t = (en: string, bn: string) => (lang === "bn" ? bn : en);
+  const t = useT(lang);
   const category = getCategory(cat);
   const res = useMemo(() => convert(value, cat, from, to), [value, cat, from, to]);
   const show = value.trim() !== "" && res.ok;

@@ -3,9 +3,10 @@
 
 export type ToolCategory = "marks" | "school" | "maths" | "teacher";
 
-/** A short string that exists in both site languages. */
+/** A short string that exists in all three site languages. */
 export interface Bilingual {
   en: string;
+  hi: string;
   bn: string;
 }
 
@@ -50,9 +51,9 @@ export interface CategoryMeta {
   blurb: Bilingual;
 }
 
-export type Lang = "en" | "bn";
+export type Lang = "en" | "hi" | "bn";
 
-/** Resolve a bilingual value for the active language. */
+/** Resolve a value for the active language. */
 export function pick(b: Bilingual, lang: Lang): string {
-  return lang === "bn" ? b.bn : b.en;
+  return lang === "bn" ? b.bn : lang === "hi" ? b.hi : b.en;
 }

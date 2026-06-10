@@ -3,18 +3,18 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { CATEGORIES, TOOLS, toolUrl } from "@/lib/tools/registry";
-import { LangToggle, useLang, pick } from "@/components/tools/islands/_shared";
+import { LangToggle, useLang, useT, pick } from "@/components/tools/islands/_shared";
 
 export default function ToolsHub() {
   const [lang, setLang] = useLang();
   const [q, setQ] = useState("");
-  const t = (en: string, bn: string) => (lang === "bn" ? bn : en);
+  const t = useT(lang);
 
   const query = q.trim().toLowerCase();
   const matches = useMemo(() => {
     if (!query) return null;
     return TOOLS.filter((tool) => {
-      const hay = [tool.name.en, tool.name.bn, tool.short.en, tool.short.bn, ...tool.keywords]
+      const hay = [tool.name.en, tool.name.hi, tool.name.bn, tool.short.en, tool.short.hi, tool.short.bn, ...tool.keywords]
         .join(" ")
         .toLowerCase();
       return hay.includes(query);
@@ -83,13 +83,13 @@ function ToolCard({
   lang,
 }: {
   tool: (typeof TOOLS)[number];
-  lang: "en" | "bn";
+  lang: "en" | "hi" | "bn";
 }) {
   return (
     <Link href={toolUrl(tool.slug)} className="card relative border p-4 transition hover:-translate-y-0.5">
       {tool.popular && (
         <span className="absolute right-3 top-3 rounded-full bg-sun px-2 py-0.5 text-[11px] font-bold text-[#3a2a00]">
-          {lang === "bn" ? "জনপ্রিয়" : "Popular"}
+          {lang === "bn" ? "জনপ্রিয়" : lang === "hi" ? "लोकप्रिय" : "Popular"}
         </span>
       )}
       <div className="flex items-center gap-2">
@@ -101,7 +101,7 @@ function ToolCard({
           <p lang="bn" className="text-xs text-muted">{tool.name.bn}</p>
         </div>
       </div>
-      <p className="mt-2 text-sm text-muted">{lang === "bn" ? tool.short.bn : tool.short.en}</p>
+      <p className="mt-2 text-sm text-muted">{pick(tool.short, lang)}</p>
     </Link>
   );
 }

@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { attendancePercent, targetPlan } from "@/lib/tools/logic/attendance";
-import { LangToggle, NumberField, ErrorText, ResultActions, useLang, useUrlSync } from "./_shared";
+import { LangToggle, NumberField, ErrorText, ResultActions, useLang, useT, useUrlSync } from "./_shared";
 
 export default function AttendanceIsland() {
   const [lang, setLang] = useLang();
@@ -19,7 +19,7 @@ export default function AttendanceIsland() {
     if (g != null) setTarget(g);
   });
 
-  const t = (en: string, bn: string) => (lang === "bn" ? bn : en);
+  const t = useT(lang);
 
   const base = useMemo(() => attendancePercent(held, attended), [held, attended]);
   const plan = useMemo(() => targetPlan(held, attended, target), [held, attended, target]);

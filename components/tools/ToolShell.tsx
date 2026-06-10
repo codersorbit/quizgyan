@@ -44,6 +44,7 @@ export function ToolShell({ tool, children }: { tool: ToolConfig; children: Reac
           {tool.name.en}
         </h1>
         <p className="mt-3 max-w-2xl text-muted">{tool.intro.en}</p>
+        <p lang="hi" className="mt-2 max-w-2xl text-sm text-muted/90">{tool.intro.hi}</p>
         <p lang="bn" className="mt-2 max-w-2xl text-sm text-muted/90">{tool.intro.bn}</p>
       </header>
 
@@ -54,6 +55,7 @@ export function ToolShell({ tool, children }: { tool: ToolConfig; children: Reac
       <section className="mt-8">
         <h2 className="font-display text-xl font-bold text-ink">How it works</h2>
         <p className="mt-2 max-w-2xl text-muted">{tool.how.en}</p>
+        <p lang="hi" className="mt-2 max-w-2xl text-sm text-muted/90">{tool.how.hi}</p>
         <p lang="bn" className="mt-2 max-w-2xl text-sm text-muted/90">{tool.how.bn}</p>
       </section>
 
@@ -65,6 +67,9 @@ export function ToolShell({ tool, children }: { tool: ToolConfig; children: Reac
             <details key={i} className="rounded-2xl border border-line bg-card p-4">
               <summary className="cursor-pointer font-semibold text-ink">{f.q.en}</summary>
               <p className="mt-2 text-sm text-muted">{f.a.en}</p>
+              <p lang="hi" className="mt-1 text-sm text-muted/90">
+                <span className="font-medium text-ink/80">{f.q.hi}</span> — {f.a.hi}
+              </p>
               <p lang="bn" className="mt-1 text-sm text-muted/90">
                 <span className="font-medium text-ink/80">{f.q.bn}</span> — {f.a.bn}
               </p>

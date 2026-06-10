@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { paperPlan, type PaperSection } from "@/lib/tools/logic/teacher";
-import { LangToggle, NumberField, ErrorText, ResultActions, useLang, useUrlSync } from "./_shared";
+import { LangToggle, NumberField, ErrorText, ResultActions, useLang, useT, useUrlSync } from "./_shared";
 
 type Row = { name: string; count: string; marksEach: string };
 
@@ -41,7 +41,7 @@ export default function PaperPlannerIsland() {
     }
   });
 
-  const t = (en: string, bn: string) => (lang === "bn" ? bn : en);
+  const t = useT(lang);
   const sections: PaperSection[] = rows.map((r) => ({ name: r.name, count: Number(r.count), marksEach: Number(r.marksEach) }));
   const plan = useMemo(() => paperPlan(sections, Number(total), Number(duration)), [rows, total, duration]);
   const show = plan.ok;

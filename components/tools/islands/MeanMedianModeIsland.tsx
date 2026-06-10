@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { computeStats } from "@/lib/tools/logic/stats";
-import { LangToggle, ErrorText, ResultActions, useLang, useUrlSync } from "./_shared";
+import { LangToggle, ErrorText, ResultActions, useLang, useT, useUrlSync } from "./_shared";
 
 export default function MeanMedianModeIsland() {
   const [lang, setLang] = useLang();
@@ -13,7 +13,7 @@ export default function MeanMedianModeIsland() {
     if (d != null) setText(d);
   });
 
-  const t = (en: string, bn: string) => (lang === "bn" ? bn : en);
+  const t = useT(lang);
   const res = useMemo(() => computeStats(text), [text]);
   const show = res.ok;
 

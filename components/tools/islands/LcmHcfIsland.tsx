@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { lcmHcf, factorString } from "@/lib/tools/logic/lcmhcf";
-import { LangToggle, ErrorText, ResultActions, useLang, useUrlSync } from "./_shared";
+import { LangToggle, ErrorText, ResultActions, useLang, useT, useUrlSync } from "./_shared";
 
 type Method = "prime" | "division";
 
@@ -16,7 +16,7 @@ export default function LcmHcfIsland() {
     if (n != null) setText(n);
   });
 
-  const t = (en: string, bn: string) => (lang === "bn" ? bn : en);
+  const t = useT(lang);
   const nums = useMemo(
     () => text.split(/[\s,]+/).map((x) => x.trim()).filter(Boolean).map(Number),
     [text],

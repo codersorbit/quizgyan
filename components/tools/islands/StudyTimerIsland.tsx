@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
-import { LangToggle, NumberField, useLang } from "./_shared";
+import { LangToggle, NumberField, useLang, useT } from "./_shared";
 
 type Phase = "focus" | "short" | "long";
 
@@ -22,7 +22,7 @@ export default function StudyTimerIsland() {
   const [completed, setCompleted] = useState(0); // focus sessions done (resets on reload)
   const tickRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-  const t = (en: string, bn: string) => (lang === "bn" ? bn : en);
+  const t = useT(lang);
   const phaseLen = useCallback(
     (p: Phase) => (p === "focus" ? Number(focusMin) : p === "short" ? Number(shortMin) : Number(longMin)) * 60,
     [focusMin, shortMin, longMin],

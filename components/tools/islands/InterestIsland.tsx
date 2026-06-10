@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { simpleInterest, profitLoss } from "@/lib/tools/logic/interest";
-import { LangToggle, NumberField, ErrorText, ResultActions, useLang, useUrlSync } from "./_shared";
+import { LangToggle, NumberField, ErrorText, ResultActions, useLang, useT, useUrlSync } from "./_shared";
 
 type Tab = "si" | "pl";
 
@@ -38,7 +38,7 @@ export default function InterestIsland() {
     },
   );
 
-  const t = (en: string, bn: string) => (lang === "bn" ? bn : en);
+  const t = useT(lang);
   const siRes = useMemo(() => simpleInterest(p, r, time, si), [p, r, time, si]);
   const plRes = useMemo(() => profitLoss(cp, sp), [cp, sp]);
 

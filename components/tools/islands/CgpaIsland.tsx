@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { cgpaToPercentage, percentageToCgpa, GRADE_TABLE } from "@/lib/tools/logic/cgpa";
-import { LangToggle, NumberField, ErrorText, ResultActions, useLang, useUrlSync, pick } from "./_shared";
+import { LangToggle, NumberField, ErrorText, ResultActions, useLang, useT, useUrlSync, pick } from "./_shared";
 
 type Mode = "c2p" | "p2c";
 
@@ -27,7 +27,7 @@ export default function CgpaIsland({ initialCgpa }: { initialCgpa?: string }) {
     },
   );
 
-  const t = (en: string, bn: string) => (lang === "bn" ? bn : en);
+  const t = useT(lang);
 
   const c2p = useMemo(() => cgpaToPercentage(cgpa), [cgpa]);
   const p2c = useMemo(() => percentageToCgpa(pct), [pct]);

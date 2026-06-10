@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { simplePercentage, multiSubject, type SubjectRow } from "@/lib/tools/logic/percentage";
-import { LangToggle, NumberField, ErrorText, ResultActions, useLang, useUrlSync } from "./_shared";
+import { LangToggle, NumberField, ErrorText, ResultActions, useLang, useT, useUrlSync } from "./_shared";
 
 type Mode = "single" | "multi";
 
@@ -37,7 +37,7 @@ export default function PercentageIsland() {
     },
   );
 
-  const t = (en: string, bn: string) => (lang === "bn" ? bn : en);
+  const t = useT(lang);
   const passMark = Number(pass) || 33;
 
   const single = useMemo(() => simplePercentage(obtained, total, passMark), [obtained, total, passMark]);

@@ -91,6 +91,9 @@ export default async function CgpaValuePage({ params }: { params: Promise<{ valu
           This percentage falls in grade band <strong>{r.grade.code}</strong>{" "}
           {r.grade.point != null && <>(grade point {r.grade.point})</>}.
         </p>
+        <p lang="hi" className="mt-2 text-sm text-muted">
+          सीबीएसई नियम के अनुसार {fmt(n)} सीजीपीए = {r.percentage}% ({fmt(n)} × 9.5), ग्रेड बैंड {r.grade.code}।
+        </p>
         <p lang="bn" className="mt-2 text-sm text-muted">
           সিবিএসই নিয়মে {fmt(n)} সিজিপিএ = {r.percentage}% ({fmt(n)} × ৯.৫), গ্রেড ব্যান্ড {r.grade.code}।
         </p>
