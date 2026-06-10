@@ -7,6 +7,7 @@ import {
   subjectUrl,
   chapterUrl,
 } from "@/lib/content";
+import { TOOLS, toolUrl } from "@/lib/tools/registry";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -46,5 +47,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [...staticPages, ...classPages, ...subjectPages, ...chapterPages];
+  // Tools hub + each tool page.
+  const toolsPages: MetadataRoute.Sitemap = [
+    { url: u("/tools"), lastModified: now, changeFrequency: "monthly", priority: 0.8 },
+    ...TOOLS.map((t) => ({
+      url: u(toolUrl(t.slug)),
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+  ];
+
+  // Programmatic CGPA variant pages: 4.0 → 10.0 in 0.1 steps (61 pages).
+  const cgpaVariantPages: MetadataRoute.Sitemap = [];
+  for (let i = 40; i <= 100; i++) {
+    const v = (i / 10).toFixed(1);
+    cgpaVariantPages.push({
+      url: u(`${toolUrl("cgpa-to-percentage")}/${v}`),
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.5,
+    });
+  }
+
+  return [
+    ...staticPages,
+    ...classPages,
+    ...subjectPages,
+    ...chapterPages,
+    ...toolsPages,
+    ...cgpaVariantPages,
+  ];
 }

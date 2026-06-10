@@ -150,3 +150,23 @@ h1, h2, h3, h4, .font-display {
   .card { transition: none; }
   .animate-float, .animate-pop, .glow-best, .btn-candy { animation: none; transition: none; }
 }
+
+/* ----------------------------- Print styles ----------------------------- */
+/* Tool result views print cleanly: hide chrome and any element marked
+   .no-print, and drop heavy shadows/backgrounds for ink-friendly output. */
+@media print {
+  header,
+  footer,
+  nav[aria-label="Breadcrumb"],
+  .no-print {
+    display: none !important;
+  }
+  .card,
+  .glass {
+    box-shadow: none !important;
+    border-color: #ccc !important;
+  }
+  body {
+    background: #fff !important;
+  }
+}
