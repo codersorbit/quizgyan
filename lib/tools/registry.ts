@@ -372,6 +372,259 @@ export const TOOLS: ReadonlyArray<ToolConfig> = [
     related: ["study-timer", "age-calculator", "attendance-calculator"],
     chapterLinks: [],
   },
+
+  {
+    slug: "grade-calculator",
+    name: { en: "Grade Calculator (CBSE)", bn: "গ্রেড ক্যালকুলেটর (সিবিএসই)" },
+    category: "marks",
+    icon: "🏅",
+    short: { en: "Turn marks or a percentage into a CBSE grade and point.", bn: "নম্বর বা শতকরাকে সিবিএসই গ্রেড ও পয়েন্টে বদলাও।" },
+    intro: {
+      en: "Enter your marks or percentage to get the matching CBSE grade (A1–E) and its grade point, with the full grading table shown. Switch to subject-wise mode to turn each subject's grade point into an overall CGPA.",
+      bn: "তোমার নম্বর বা শতকরা দিয়ে সিবিএসই গ্রেড (A1–E) ও তার গ্রেড পয়েন্ট পাও, সঙ্গে পুরো গ্রেডিং টেবিল। বিষয়ভিত্তিক মোডে প্রতিটি বিষয়ের গ্রেড পয়েন্ট থেকে মোট সিজিপিএ বের করো।",
+    },
+    how: {
+      en: "CBSE assigns a grade band from your percentage: 91–100 is A1 (10 points), 81–90 is A2 (9), and so on down to E. For subject-wise CGPA, the tool averages the grade points of all subjects.",
+      bn: "সিবিএসই শতকরা থেকে গ্রেড ব্যান্ড দেয়: ৯১–১০০ হলে A1 (১০ পয়েন্ট), ৮১–৯০ হলে A2 (৯), এভাবে E পর্যন্ত। বিষয়ভিত্তিক সিজিপিএ-র জন্য টুল সব বিষয়ের গ্রেড পয়েন্টের গড় নেয়।",
+    },
+    keywords: ["cbse grade calculator", "grade point calculator", "marks to grade", "cgpa from grades"],
+    faq: [
+      { q: { en: "How is a CBSE grade calculated?", bn: "সিবিএসই গ্রেড কীভাবে হিসাব হয়?" }, a: { en: "Your percentage maps to a band: 91–100 = A1, 81–90 = A2, and so on.", bn: "তোমার শতকরা একটি ব্যান্ডে পড়ে: ৯১–১০০ = A1, ৮১–৯০ = A2, ইত্যাদি।" } },
+      { q: { en: "What is the grade point for A1?", bn: "A1-এর গ্রেড পয়েন্ট কত?" }, a: { en: "A1 carries a grade point of 10 under the CBSE scale.", bn: "সিবিএসই স্কেলে A1-এর গ্রেড পয়েন্ট ১০।" } },
+      { q: { en: "How do I get CGPA from grades?", bn: "গ্রেড থেকে সিজিপিএ কীভাবে পাব?" }, a: { en: "Average the grade points of your main subjects — that is your CGPA.", bn: "তোমার মূল বিষয়গুলোর গ্রেড পয়েন্টের গড় নাও — সেটাই সিজিপিএ।" } },
+      { q: { en: "What is the lowest passing grade?", bn: "পাশের সর্বনিম্ন গ্রেড কোনটি?" }, a: { en: "Grade D (33–40%) is the lowest pass; below 33% is E.", bn: "গ্রেড D (৩৩–৪০%) সর্বনিম্ন পাশ; ৩৩%-এর নিচে E।" } },
+      { q: { en: "Can grade points exceed 10?", bn: "গ্রেড পয়েন্ট কি ১০-এর বেশি হতে পারে?" }, a: { en: "No. 10 is the maximum grade point in the CBSE system.", bn: "না। সিবিএসই-তে সর্বোচ্চ গ্রেড পয়েন্ট ১০।" } },
+    ],
+    related: ["cgpa-to-percentage", "percentage-calculator", "result-calculator"],
+    chapterLinks: [],
+  },
+
+  {
+    slug: "study-timer",
+    name: { en: "Study Timer (Pomodoro)", bn: "পড়ার টাইমার (পোমোডোরো)" },
+    category: "school",
+    icon: "🍅",
+    short: { en: "Focus in 25-minute sprints with short and long breaks.", bn: "২৫ মিনিটের মনোযোগ আর ছোট-বড় বিরতিতে পড়ো।" },
+    intro: {
+      en: "A simple Pomodoro timer to help you study with focus: work for 25 minutes, take a 5-minute break, and a longer break after four sessions. Durations are fully adjustable, with a gentle chime and a session counter.",
+      bn: "মন দিয়ে পড়ার জন্য সহজ পোমোডোরো টাইমার: ২৫ মিনিট পড়ো, ৫ মিনিট বিরতি, আর চারটি সেশনের পর বড় বিরতি। সময় বদলানো যায়, সঙ্গে নরম ঘণ্টা ও সেশন গণনা।",
+    },
+    how: {
+      en: "The Pomodoro method breaks study into focused sprints separated by short rests, which helps concentration and reduces tiredness. This timer chimes at the end of each phase and counts how many focus sessions you finish.",
+      bn: "পোমোডোরো পদ্ধতি পড়াকে ছোট মনোযোগী ভাগে ভেঙে মাঝে বিশ্রাম দেয়, যা মনোযোগ বাড়ায় ও ক্লান্তি কমায়। এই টাইমার প্রতিটি ধাপ শেষে ঘণ্টা বাজায় ও কতগুলো সেশন শেষ করলে তা গোনে।",
+    },
+    keywords: ["pomodoro timer", "study timer", "focus timer", "25 minute timer"],
+    faq: [
+      { q: { en: "What is the Pomodoro technique?", bn: "পোমোডোরো কৌশল কী?" }, a: { en: "Study for 25 minutes, rest for 5, and take a longer break after four rounds.", bn: "২৫ মিনিট পড়ো, ৫ মিনিট বিশ্রাম, আর চার রাউন্ড পর বড় বিরতি নাও।" } },
+      { q: { en: "Can I change the timer lengths?", bn: "টাইমারের সময় কি বদলানো যায়?" }, a: { en: "Yes — open ‘Customise durations’ to set your own focus and break times.", bn: "হ্যাঁ — ‘সময় বদলাও’ খুলে নিজের মতো সময় ঠিক করো।" } },
+      { q: { en: "Does it make a sound?", bn: "এটা কি শব্দ করে?" }, a: { en: "A gentle chime plays at the end of each session, generated in your browser.", bn: "প্রতিটি সেশন শেষে একটি নরম ঘণ্টা বাজে, যা ব্রাউজারেই তৈরি হয়।" } },
+      { q: { en: "Will my session count be saved?", bn: "সেশন গণনা কি সংরক্ষিত হবে?" }, a: { en: "It counts during your visit but resets if you reload — nothing is stored.", bn: "তোমার ভিজিটের সময় গোনে, রিলোড করলে শূন্য হয় — কিছু সংরক্ষণ হয় না।" } },
+      { q: { en: "Why take breaks while studying?", bn: "পড়ার ফাঁকে বিরতি কেন?" }, a: { en: "Short rests refresh your attention so you remember more and tire less.", bn: "ছোট বিশ্রাম মনোযোগ চাঙ্গা করে, তাই বেশি মনে থাকে ও কম ক্লান্ত লাগে।" } },
+    ],
+    related: ["exam-countdown", "age-calculator", "mean-median-mode"],
+    chapterLinks: [],
+  },
+
+  {
+    slug: "fraction-calculator",
+    name: { en: "Fraction Calculator", bn: "ভগ্নাংশ ক্যালকুলেটর" },
+    category: "maths",
+    icon: "½",
+    short: { en: "Add, subtract, multiply, divide fractions — with steps.", bn: "ভগ্নাংশ যোগ-বিয়োগ-গুণ-ভাগ — ধাপে ধাপে।" },
+    intro: {
+      en: "Work with two fractions, including mixed numbers, and see every step — the LCM, the conversion and the final simplification. There's a simplify-only mode too, because on a learning site the working is the whole point.",
+      bn: "দুটি ভগ্নাংশ (মিশ্র সংখ্যা সহ) নিয়ে কাজ করো এবং প্রতিটি ধাপ দেখো — লসাগু, রূপান্তর ও চূড়ান্ত সরলীকরণ। শুধু সরল করার মোডও আছে, কারণ শেখার সাইটে ধাপগুলোই আসল।",
+    },
+    how: {
+      en: "To add or subtract, the tool finds the LCM of the denominators and rewrites both fractions over it. To multiply, numerators and denominators multiply across; to divide, it multiplies by the reciprocal. Every answer is reduced to lowest terms.",
+      bn: "যোগ বা বিয়োগে টুল হরগুলোর লসাগু বের করে দুটি ভগ্নাংশকে সেই হরে লেখে। গুণে লব ও হর আড়াআড়ি গুণ হয়; ভাগে বিপরীত ভগ্নাংশ দিয়ে গুণ হয়। প্রতিটি উত্তর সরলতম আকারে আনা হয়।",
+    },
+    keywords: ["fraction calculator", "add fractions", "mixed number calculator", "simplify fractions"],
+    faq: [
+      { q: { en: "How do I add two fractions?", bn: "দুটি ভগ্নাংশ কীভাবে যোগ করব?" }, a: { en: "Make the denominators equal using their LCM, then add the numerators.", bn: "লসাগু দিয়ে হর সমান করো, তারপর লব যোগ করো।" } },
+      { q: { en: "Can it handle mixed numbers?", bn: "মিশ্র সংখ্যা কি চলবে?" }, a: { en: "Yes — fill the whole-number box and the tool converts it for you.", bn: "হ্যাঁ — পূর্ণ-সংখ্যার ঘর ভরো, টুল নিজেই রূপান্তর করবে।" } },
+      { q: { en: "How do I divide fractions?", bn: "ভগ্নাংশ কীভাবে ভাগ করব?" }, a: { en: "Multiply the first fraction by the reciprocal (flip) of the second.", bn: "প্রথম ভগ্নাংশকে দ্বিতীয়টির বিপরীত (উল্টানো) দিয়ে গুণ করো।" } },
+      { q: { en: "What does ‘simplify’ mean?", bn: "‘সরল করা’ মানে কী?" }, a: { en: "Divide the numerator and denominator by their HCF to get the smallest form.", bn: "লব ও হরকে তাদের গসাগু দিয়ে ভাগ করে ক্ষুদ্রতম রূপ পাওয়া।" } },
+      { q: { en: "Why show the steps?", bn: "ধাপ দেখানো কেন?" }, a: { en: "Seeing each step helps you learn the method, not just copy the answer.", bn: "প্রতিটি ধাপ দেখলে পদ্ধতি শেখা যায়, শুধু উত্তর টোকা নয়।" } },
+    ],
+    related: ["lcm-hcf-calculator", "mean-median-mode", "percentage-calculator"],
+    chapterLinks: [
+      { classId: "6", subject: "maths", slug: "fractions", board: "cbse", label: { en: "Class 6 Maths — Fractions", bn: "ষষ্ঠ অঙ্ক — ভগ্নাংশ" } },
+      { classId: "7", subject: "maths", slug: "working-with-fractions", board: "cbse", label: { en: "Class 7 Maths — Working with Fractions", bn: "সপ্তম অঙ্ক — ভগ্নাংশ নিয়ে কাজ" } },
+      { classId: "8", subject: "maths", slug: "fractions-in-disguise", board: "cbse", label: { en: "Class 8 Maths — Fractions in Disguise", bn: "অষ্টম অঙ্ক — ছদ্মবেশী ভগ্নাংশ" } },
+    ],
+  },
+
+  {
+    slug: "lcm-hcf-calculator",
+    name: { en: "LCM & HCF Calculator", bn: "লসাগু ও গসাগু ক্যালকুলেটর" },
+    category: "maths",
+    icon: "🔢",
+    short: { en: "Find LCM and HCF with prime-factor and division methods.", bn: "মৌলিক উৎপাদক ও ভাগ পদ্ধতিতে লসাগু-গসাগু বের করো।" },
+    intro: {
+      en: "Enter two to five numbers to get their LCM and HCF, shown two ways: a prime-factorization breakdown and the step-by-step division (ladder) method. Toggle between them to learn whichever your class uses.",
+      bn: "দুই থেকে পাঁচটি সংখ্যা দিয়ে তাদের লসাগু ও গসাগু পাও, দুইভাবে দেখানো: মৌলিক উৎপাদকে বিশ্লেষণ ও ধাপে ধাপে ভাগ (মই) পদ্ধতি। তোমার ক্লাসে যেটা চলে সেটা শিখতে টগল করো।",
+    },
+    how: {
+      en: "Break each number into prime factors. The HCF is the product of the common primes taken to their lowest powers; the LCM is the product of all primes taken to their highest powers. The division method divides all numbers by a shared prime until each becomes 1.",
+      bn: "প্রতিটি সংখ্যাকে মৌলিক উৎপাদকে ভাঙো। গসাগু = সাধারণ মৌলিকগুলোর সর্বনিম্ন ঘাতের গুণফল; লসাগু = সব মৌলিকের সর্বোচ্চ ঘাতের গুণফল। ভাগ পদ্ধতিতে সব সংখ্যাকে একটি সাধারণ মৌলিক দিয়ে ভাগ করা হয় যতক্ষণ না প্রতিটি ১ হয়।",
+    },
+    keywords: ["lcm calculator", "hcf calculator", "gcd calculator", "lcm and hcf with steps"],
+    faq: [
+      { q: { en: "What is the difference between LCM and HCF?", bn: "লসাগু ও গসাগুর পার্থক্য কী?" }, a: { en: "HCF is the largest number that divides all of them; LCM is the smallest number all of them divide.", bn: "গসাগু = যে বৃহত্তম সংখ্যা সবগুলোকে ভাগ করে; লসাগু = যে ক্ষুদ্রতম সংখ্যাকে সবগুলো ভাগ করে।" } },
+      { q: { en: "How do I find HCF by prime factors?", bn: "মৌলিক উৎপাদকে গসাগু কীভাবে বের করব?" }, a: { en: "Multiply the primes common to every number, each at its lowest power.", bn: "প্রতিটি সংখ্যায় থাকা সাধারণ মৌলিকগুলো সর্বনিম্ন ঘাতে গুণ করো।" } },
+      { q: { en: "What is the division method?", bn: "ভাগ পদ্ধতি কী?" }, a: { en: "Keep dividing all the numbers by a common prime until each becomes 1.", bn: "সব সংখ্যাকে একটি সাধারণ মৌলিক দিয়ে ভাগ করতে থাকো যতক্ষণ না প্রতিটি ১ হয়।" } },
+      { q: { en: "Is LCM × HCF related to the numbers?", bn: "লসাগু × গসাগু কি সংখ্যাগুলোর সঙ্গে সম্পর্কিত?" }, a: { en: "For two numbers, LCM × HCF equals the product of the two numbers.", bn: "দুটি সংখ্যার ক্ষেত্রে লসাগু × গসাগু = সংখ্যা দুটির গুণফল।" } },
+      { q: { en: "How many numbers can I enter?", bn: "কতগুলো সংখ্যা দিতে পারি?" }, a: { en: "Between two and five whole numbers works best for clear steps.", bn: "পরিষ্কার ধাপের জন্য দুই থেকে পাঁচটি পূর্ণসংখ্যা সবচেয়ে ভালো।" } },
+    ],
+    related: ["fraction-calculator", "mean-median-mode", "simple-interest-calculator"],
+    chapterLinks: [
+      { classId: "7", subject: "maths", slug: "number-play", board: "cbse", label: { en: "Class 7 Maths — Number Play", bn: "সপ্তম অঙ্ক — সংখ্যা নিয়ে খেলা" } },
+      { classId: "8", subject: "maths", slug: "number-play", board: "cbse", label: { en: "Class 8 Maths — Number Play", bn: "অষ্টম অঙ্ক — সংখ্যা নিয়ে খেলা" } },
+      { classId: "5", subject: "maths", slug: "multiples-factors", board: "wbbpe", label: { en: "Class 5 Maths — Multiples & Factors", bn: "পঞ্চম অঙ্ক — গুণিতক ও উৎপাদক" } },
+    ],
+  },
+
+  {
+    slug: "mean-median-mode",
+    name: { en: "Mean, Median & Mode Calculator", bn: "গড়, মধ্যমা ও প্রচুরক ক্যালকুলেটর" },
+    category: "maths",
+    icon: "📈",
+    short: { en: "Mean, median, mode, range and more from a list.", bn: "একটি তালিকা থেকে গড়, মধ্যমা, প্রচুরক, পরিসর ও আরও।" },
+    intro: {
+      en: "Type or paste a list of numbers to get the mean, median, mode, range, count and sum at once. The sorted list is shown with the median highlighted, and each measure comes with a plain-language explanation.",
+      bn: "সংখ্যার একটি তালিকা টাইপ বা পেস্ট করো — একসঙ্গে গড়, মধ্যমা, প্রচুরক, পরিসর, সংখ্যা ও যোগফল পাও। সাজানো তালিকায় মধ্যমা চিহ্নিত থাকে, আর প্রতিটি মানের সহজ ব্যাখ্যা দেওয়া হয়।",
+    },
+    how: {
+      en: "Mean is the sum divided by the count. Median is the middle value of the sorted list (the average of the two middle values if the count is even). Mode is the most frequent value, and range is the largest minus the smallest.",
+      bn: "গড় = যোগফল ÷ সংখ্যা। মধ্যমা = সাজানো তালিকার মাঝের মান (সংখ্যা জোড় হলে মাঝের দুটির গড়)। প্রচুরক = সবচেয়ে বেশি বার আসা মান, আর পরিসর = সর্বোচ্চ − সর্বনিম্ন।",
+    },
+    keywords: ["mean median mode calculator", "average calculator", "range calculator", "statistics calculator"],
+    faq: [
+      { q: { en: "How do I find the mean?", bn: "গড় কীভাবে বের করব?" }, a: { en: "Add all the numbers and divide by how many there are.", bn: "সব সংখ্যা যোগ করে কয়টি আছে তা দিয়ে ভাগ করো।" } },
+      { q: { en: "How is the median found?", bn: "মধ্যমা কীভাবে বের হয়?" }, a: { en: "Sort the numbers and pick the middle one; average the two middle ones if the count is even.", bn: "সংখ্যাগুলো সাজিয়ে মাঝেরটা নাও; জোড় হলে মাঝের দুটির গড় নাও।" } },
+      { q: { en: "Can there be more than one mode?", bn: "একাধিক প্রচুরক কি হতে পারে?" }, a: { en: "Yes — if several values tie for the highest frequency, all are modes.", bn: "হ্যাঁ — একাধিক মান সমান সর্বোচ্চবার এলে সবগুলোই প্রচুরক।" } },
+      { q: { en: "What if every number appears once?", bn: "প্রতিটি সংখ্যা একবার করে এলে?" }, a: { en: "Then there is no mode — the tool shows ‘none’.", bn: "তখন কোনো প্রচুরক নেই — টুল ‘নেই’ দেখায়।" } },
+      { q: { en: "What is the range?", bn: "পরিসর কী?" }, a: { en: "The difference between the largest and the smallest value.", bn: "সর্বোচ্চ ও সর্বনিম্ন মানের পার্থক্য।" } },
+    ],
+    related: ["fraction-calculator", "lcm-hcf-calculator", "percentage-calculator"],
+    chapterLinks: [
+      { classId: "6", subject: "maths", slug: "data-handling-and-presentation", board: "cbse", label: { en: "Class 6 Maths — Data Handling", bn: "ষষ্ঠ অঙ্ক — তথ্য বিন্যাস" } },
+      { classId: "9", subject: "maths", slug: "statistics", board: "cbse", label: { en: "Class 9 Maths — Statistics", bn: "নবম অঙ্ক — পরিসংখ্যান" } },
+      { classId: "10", subject: "maths", slug: "statistics", board: "cbse", label: { en: "Class 10 Maths — Statistics", bn: "দশম অঙ্ক — পরিসংখ্যান" } },
+    ],
+  },
+
+  {
+    slug: "simple-interest-calculator",
+    name: { en: "Simple Interest & Profit–Loss Calculator", bn: "সরল সুদ ও লাভ-ক্ষতি ক্যালকুলেটর" },
+    category: "maths",
+    icon: "💰",
+    short: { en: "Solve simple interest or profit/loss with full steps.", bn: "ধাপে ধাপে সরল সুদ বা লাভ-ক্ষতি বের করো।" },
+    intro: {
+      en: "Two calculators in one. The simple-interest tab solves for whichever value you leave blank — principal, rate, time or interest. The profit-and-loss tab turns cost and selling price into the profit or loss amount and percentage, with the steps shown.",
+      bn: "একটিতে দুটি ক্যালকুলেটর। সরল সুদ ট্যাবে তুমি যেটা খালি রাখবে সেটা বের করে — আসল, হার, সময় বা সুদ। লাভ-ক্ষতি ট্যাবে ক্রয়মূল্য ও বিক্রয়মূল্য থেকে লাভ বা ক্ষতির পরিমাণ ও শতকরা বের হয়, ধাপসহ।",
+    },
+    how: {
+      en: "Simple interest is SI = P × R × T ÷ 100, so any one of P, R, T or SI can be found from the other three. For profit and loss, profit or loss = |SP − CP|, and the percentage is that amount divided by the cost price, times 100.",
+      bn: "সরল সুদ = P × R × T ÷ ১০০, তাই P, R, T বা SI-এর যেকোনো একটি বাকি তিনটি থেকে বের করা যায়। লাভ-ক্ষতির জন্য লাভ বা ক্ষতি = |SP − CP|, আর শতকরা = সেই পরিমাণ ÷ ক্রয়মূল্য × ১০০।",
+    },
+    keywords: ["simple interest calculator", "profit and loss calculator", "si formula", "profit percentage"],
+    faq: [
+      { q: { en: "What is the simple interest formula?", bn: "সরল সুদের সূত্র কী?" }, a: { en: "SI = P × R × T ÷ 100, where P is principal, R the yearly rate and T the time in years.", bn: "SI = P × R × T ÷ ১০০, যেখানে P আসল, R বছরের হার, T বছরে সময়।" } },
+      { q: { en: "Can I find the rate or time?", bn: "হার বা সময় কি বের করা যায়?" }, a: { en: "Yes — fill any three boxes and leave the unknown blank; the tool solves it.", bn: "হ্যাঁ — যেকোনো তিনটি ভরো, অজানাটা খালি রাখো; টুল বের করবে।" } },
+      { q: { en: "How is profit percentage calculated?", bn: "লাভের শতকরা কীভাবে হিসাব হয়?" }, a: { en: "Profit ÷ cost price × 100. Loss percentage uses the same with the loss amount.", bn: "লাভ ÷ ক্রয়মূল্য × ১০০। ক্ষতির শতকরাও একইভাবে, ক্ষতির পরিমাণ দিয়ে।" } },
+      { q: { en: "What is the amount in simple interest?", bn: "সরল সুদে মোট পরিমাণ কী?" }, a: { en: "The amount is the principal plus the interest.", bn: "মোট পরিমাণ = আসল + সুদ।" } },
+      { q: { en: "Is profit always when SP is higher?", bn: "বিক্রয়মূল্য বেশি হলেই কি লাভ?" }, a: { en: "Yes — if selling price is above cost price it's a profit; below it, a loss.", bn: "হ্যাঁ — বিক্রয়মূল্য ক্রয়মূল্যের বেশি হলে লাভ; কম হলে ক্ষতি।" } },
+    ],
+    related: ["percentage-calculator", "fraction-calculator", "unit-converter"],
+    chapterLinks: [
+      { classId: "8", subject: "maths", slug: "proportional-reasoning-1", board: "cbse", label: { en: "Class 8 Maths — Proportional Reasoning 1", bn: "অষ্টম অঙ্ক — অনুপাত ১" } },
+      { classId: "8", subject: "maths", slug: "proportional-reasoning-2", board: "cbse", label: { en: "Class 8 Maths — Proportional Reasoning 2", bn: "অষ্টম অঙ্ক — অনুপাত ২" } },
+    ],
+  },
+
+  {
+    slug: "unit-converter",
+    name: { en: "Unit Converter (Science)", bn: "একক রূপান্তর (বিজ্ঞান)" },
+    category: "maths",
+    icon: "📏",
+    short: { en: "Convert length, mass, time, temperature and more.", bn: "দৈর্ঘ্য, ভর, সময়, তাপমাত্রা ও আরও রূপান্তর করো।" },
+    intro: {
+      en: "Convert between the units you meet in Class 6–10 science and maths — length, mass, time, temperature, area, volume and speed. Conversions are instant and the factor is always shown, so you learn the relationship, not just the answer.",
+      bn: "ষষ্ঠ থেকে দশম শ্রেণির বিজ্ঞান ও অঙ্কে যে এককগুলো আসে — দৈর্ঘ্য, ভর, সময়, তাপমাত্রা, ক্ষেত্রফল, আয়তন ও দ্রুতি — সেগুলোর মধ্যে রূপান্তর করো। রূপান্তর সঙ্গে সঙ্গে হয় ও গুণনীয়ক দেখানো হয়, যাতে শুধু উত্তর নয়, সম্পর্কটাও শেখা যায়।",
+    },
+    how: {
+      en: "Most units convert through a base unit — for example 1 km = 1000 m, so 3.5 km = 3500 m. Temperature uses formulas instead: °F = °C × 9/5 + 32, and K = °C + 273.15.",
+      bn: "বেশির ভাগ একক একটি ভিত্তি-এককের মাধ্যমে রূপান্তরিত হয় — যেমন ১ কিমি = ১০০০ মিটার, তাই ৩.৫ কিমি = ৩৫০০ মিটার। তাপমাত্রায় সূত্র লাগে: °F = °C × ৯/৫ + ৩২, আর K = °C + ২৭৩.১৫।",
+    },
+    keywords: ["unit converter", "length converter", "temperature converter", "km to m", "celsius to fahrenheit"],
+    faq: [
+      { q: { en: "How do I convert km to m?", bn: "কিমি থেকে মিটার কীভাবে করব?" }, a: { en: "Multiply by 1000, because 1 km = 1000 m.", bn: "১০০০ দিয়ে গুণ করো, কারণ ১ কিমি = ১০০০ মিটার।" } },
+      { q: { en: "How do I convert Celsius to Fahrenheit?", bn: "সেলসিয়াস থেকে ফারেনহাইট কীভাবে করব?" }, a: { en: "Use °F = °C × 9/5 + 32.", bn: "ব্যবহার করো °F = °C × ৯/৫ + ৩২।" } },
+      { q: { en: "What is the base unit of mass here?", bn: "এখানে ভরের ভিত্তি-একক কী?" }, a: { en: "Grams — mg, g, kg and tonnes all convert through grams.", bn: "গ্রাম — mg, g, kg ও টন সবই গ্রামের মাধ্যমে রূপান্তরিত হয়।" } },
+      { q: { en: "How do I change km/h to m/s?", bn: "কিমি/ঘণ্টা থেকে মি/সেকেন্ড কীভাবে করব?" }, a: { en: "Multiply by 5/18 (that is, 1000 ÷ 3600).", bn: "৫/১৮ দিয়ে গুণ করো (অর্থাৎ ১০০০ ÷ ৩৬০০)।" } },
+      { q: { en: "Is Kelvin ever negative?", bn: "কেলভিন কি কখনো ঋণাত্মক হয়?" }, a: { en: "No — 0 K is the lowest possible temperature.", bn: "না — ০ K সম্ভাব্য সর্বনিম্ন তাপমাত্রা।" } },
+    ],
+    related: ["simple-interest-calculator", "mean-median-mode", "fraction-calculator"],
+    chapterLinks: [
+      { classId: "6", subject: "science", slug: "measurement-of-length-and-motion", board: "cbse", label: { en: "Class 6 Science — Measurement of Length & Motion", bn: "ষষ্ঠ বিজ্ঞান — দৈর্ঘ্য ও গতি পরিমাপ" } },
+      { classId: "7", subject: "science", slug: "measurement-of-time-and-motion", board: "cbse", label: { en: "Class 7 Science — Measurement of Time & Motion", bn: "সপ্তম বিজ্ঞান — সময় ও গতি পরিমাপ" } },
+      { classId: "6", subject: "science", slug: "temperature-and-its-measurement", board: "cbse", label: { en: "Class 6 Science — Temperature & its Measurement", bn: "ষষ্ঠ বিজ্ঞান — তাপমাত্রা ও তার পরিমাপ" } },
+    ],
+  },
+
+  {
+    slug: "result-calculator",
+    name: { en: "Class Result Calculator", bn: "ক্লাস রেজাল্ট ক্যালকুলেটর" },
+    category: "teacher",
+    icon: "🧑‍🏫",
+    short: { en: "Paste a class's marks for instant results and a CSV.", bn: "ক্লাসের নম্বর পেস্ট করে তৎক্ষণাৎ ফল ও CSV পাও।" },
+    intro: {
+      en: "Paste a whole class's marks — one student per line as ‘Name, Marks’ — and get each student's percentage and grade, the class average, the highest and lowest, the pass count and a grade-distribution chart. Export a CSV or print a clean result sheet.",
+      bn: "পুরো ক্লাসের নম্বর পেস্ট করো — প্রতি লাইনে একজন ‘নাম, নম্বর’ — আর পাও প্রতিটি শিক্ষার্থীর শতকরা ও গ্রেড, ক্লাসের গড়, সর্বোচ্চ-সর্বনিম্ন, পাশের সংখ্যা ও গ্রেড বণ্টনের চার্ট। CSV ডাউনলোড করো বা পরিষ্কার রেজাল্ট শিট প্রিন্ট করো।",
+    },
+    how: {
+      en: "The tool reads each ‘Name, Marks’ line (a comma, tab or spaces all work), converts marks to a percentage against the maximum you set, and assigns a CBSE grade. It then totals the class: average, highest, lowest, pass count and how many fall in each grade.",
+      bn: "টুলটি প্রতিটি ‘নাম, নম্বর’ লাইন পড়ে (কমা, ট্যাব বা স্পেস চলবে), তুমি দেওয়া পূর্ণমানের সাপেক্ষে নম্বরকে শতকরায় বদলায় ও সিবিএসই গ্রেড দেয়। তারপর ক্লাসের হিসাব করে: গড়, সর্বোচ্চ, সর্বনিম্ন, পাশ সংখ্যা ও কোন গ্রেডে কতজন।",
+    },
+    keywords: ["class result calculator", "bulk marks calculator", "result sheet maker", "grade distribution"],
+    faq: [
+      { q: { en: "What format should the marks be in?", bn: "নম্বর কোন ফরম্যাটে দেব?" }, a: { en: "One student per line as ‘Name, Marks’. A comma, tab or spaces between them all work.", bn: "প্রতি লাইনে একজন ‘নাম, নম্বর’। মাঝে কমা, ট্যাব বা স্পেস — সবই চলবে।" } },
+      { q: { en: "Can I download the results?", bn: "ফলাফল কি ডাউনলোড করা যায়?" }, a: { en: "Yes — use the CSV button to save a spreadsheet-ready file.", bn: "হ্যাঁ — CSV বোতামে স্প্রেডশিট-উপযোগী ফাইল সেভ করো।" } },
+      { q: { en: "How is the grade decided?", bn: "গ্রেড কীভাবে ঠিক হয়?" }, a: { en: "Each percentage maps to the CBSE grade band (A1–E).", bn: "প্রতিটি শতকরা সিবিএসই গ্রেড ব্যান্ডে (A1–E) পড়ে।" } },
+      { q: { en: "Can I change the pass mark?", bn: "পাশ নম্বর কি বদলানো যায়?" }, a: { en: "Yes — set any pass percentage; the default is 33%.", bn: "হ্যাঁ — যেকোনো পাশ শতকরা দাও; ডিফল্ট ৩৩%।" } },
+      { q: { en: "Is student data uploaded anywhere?", bn: "শিক্ষার্থীর তথ্য কি কোথাও আপলোড হয়?" }, a: { en: "No — everything is computed in your browser and nothing is sent or stored.", bn: "না — সব কিছু তোমার ব্রাউজারেই হিসাব হয়, কিছু পাঠানো বা সংরক্ষণ হয় না।" } },
+    ],
+    related: ["question-paper-planner", "grade-calculator", "percentage-calculator"],
+    chapterLinks: [],
+  },
+
+  {
+    slug: "question-paper-planner",
+    name: { en: "Question Paper Blueprint Planner", bn: "প্রশ্নপত্রের নকশা পরিকল্পক" },
+    category: "teacher",
+    icon: "📝",
+    short: { en: "Design a balanced paper with section-wise marks and timing.", bn: "বিভাগভিত্তিক নম্বর ও সময়সহ সুষম প্রশ্নপত্র সাজাও।" },
+    intro: {
+      en: "Set a paper's total marks and duration, then add sections (like MCQ ×1, Short ×3, Long ×5). The planner checks live that the sections add up to the total, suggests a time allocation per section, and gives you a clean blueprint table to print or share.",
+      bn: "প্রশ্নপত্রের মোট নম্বর ও সময় ঠিক করো, তারপর বিভাগ যোগ করো (যেমন MCQ ×১, সংক্ষিপ্ত ×৩, রচনাধর্মী ×৫)। পরিকল্পক সঙ্গে সঙ্গে দেখে নেয় বিভাগগুলোর যোগফল মোটের সমান কিনা, প্রতিটি বিভাগের জন্য সময় প্রস্তাব করে, আর প্রিন্ট বা শেয়ারের জন্য পরিষ্কার নকশা টেবিল দেয়।",
+    },
+    how: {
+      en: "Each section's marks are its question count times the marks per question. The planner sums these and compares with the paper total, flagging any gap. Time per section is shared out in proportion to its marks, based on the total duration.",
+      bn: "প্রতিটি বিভাগের নম্বর = প্রশ্ন সংখ্যা × প্রতি প্রশ্নের নম্বর। পরিকল্পক এগুলো যোগ করে মোটের সঙ্গে মেলায় ও কোনো ফারাক থাকলে দেখায়। মোট সময়ের ভিত্তিতে প্রতিটি বিভাগের সময় তার নম্বরের অনুপাতে ভাগ করা হয়।",
+    },
+    keywords: ["question paper blueprint", "exam paper planner", "marks distribution", "question paper format"],
+    faq: [
+      { q: { en: "How do I check my paper adds up?", bn: "প্রশ্নপত্রের যোগফল ঠিক আছে কিনা কীভাবে দেখব?" }, a: { en: "The planner compares the section totals with the paper total and flags any difference.", bn: "পরিকল্পক বিভাগের মোট ও পেপারের মোট মিলিয়ে ফারাক দেখায়।" } },
+      { q: { en: "How is time per section suggested?", bn: "প্রতি বিভাগের সময় কীভাবে প্রস্তাব হয়?" }, a: { en: "Total minutes are shared in proportion to each section's marks.", bn: "মোট মিনিট প্রতিটি বিভাগের নম্বরের অনুপাতে ভাগ করা হয়।" } },
+      { q: { en: "Can I share my blueprint?", bn: "নকশা কি শেয়ার করা যায়?" }, a: { en: "Yes — the layout is saved in the link, so sharing the URL shares the plan.", bn: "হ্যাঁ — নকশা লিংকে থাকে, তাই URL শেয়ার করলেই পরিকল্পনা শেয়ার হয়।" } },
+      { q: { en: "How many sections can I add?", bn: "কতগুলো বিভাগ যোগ করা যায়?" }, a: { en: "Add as many as your paper needs — each with its own count and marks.", bn: "যত দরকার তত যোগ করো — প্রতিটির নিজস্ব সংখ্যা ও নম্বরসহ।" } },
+      { q: { en: "Can I print the blueprint?", bn: "নকশা কি প্রিন্ট করা যায়?" }, a: { en: "Yes — use print for a clean blueprint table without the page chrome.", bn: "হ্যাঁ — প্রিন্ট ব্যবহার করো পরিষ্কার নকশা টেবিলের জন্য।" } },
+    ],
+    related: ["result-calculator", "grade-calculator", "study-timer"],
+    chapterLinks: [],
+  },
 ];
 
 /* ------------------------------- Helpers -------------------------------- */
