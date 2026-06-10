@@ -8,6 +8,8 @@ import {
   chapterUrl,
 } from "@/lib/content";
 import { TOOLS, toolUrl } from "@/lib/tools/registry";
+import { worksheetLandingParams, worksheetSubjectParams } from "@/lib/tools/worksheet-bank";
+import { worksheetLandingUrl, worksheetSubjectUrl } from "@/lib/tools/worksheet-routes";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -70,6 +72,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
+  // Programmatic worksheet landing pages (one per qualifying chapter) and the
+  // per-subject roll-ups. Counts are logged below for the Phase-3 report.
+  const worksheetChapterPages: MetadataRoute.Sitemap = worksheetLandingParams().map((p) => ({
+    url: u(worksheetLandingUrl(p.board, p.classId, p.subject, p.chapter)),
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.6,
+  }));
+  const worksheetSubjectPages: MetadataRoute.Sitemap = worksheetSubjectParams().map((p) => ({
+    url: u(worksheetSubjectUrl(p.board, p.classId, p.subject)),
+    lastModified: now,
+    changeFrequency: "monthly",
+    priority: 0.55,
+  }));
+  console.log(
+    `[sitemap] worksheet landing pages: ${worksheetChapterPages.length} chapters + ${worksheetSubjectPages.length} subject roll-ups`,
+  );
+
   return [
     ...staticPages,
     ...classPages,
@@ -77,5 +97,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...chapterPages,
     ...toolsPages,
     ...cgpaVariantPages,
+    ...worksheetChapterPages,
+    ...worksheetSubjectPages,
   ];
 }

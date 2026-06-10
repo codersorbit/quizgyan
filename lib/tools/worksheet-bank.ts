@@ -80,3 +80,50 @@ export function bankStats(bank: WorksheetBank): {
   for (const b of bank.scope) for (const c of b.classes) for (const s of c.subjects) chapters += s.chapters.length;
   return { questions: bank.questions.length, chapters, byType };
 }
+
+/* ------------------ Programmatic landing-page parameters ------------------ */
+// A chapter must hold at least this many questions to earn its own landing page
+// (keeps thin/empty pages out of the index — Section 8 guard).
+export const MIN_LANDING_QUESTIONS = 6;
+
+export interface LandingParam {
+  board: string;
+  classId: string;
+  subject: string;
+  chapter: string;
+}
+export interface SubjectRollup {
+  board: string;
+  classId: string;
+  subject: string;
+  chapters: number;
+}
+
+/** Every (board, class, subject, chapter) that qualifies for a landing page. */
+export function worksheetLandingParams(): LandingParam[] {
+  const out: LandingParam[] = [];
+  for (const board of ["cbse", "wbbpe"] as const) {
+    for (const cls of ALL_CLASSES.filter((c) => c.board === board)) {
+      for (const subj of cls.subjects) {
+        for (const ch of getAuthoredInSubject(cls.id, subj.key, board)) {
+          if (chapterToQuestions(ch).length >= MIN_LANDING_QUESTIONS) {
+            out.push({ board, classId: cls.id, subject: subj.key, chapter: ch.slug });
+          }
+        }
+      }
+    }
+  }
+  return out;
+}
+
+/** Every (board, class, subject) roll-up that has ≥1 qualifying chapter. */
+export function worksheetSubjectParams(): SubjectRollup[] {
+  const counts = new Map<string, SubjectRollup>();
+  for (const p of worksheetLandingParams()) {
+    const key = `${p.board}/${p.classId}/${p.subject}`;
+    const cur = counts.get(key);
+    if (cur) cur.chapters += 1;
+    else counts.set(key, { board: p.board, classId: p.classId, subject: p.subject, chapters: 1 });
+  }
+  return [...counts.values()];
+}

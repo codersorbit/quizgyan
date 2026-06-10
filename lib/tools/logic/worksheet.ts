@@ -276,3 +276,121 @@ export function shuffleOptions(q: WorksheetQuestion, seed: string): WorksheetQue
   const answerIndex = order.indexOf(q.answerIndex);
   return { ...q, options, answerIndex, answer: options[answerIndex] ?? q.answer };
 }
+
+/* --------------------- Custom (teacher-typed) questions ------------------ */
+
+/** Raw shape the custom-question editor produces. */
+export interface CustomQuestion {
+  id: string;
+  type: QType;
+  prompt: string;
+  options?: string[]; // mcq
+  answerIndex?: number; // mcq correct option
+  answer: string; // model answer (free types) / fallback
+  explanation?: string;
+  marks: number;
+}
+
+/** Map a teacher-typed question into the common WorksheetQuestion shape. */
+export function customToQuestion(c: CustomQuestion): WorksheetQuestion {
+  const lang = detectLang([c.prompt, c.answer]);
+  const isMcq = c.type === "mcq" && c.options && c.options.length > 0;
+  return {
+    id: `custom:${c.id}`,
+    board: "cbse",
+    classLevel: 0,
+    subject: "custom",
+    chapterSlug: "custom",
+    chapterTitle: "custom",
+    type: c.type,
+    lang,
+    prompt: c.prompt,
+    options: isMcq ? [...c.options!] : undefined,
+    answerIndex: isMcq ? (c.answerIndex ?? 0) : undefined,
+    answer: isMcq ? c.options![c.answerIndex ?? 0] ?? c.answer : c.answer,
+    explanation: c.explanation || undefined,
+    difficulty: c.type === "hots" ? "hots" : "standard",
+    marks: Math.max(0, Math.floor(c.marks) || 0),
+  };
+}
+
+/** Merge teacher questions into the bank-selected sections, by type. */
+function mergeCustoms(bankSections: WorksheetSection[], customs: WorksheetQuestion[]): WorksheetSection[] {
+  const byType = new Map<QType, WorksheetQuestion[]>();
+  for (const sec of bankSections) byType.set(sec.type, [...sec.questions]);
+  for (const c of customs) {
+    const arr = byType.get(c.type) ?? [];
+    arr.push(c);
+    byType.set(c.type, arr);
+  }
+  const out: WorksheetSection[] = [];
+  for (const type of TYPE_ORDER) {
+    const qs = byType.get(type);
+    if (qs && qs.length > 0) out.push({ type, questions: qs });
+  }
+  return out;
+}
+
+function totalsOf(sections: WorksheetSection[]): { totalQuestions: number; totalMarks: number } {
+  let totalQuestions = 0;
+  let totalMarks = 0;
+  for (const sec of sections) {
+    totalQuestions += sec.questions.length;
+    for (const q of sec.questions) totalMarks += q.marks;
+  }
+  return { totalQuestions, totalMarks };
+}
+
+/**
+ * Build 1–4 sets (A/B/C/D) from the same scope + mix. Each set draws with its
+ * own seed (so selections differ when the pool allows), merges in the teacher's
+ * custom questions, and — when more than one set is requested — shuffles MCQ
+ * option order per set so two students side-by-side get visibly different
+ * papers. Option-shuffling keeps each set's answer key correct.
+ */
+export function buildWorksheetSets(
+  pool: WorksheetQuestion[],
+  req: SelectionRequest,
+  customs: WorksheetQuestion[],
+  setCount: number,
+): SelectionResult[] {
+  const n = Math.max(1, Math.min(4, Math.floor(setCount) || 1));
+  const sets: SelectionResult[] = [];
+  for (let i = 0; i < n; i++) {
+    const setSeed = `${req.seed}:set${i}`;
+    const bank = selectQuestions(pool, { ...req, seed: setSeed });
+    let sections = mergeCustoms(bank.sections, customs);
+    if (n > 1) {
+      sections = sections.map((sec) =>
+        sec.type === "mcq"
+          ? { ...sec, questions: sec.questions.map((q) => shuffleOptions(q, setSeed)) }
+          : sec,
+      );
+    }
+    const { totalQuestions, totalMarks } = totalsOf(sections);
+    sets.push({ sections, shortfalls: bank.shortfalls, totalQuestions, totalMarks });
+  }
+  return sets;
+}
+
+/* ------------------------------ CSV export ------------------------------ */
+
+const OPT_LETTERS = ["a", "b", "c", "d", "e", "f"];
+
+/** Plain-CSV answer key for quick marking (Excel/Sheets-friendly). */
+export function answerKeyCsv(sections: WorksheetSection[]): string {
+  const esc = (s: string) => `"${(s ?? "").replace(/"/g, '""')}"`;
+  const rows: string[][] = [["No.", "Type", "Question", "Answer", "Marks", "Level"]];
+  let n = 0;
+  for (const sec of sections) {
+    for (const q of sec.questions) {
+      n += 1;
+      const ans =
+        q.type === "mcq" && q.answerIndex != null
+          ? `(${OPT_LETTERS[q.answerIndex] ?? "?"}) ${q.answer}`
+          : q.answer;
+      rows.push([String(n), q.type, q.prompt, ans, String(q.marks), q.difficulty]);
+    }
+  }
+  return rows.map((r) => r.map(esc).join(",")).join("\r\n");
+}

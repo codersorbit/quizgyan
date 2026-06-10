@@ -63,6 +63,31 @@ export interface WorksheetStrings {
   types: Record<QType, string>;
   difficulty: Record<WDifficulty, string>;
   langName: Record<WLang, string>;
+  // sets
+  setsTitle: string;
+  numberOfSets: string;
+  setWord: string;
+  // custom questions
+  customTitle: string;
+  customSubtitle: string;
+  addQuestion: string;
+  qType: string;
+  qPrompt: string;
+  qAnswer: string;
+  qExplanation: string;
+  qMarks: string;
+  qOption: string;
+  correctOption: string;
+  removeQ: string;
+  customLabel: string;
+  // actions / sharing
+  share: string;
+  whatsapp: string;
+  copyLink: string;
+  copied: string;
+  downloadCsv: string;
+  shareNote: string;
+  pdfHint: string;
 }
 
 export const WORKSHEET_T: Record<WLang, WorksheetStrings> = {
@@ -130,6 +155,28 @@ export const WORKSHEET_T: Record<WLang, WorksheetStrings> = {
     },
     difficulty: { easy: "Easy", standard: "Standard", hard: "Hard", hots: "HOTS" },
     langName: { en: "English", bn: "Bengali", hi: "Hindi" },
+    setsTitle: "Question paper sets",
+    numberOfSets: "Number of sets",
+    setWord: "Set",
+    customTitle: "Your own questions",
+    customSubtitle: "Bring your own questions, get an instant answer key.",
+    addQuestion: "Add question",
+    qType: "Type",
+    qPrompt: "Question",
+    qAnswer: "Answer",
+    qExplanation: "Explanation (optional)",
+    qMarks: "Marks",
+    qOption: "Option",
+    correctOption: "Correct",
+    removeQ: "Remove",
+    customLabel: "Your questions",
+    share: "Share",
+    whatsapp: "WhatsApp",
+    copyLink: "Copy link",
+    copied: "Copied ✓",
+    downloadCsv: "Answer key (CSV)",
+    shareNote: "The link reproduces this setup and the same questions (via the seed). Your own typed questions are not stored in the link.",
+    pdfHint: "Tip: in the print dialog choose “Save as PDF” for a clean file.",
   },
 
   bn: {
@@ -196,6 +243,28 @@ export const WORKSHEET_T: Record<WLang, WorksheetStrings> = {
     },
     difficulty: { easy: "সহজ", standard: "সাধারণ", hard: "কঠিন", hots: "HOTS" },
     langName: { en: "ইংরেজি", bn: "বাংলা", hi: "হিন্দি" },
+    setsTitle: "প্রশ্নপত্রের সেট",
+    numberOfSets: "সেটের সংখ্যা",
+    setWord: "সেট",
+    customTitle: "তোমার নিজের প্রশ্ন",
+    customSubtitle: "নিজের প্রশ্ন দাও, সঙ্গে সঙ্গে উত্তরপত্র পাও।",
+    addQuestion: "প্রশ্ন যোগ করো",
+    qType: "ধরন",
+    qPrompt: "প্রশ্ন",
+    qAnswer: "উত্তর",
+    qExplanation: "ব্যাখ্যা (ঐচ্ছিক)",
+    qMarks: "নম্বর",
+    qOption: "বিকল্প",
+    correctOption: "সঠিক",
+    removeQ: "মুছে ফেলো",
+    customLabel: "তোমার প্রশ্ন",
+    share: "শেয়ার",
+    whatsapp: "হোয়াটসঅ্যাপ",
+    copyLink: "লিঙ্ক কপি",
+    copied: "কপি হয়েছে ✓",
+    downloadCsv: "উত্তরপত্র (CSV)",
+    shareNote: "লিঙ্কটি এই সেটআপ ও একই প্রশ্ন ফিরিয়ে আনে (সিড অনুযায়ী)। তোমার নিজের লেখা প্রশ্ন লিঙ্কে থাকে না।",
+    pdfHint: "টিপ: প্রিন্ট উইন্ডোতে “Save as PDF” বেছে নিলে পরিষ্কার ফাইল পাবে।",
   },
 
   hi: {
@@ -262,5 +331,27 @@ export const WORKSHEET_T: Record<WLang, WorksheetStrings> = {
     },
     difficulty: { easy: "आसान", standard: "सामान्य", hard: "कठिन", hots: "HOTS" },
     langName: { en: "अंग्रेज़ी", bn: "बंगाली", hi: "हिन्दी" },
+    setsTitle: "प्रश्नपत्र के सेट",
+    numberOfSets: "सेटों की संख्या",
+    setWord: "सेट",
+    customTitle: "आपके अपने प्रश्न",
+    customSubtitle: "अपने प्रश्न दें, तुरंत उत्तर-कुंजी पाएँ।",
+    addQuestion: "प्रश्न जोड़ें",
+    qType: "प्रकार",
+    qPrompt: "प्रश्न",
+    qAnswer: "उत्तर",
+    qExplanation: "व्याख्या (वैकल्पिक)",
+    qMarks: "अंक",
+    qOption: "विकल्प",
+    correctOption: "सही",
+    removeQ: "हटाएँ",
+    customLabel: "आपके प्रश्न",
+    share: "शेयर",
+    whatsapp: "व्हाट्सऐप",
+    copyLink: "लिंक कॉपी करें",
+    copied: "कॉपी हुआ ✓",
+    downloadCsv: "उत्तर-कुंजी (CSV)",
+    shareNote: "यह लिंक इस सेटअप और वही प्रश्न दोबारा बनाता है (सीड के ज़रिए)। आपके अपने टाइप किए प्रश्न लिंक में संग्रहीत नहीं होते।",
+    pdfHint: "सुझाव: प्रिंट विंडो में “Save as PDF” चुनें ताकि साफ़ फ़ाइल मिले।",
   },
 };

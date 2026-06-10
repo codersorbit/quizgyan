@@ -192,15 +192,23 @@ h1, h2, h3, h4, .font-display {
     width: 100%;
   }
   /* print only the chosen document, even if it is the inactive (hidden) tab */
-  body[data-print="worksheet"] .ws-doc-key {
-    display: none !important;
+  /* print only the chosen document, even if it is the inactive tab... */
+  body[data-print="worksheet"] .ws-doc-worksheet,
+  body[data-print="key"] .ws-doc-key {
+    display: block !important;
   }
+  body[data-print="worksheet"] .ws-doc-key,
   body[data-print="key"] .ws-doc-worksheet {
     display: none !important;
   }
-  body[data-print="worksheet"] .ws-doc-worksheet.hidden,
-  body[data-print="key"] .ws-doc-key.hidden {
+  /* ...and within it print every set (override the on-screen active-only view) */
+  body[data-print="worksheet"] .ws-doc-worksheet .ws-set,
+  body[data-print="key"] .ws-doc-key .ws-set {
     display: block !important;
+  }
+  .ws-set + .ws-set {
+    page-break-before: always;
+    break-before: page;
   }
   .ws-doc {
     border: none !important;
