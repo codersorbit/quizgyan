@@ -24,7 +24,8 @@ export default function TopNav() {
         <a href="/cbse" className="hover:text-[#1A1A1A] transition-colors whitespace-nowrap cursor-pointer">CBSE</a>
         <a href="/wbbpe" className="hover:text-[#1A1A1A] transition-colors whitespace-nowrap cursor-pointer">WBBPE</a>
         <a href="/daily" className="hover:text-[#1A1A1A] transition-colors whitespace-nowrap cursor-pointer">Daily</a>
-        <a href="#boards" className="hover:text-[#1A1A1A] transition-colors whitespace-nowrap cursor-pointer">All classes</a>
+        <a href="/tools" className="hover:text-[#1A1A1A] transition-colors whitespace-nowrap cursor-pointer">Tools</a>
+        <a href="/#boards" className="hover:text-[#1A1A1A] transition-colors whitespace-nowrap cursor-pointer">All classes</a>
       </nav>
       <a
         href="/cbse"

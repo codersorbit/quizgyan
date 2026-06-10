@@ -4,6 +4,8 @@ import { site } from "@/lib/site";
 import { JsonLd } from "@/components/JsonLd";
 import { organizationLd, websiteLd } from "@/lib/seo";
 import { StreakMigration } from "@/components/StreakMigration";
+import TopNav from "@/components/home/TopNav";
+import FooterSection from "@/components/home/FooterSection";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -45,7 +47,9 @@ export default function RootLayout({
         />
         <JsonLd data={[websiteLd(), organizationLd()]} />
         <StreakMigration />
+        <TopNav />
         {children}
+        <FooterSection />
       </body>
     </html>
   );
