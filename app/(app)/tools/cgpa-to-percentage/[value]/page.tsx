@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { buildMetadata, breadcrumbLd, faqLd } from "@/lib/seo";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { cgpaToPercentage } from "@/lib/tools/logic/cgpa";
 import { toolUrl } from "@/lib/tools/registry";
+import ToolLink from "@/components/tools/ToolLink";
 import CgpaIsland from "@/components/tools/islands/CgpaIsland";
 
 const MIN = 4.0;
@@ -105,19 +105,19 @@ export default async function CgpaValuePage({ params }: { params: Promise<{ valu
       {/* Neighbour links */}
       <nav className="no-print mt-6 flex items-center justify-between text-sm" aria-label="Nearby CGPA values">
         {prev ? (
-          <Link href={`${toolUrl("cgpa-to-percentage")}/${prev}`} className="rounded-full border border-line px-4 py-2 font-semibold text-cobalt transition hover:border-cobalt">
+          <ToolLink href={`${toolUrl("cgpa-to-percentage")}/${prev}`} className="rounded-full border border-line px-4 py-2 font-semibold text-cobalt transition hover:border-cobalt">
             ← {prev} CGPA
-          </Link>
+          </ToolLink>
         ) : (
           <span />
         )}
-        <Link href={toolUrl("cgpa-to-percentage")} className="font-semibold text-muted hover:text-cobalt">
+        <ToolLink href={toolUrl("cgpa-to-percentage")} className="font-semibold text-muted hover:text-cobalt">
           All values
-        </Link>
+        </ToolLink>
         {next ? (
-          <Link href={`${toolUrl("cgpa-to-percentage")}/${next}`} className="rounded-full border border-line px-4 py-2 font-semibold text-cobalt transition hover:border-cobalt">
+          <ToolLink href={`${toolUrl("cgpa-to-percentage")}/${next}`} className="rounded-full border border-line px-4 py-2 font-semibold text-cobalt transition hover:border-cobalt">
             {next} CGPA →
-          </Link>
+          </ToolLink>
         ) : (
           <span />
         )}

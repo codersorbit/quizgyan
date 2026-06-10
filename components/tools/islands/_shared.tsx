@@ -50,11 +50,18 @@ function readLangFromUrl(): Lang {
   return q === "bn" ? "bn" : q === "hi" ? "hi" : "en";
 }
 
+// One in-page event so every useLang() instance (toggles + links) stays in
+// sync when any of them changes the language. Stored in the URL only.
+const LANG_EVENT = "smx:lang";
+
 /** Read the initial language from ?lang=hi|bn (defaults to English). */
 export function useLang(): [Lang, (l: Lang) => void] {
   const [lang, setLang] = useState<Lang>("en");
   useEffect(() => {
     setLang(readLangFromUrl());
+    const onChange = (e: Event) => setLang((e as CustomEvent<Lang>).detail);
+    window.addEventListener(LANG_EVENT, onChange);
+    return () => window.removeEventListener(LANG_EVENT, onChange);
   }, []);
   const set = useCallback((l: Lang) => {
     setLang(l);
@@ -63,8 +70,16 @@ export function useLang(): [Lang, (l: Lang) => void] {
     else sp.set("lang", l);
     const qs = sp.toString();
     window.history.replaceState(null, "", qs ? `${window.location.pathname}?${qs}` : window.location.pathname);
+    window.dispatchEvent(new CustomEvent(LANG_EVENT, { detail: l }));
   }, []);
   return [lang, set];
+}
+
+/** Append the active language to an internal path (English stays clean). */
+export function withLang(path: string, lang: Lang): string {
+  if (lang === "en") return path;
+  const sep = path.includes("?") ? "&" : "?";
+  return /[?&]lang=/.test(path) ? path : `${path}${sep}lang=${lang}`;
 }
 
 /** Three-way picker for inline strings: tri(lang, english, hindi, bangla). */

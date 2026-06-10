@@ -3,7 +3,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 import { CATEGORIES, TOOLS, toolUrl } from "@/lib/tools/registry";
-import { LangToggle, useLang, useT, pick } from "@/components/tools/islands/_shared";
+import { LangToggle, useLang, useT, pick, withLang } from "@/components/tools/islands/_shared";
 
 export default function ToolsHub() {
   const [lang, setLang] = useLang();
@@ -86,7 +86,7 @@ function ToolCard({
   lang: "en" | "hi" | "bn";
 }) {
   return (
-    <Link href={toolUrl(tool.slug)} className="card relative border p-4 transition hover:-translate-y-0.5">
+    <Link href={withLang(toolUrl(tool.slug), lang)} className="card relative border p-4 transition hover:-translate-y-0.5">
       {tool.popular && (
         <span className="absolute right-3 top-3 rounded-full bg-sun px-2 py-0.5 text-[11px] font-bold text-[#3a2a00]">
           {lang === "bn" ? "জনপ্রিয়" : lang === "hi" ? "लोकप्रिय" : "Popular"}

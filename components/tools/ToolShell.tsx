@@ -6,6 +6,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbLd, faqLd } from "@/lib/seo";
 import { relatedTools, toolUrl } from "@/lib/tools/registry";
+import ToolLink from "@/components/tools/ToolLink";
 import type { ToolConfig } from "@/lib/tools/types";
 
 function webAppLd(tool: ToolConfig) {
@@ -84,7 +85,7 @@ export function ToolShell({ tool, children }: { tool: ToolConfig; children: Reac
           <h2 className="font-display text-xl font-bold text-ink">Related tools</h2>
           <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((r) => (
-              <Link
+              <ToolLink
                 key={r.slug}
                 href={toolUrl(r.slug)}
                 className="card border p-4 transition hover:-translate-y-0.5"
@@ -94,7 +95,7 @@ export function ToolShell({ tool, children }: { tool: ToolConfig; children: Reac
                   <span className="font-semibold text-ink">{r.name.en}</span>
                 </div>
                 <p className="mt-1 text-sm text-muted">{r.short.en}</p>
-              </Link>
+              </ToolLink>
             ))}
           </div>
         </section>
