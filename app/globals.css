@@ -2,14 +2,14 @@
 
 /* ---- Brand design tokens (StudyMatic · “Playful” calibrated theme) ---- */
 @theme {
-  --color-cream: #fffdf6;        /* warm paper canvas */
+  --color-cream: #faf6ee;        /* homepage warm paper canvas */
   --color-card: #ffffff;
   --color-ink: #1a1a1a;
-  --color-muted: #5b6072;
-  --color-cobalt: #3257f0;       /* primary action (trust) */
-  --color-cobalt-soft: #eaf0ff;
+  --color-muted: #5b6a85;        /* homepage navy-tinted muted */
+  --color-cobalt: #0f2a5c;       /* primary action — homepage deep navy */
+  --color-cobalt-soft: #eaeef6;  /* navy tint for soft fills */
   --color-amber: #ffb300;
-  --color-coral: #ff5d73;
+  --color-coral: #e63946;        /* homepage red for errors/danger */
   --color-green: #1faf6b;
   --color-violet: #7b54d3;
   --color-sun: #ffd500;          /* playful hero accent */
@@ -112,7 +112,7 @@ h1, h2, h3, h4, .font-display {
 }
 .btn-candy:hover { transform: translateY(-2px); filter: brightness(1.03); }
 .btn-candy.sun { background: var(--color-sun); color: #3a2a00; box-shadow: 0 8px 0 -2px #d8b500; }
-.btn-candy.cobalt { background: var(--color-cobalt); box-shadow: 0 8px 0 -2px #2440c8; }
+.btn-candy.cobalt { background: var(--color-cobalt); box-shadow: 0 8px 0 -2px #081a3d; }
 .btn-candy.ghost { background: #fff; color: var(--color-ink); box-shadow: 0 8px 0 -2px rgba(26,26,26,0.08); border: 2px solid var(--color-line); }
 
 .prose-block p { margin-bottom: 0.75rem; line-height: 1.75; }
@@ -168,5 +168,50 @@ h1, h2, h3, h4, .font-display {
   }
   body {
     background: #fff !important;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Worksheet Generator print: when a specific document is being printed
+   (body[data-print="worksheet"|"key"]), show ONLY that document, lifted to the
+   page origin, on clean A4. Everything else is hidden via visibility so layout
+   doesn't shift. Questions never split across a page break.
+--------------------------------------------------------------------------- */
+@media print {
+  body[data-print] * {
+    visibility: hidden !important;
+  }
+  body[data-print] .ws-print-area,
+  body[data-print] .ws-print-area * {
+    visibility: visible !important;
+  }
+  body[data-print] .ws-print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  /* print only the chosen document, even if it is the inactive (hidden) tab */
+  body[data-print="worksheet"] .ws-doc-key {
+    display: none !important;
+  }
+  body[data-print="key"] .ws-doc-worksheet {
+    display: none !important;
+  }
+  body[data-print="worksheet"] .ws-doc-worksheet.hidden,
+  body[data-print="key"] .ws-doc-key.hidden {
+    display: block !important;
+  }
+  .ws-doc {
+    border: none !important;
+    padding: 0 !important;
+  }
+  .ws-q {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  @page {
+    size: A4;
+    margin: 14mm;
   }
 }

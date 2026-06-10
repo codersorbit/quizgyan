@@ -586,6 +586,86 @@ export const TOOLS: ReadonlyArray<ToolConfig> = [
     related: ["result-calculator", "grade-calculator", "study-timer"],
     chapterLinks: [],
   },
+
+  {
+    slug: "worksheet-generator",
+    name: {
+      en: "Worksheet & Answer-Key Generator",
+      hi: "वर्कशीट और उत्तर-कुंजी जनरेटर",
+      bn: "ওয়ার্কশিট ও উত্তরপত্র জেনারেটর",
+    },
+    category: "teacher",
+    icon: "📝",
+    popular: true,
+    short: {
+      en: "Build a print-ready worksheet + answer key from any chapter, free.",
+      hi: "किसी भी अध्याय से प्रिंट-तैयार वर्कशीट और उत्तर-कुंजी मुफ़्त बनाएँ।",
+      bn: "যেকোনো অধ্যায় থেকে প্রিন্ট-প্রস্তুত ওয়ার্কশিট ও উত্তরপত্র বিনামূল্যে তৈরি করো।",
+    },
+    intro: {
+      en: "Pick a board, class, subject and chapter(s), choose how many MCQs, short, long and HOTS questions you want, and generate a clean worksheet with a matching answer key — pulled from StudyMatic's own question bank. Print it or save as PDF in one tap. No login, no ads.",
+      hi: "बोर्ड, कक्षा, विषय और अध्याय चुनें, तय करें कि कितने बहुविकल्पीय, लघु, दीर्घ और HOTS प्रश्न चाहिए, और एक साफ़ वर्कशीट उसकी उत्तर-कुंजी सहित बनाएँ — StudyMatic के अपने प्रश्न-बैंक से। एक टैप में प्रिंट या PDF सेव करें। कोई लॉगिन नहीं, कोई विज्ञापन नहीं।",
+      bn: "বোর্ড, শ্রেণি, বিষয় ও অধ্যায় বেছে নাও, কতগুলো বহুনির্বাচনী, সংক্ষিপ্ত, দীর্ঘ ও HOTS প্রশ্ন চাও ঠিক করো, এবং উত্তরপত্রসহ একটি পরিষ্কার ওয়ার্কশিট তৈরি করো — StudyMatic-এর নিজস্ব প্রশ্ন-ব্যাংক থেকে। এক ট্যাপে প্রিন্ট বা PDF সেভ করো। লগইন নেই, বিজ্ঞাপন নেই।",
+    },
+    how: {
+      en: "Every question comes from StudyMatic's chapter bank — nothing is invented. You set the mix per question type; the tool fills it from the chapters you picked, tells you if a type is short, and lets you swap any single question. The worksheet (student copy, with answer space) and the answer key (with explanations and marks) are separate printable documents.",
+      hi: "हर प्रश्न StudyMatic के अध्याय-बैंक से आता है — कुछ भी मनगढ़ंत नहीं। आप प्रति प्रश्न-प्रकार मिश्रण तय करते हैं; टूल आपके चुने अध्यायों से उसे भरता है, कमी होने पर बताता है, और किसी भी प्रश्न को बदलने देता है। वर्कशीट (छात्र प्रति) और उत्तर-कुंजी (व्याख्या व अंक सहित) अलग-अलग प्रिंट-योग्य दस्तावेज़ हैं।",
+      bn: "প্রতিটি প্রশ্ন StudyMatic-এর অধ্যায়-ব্যাংক থেকে আসে — কিছুই বানানো নয়। তুমি প্রতি প্রশ্ন-ধরন অনুযায়ী মিশ্রণ ঠিক করো; টুল তোমার বেছে নেওয়া অধ্যায় থেকে তা পূরণ করে, কম পড়লে জানায়, এবং যেকোনো প্রশ্ন বদলাতে দেয়। ওয়ার্কশিট (ছাত্র কপি) ও উত্তরপত্র (ব্যাখ্যা ও নম্বরসহ) আলাদা প্রিন্টযোগ্য নথি।",
+    },
+    keywords: [
+      "worksheet generator",
+      "question paper generator",
+      "answer key generator",
+      "cbse worksheet with answers",
+      "class 6 maths worksheet",
+      "free worksheet maker for teachers",
+      "printable worksheet pdf",
+    ],
+    faq: [
+      {
+        q: { en: "Where do the questions come from?", hi: "प्रश्न कहाँ से आते हैं?", bn: "প্রশ্নগুলো কোথা থেকে আসে?" },
+        a: {
+          en: "From StudyMatic's own question bank for the chapter you pick — never auto-generated or invented. You can also add your own questions (coming soon).",
+          hi: "आपके चुने अध्याय के लिए StudyMatic के अपने प्रश्न-बैंक से — कभी स्वतः-निर्मित या मनगढ़ंत नहीं। आप अपने प्रश्न भी जोड़ सकेंगे (जल्द आ रहा है)।",
+          bn: "তোমার বেছে নেওয়া অধ্যায়ের জন্য StudyMatic-এর নিজস্ব প্রশ্ন-ব্যাংক থেকে — কখনও স্বয়ংক্রিয় বা বানানো নয়। নিজের প্রশ্নও যোগ করতে পারবে (শীঘ্রই আসছে)।",
+        },
+      },
+      {
+        q: { en: "Is it really free with no login?", hi: "क्या यह सच में बिना लॉगिन मुफ़्त है?", bn: "এটা কি সত্যিই লগইন ছাড়া বিনামূল্যে?" },
+        a: {
+          en: "Yes — free forever, no login and no ads, like every StudyMatic tool.",
+          hi: "हाँ — हमेशा मुफ़्त, कोई लॉगिन नहीं और कोई विज्ञापन नहीं, हर StudyMatic टूल की तरह।",
+          bn: "হ্যাঁ — চিরকাল বিনামূল্যে, লগইন নেই, বিজ্ঞাপন নেই, প্রতিটি StudyMatic টুলের মতো।",
+        },
+      },
+      {
+        q: { en: "How do I get a PDF?", hi: "मुझे PDF कैसे मिलेगी?", bn: "PDF কীভাবে পাব?" },
+        a: {
+          en: "Hit Print and choose “Save as PDF” — the layout is tuned for clean A4 pages that never split a question across pages.",
+          hi: "प्रिंट दबाएँ और “Save as PDF” चुनें — लेआउट साफ़ A4 पेजों के लिए तैयार है जो किसी प्रश्न को दो पेजों में नहीं बाँटता।",
+          bn: "প্রিন্ট চাপো এবং “Save as PDF” বেছে নাও — লেআউটটি পরিষ্কার A4 পেজের জন্য তৈরি যা কোনো প্রশ্নকে দুই পেজে ভাগ করে না।",
+        },
+      },
+      {
+        q: { en: "Can I choose the question types and marks?", hi: "क्या मैं प्रश्न-प्रकार और अंक चुन सकता हूँ?", bn: "প্রশ্নের ধরন ও নম্বর কি আমি বেছে নিতে পারি?" },
+        a: {
+          en: "Yes — set how many MCQ, short, long and HOTS questions you want and the marks for each; totals update live.",
+          hi: "हाँ — तय करें कि कितने बहुविकल्पीय, लघु, दीर्घ और HOTS प्रश्न चाहिए और हर एक के अंक; योग तुरंत अपडेट होते हैं।",
+          bn: "হ্যাঁ — কতগুলো বহুনির্বাচনী, সংক্ষিপ্ত, দীর্ঘ ও HOTS প্রশ্ন চাও আর প্রতিটির নম্বর ঠিক করো; মোট তৎক্ষণাৎ আপডেট হয়।",
+        },
+      },
+      {
+        q: { en: "Which boards and classes are covered?", hi: "कौन से बोर्ड और कक्षाएँ शामिल हैं?", bn: "কোন বোর্ড ও শ্রেণি অন্তর্ভুক্ত?" },
+        a: {
+          en: "CBSE (Classes 6–10) and WBBPE / West Bengal Board (Classes 1–5), across the subjects StudyMatic already has chapters for.",
+          hi: "CBSE (कक्षा 6–10) और WBBPE / पश्चिम बंगाल बोर्ड (कक्षा 1–5), उन विषयों में जिनके अध्याय StudyMatic पर पहले से हैं।",
+          bn: "CBSE (ষষ্ঠ–দশম) এবং WBBPE / পশ্চিমবঙ্গ বোর্ড (প্রথম–পঞ্চম), যেসব বিষয়ের অধ্যায় StudyMatic-এ ইতিমধ্যে আছে।",
+        },
+      },
+    ],
+    related: ["result-calculator", "question-paper-planner"],
+    chapterLinks: [],
+  },
 ];
 
 /* ------------------------------- Helpers -------------------------------- */

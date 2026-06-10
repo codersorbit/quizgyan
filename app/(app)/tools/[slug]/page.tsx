@@ -18,6 +18,7 @@ import InterestIsland from "@/components/tools/islands/InterestIsland";
 import UnitConverterIsland from "@/components/tools/islands/UnitConverterIsland";
 import ResultIsland from "@/components/tools/islands/ResultIsland";
 import PaperPlannerIsland from "@/components/tools/islands/PaperPlannerIsland";
+import WorksheetIsland from "@/components/tools/islands/WorksheetIsland";
 
 export function generateStaticParams() {
   return TOOLS.map((t) => ({ slug: t.slug }));
@@ -68,6 +69,8 @@ function island(slug: string) {
       return <ResultIsland />;
     case "question-paper-planner":
       return <PaperPlannerIsland />;
+    case "worksheet-generator":
+      return <WorksheetIsland />;
     default:
       return null;
   }
