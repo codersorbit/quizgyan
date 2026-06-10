@@ -27,7 +27,7 @@ const TABS: Tab[] = [
       "Written to be understood, not crammed",
     ],
     img:
-      "https://readdy.ai/api/search-image?query=Four%20happy%20preschool%20kids%20age%204%20to%206%20sitting%20around%20small%20round%20wooden%20table%20together%20drawing%20and%20coloring%20with%20markers%20on%20colorful%20paper%2C%20bright%20modern%20kindergarten%20classroom%20with%20white%20walls%20plants%20on%20windowsill%20warm%20natural%20daylight%2C%20candid%20joyful%20learning%20moment%2C%20sharp%20focus%2C%20soft%20cinematic%20lighting%2C%20clean%20educational%20environment%20composition&width=1200&height=900&seq=eng-tab-multi-2026&orientation=landscape",
+      "/img/tab-1.jpg",
   },
   {
     key: "social",
@@ -43,7 +43,7 @@ const TABS: Tab[] = [
       "Your score, the moment you finish",
     ],
     img:
-      "https://readdy.ai/api/search-image?query=Two%20preschool%20kids%20age%204%20sitting%20cross-legged%20on%20soft%20rug%20hugging%20and%20smiling%20at%20each%20other%20in%20cozy%20kindergarten%20classroom%20corner%20with%20cushions%20and%20soft%20toys%2C%20warm%20afternoon%20sunlight%20through%20window%2C%20candid%20emotional%20sharing%20moment%2C%20sharp%20focus%2C%20soft%20cinematic%20lighting%2C%20peaceful%20educational%20environment&width=1200&height=900&seq=eng-tab-social-2026&orientation=landscape",
+      "/img/tab-2.jpg",
   },
   {
     key: "outdoor",
@@ -59,7 +59,7 @@ const TABS: Tab[] = [
       "Common mistakes to avoid",
     ],
     img:
-      "https://readdy.ai/api/search-image?query=Group%20of%20preschool%20kids%20age%204%20to%206%20playing%20happily%20outdoors%20in%20green%20garden%20with%20small%20plants%20and%20watering%20cans%2C%20wearing%20colorful%20rain%20boots%20and%20sun%20hats%2C%20sunny%20day%20natural%20lighting%2C%20candid%20joyful%20outdoor%20moment%2C%20sharp%20focus%2C%20soft%20cinematic%20lighting%2C%20kindergarten%20nature%20education%20theme&width=1200&height=900&seq=eng-tab-outdoor-2026&orientation=landscape",
+      "/img/tab-3.jpg",
   },
   {
     key: "english",
@@ -75,7 +75,7 @@ const TABS: Tab[] = [
       "Mixes subjects and classes",
     ],
     img:
-      "https://readdy.ai/api/search-image?query=Smiling%20young%20teacher%20reading%20colorful%20English%20picture%20book%20to%20small%20circle%20of%20preschool%20kids%20age%204%20to%206%20sitting%20attentively%20on%20soft%20carpet%20in%20bright%20modern%20kindergarten%20classroom%2C%20warm%20natural%20daylight%2C%20candid%20storytime%20learning%20moment%2C%20sharp%20focus%2C%20soft%20cinematic%20lighting%2C%20educational%20environment&width=1200&height=900&seq=eng-tab-english-2026&orientation=landscape",
+      "/img/tab-4.jpg",
   },
 ];
 

@@ -21,10 +21,10 @@ export default function TopNav() {
         </span>
       </a>
       <nav className="hidden md:flex items-center gap-8 text-[#1A1A1A]/75 text-sm">
-        <a href="#boards" className="hover:text-[#1A1A1A] transition-colors whitespace-nowrap cursor-pointer">Boards</a>
-        <a href="/cbse" className="hover:text-[#1A1A1A] transition-colors whitespace-nowrap cursor-pointer">Classes</a>
+        <a href="/cbse" className="hover:text-[#1A1A1A] transition-colors whitespace-nowrap cursor-pointer">CBSE</a>
+        <a href="/wbbpe" className="hover:text-[#1A1A1A] transition-colors whitespace-nowrap cursor-pointer">WBBPE</a>
         <a href="/daily" className="hover:text-[#1A1A1A] transition-colors whitespace-nowrap cursor-pointer">Daily</a>
-        <a href="#about" className="hover:text-[#1A1A1A] transition-colors whitespace-nowrap cursor-pointer">About</a>
+        <a href="#boards" className="hover:text-[#1A1A1A] transition-colors whitespace-nowrap cursor-pointer">All classes</a>
       </nav>
       <a
         href="/cbse"

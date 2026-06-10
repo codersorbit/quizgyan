@@ -39,7 +39,7 @@ export default function CTASection() {
             {/* Right photo */}
             <div className="relative h-[260px] md:h-[400px] hidden md:block">
               <img
-                src="https://readdy.ai/api/search-image?query=Two%20happy%20cheerful%20preschool%20kids%20sitting%20together%20on%20floor%20laughing%20and%20playing%20with%20colorful%20toys%20and%20toy%20cars%2C%20wearing%20clean%20white%20school%20uniform%20shirts%2C%20bright%20joyful%20smiles%2C%20isolated%20cutout%20on%20solid%20pure%20red%20background%2C%20professional%20childhood%20studio%20portrait%20photography%2C%20vibrant%20natural%20soft%20lighting%2C%20sharp%20focus%2C%20simple%20clean%20background%20kindergarten%20education%20theme&width=900&height=900&seq=cta-kids-01&orientation=squarish"
+                src="/img/cta.jpg"
                 alt="Happy kids playing"
                 className="absolute right-0 bottom-0 h-full w-auto object-contain object-bottom"
               />

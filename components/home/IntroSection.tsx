@@ -49,7 +49,7 @@ export default function IntroSection() {
           {/* Photo */}
           <div className="absolute inset-0 flex items-center justify-center">
             <img
-              src="https://readdy.ai/api/search-image?query=Happy%20joyful%20toddler%20kid%20boy%20holding%20colorful%20pencils%20and%20paintbrushes%2C%20wearing%20clean%20white%20school%20uniform%20shirt%2C%20laughing%20with%20bright%20smile%2C%20isolated%20cutout%20on%20solid%20pure%20clean%20white%20background%2C%20professional%20studio%20portrait%2C%20vibrant%20cheerful%20educational%20preschool%20kindergarten%20photography%2C%20natural%20soft%20lighting%2C%20sharp%20focus%2C%20high%20resolution%20childhood%20portrait%20photography%20with%20simple%20minimal%20background&width=900&height=1100&seq=intro-kid-01&orientation=portrait"
+              src="/img/intro.jpg"
               alt="Happy preschool kid with paintbrush"
               className="relative z-10 max-h-[480px] w-auto object-contain object-bottom"
             />

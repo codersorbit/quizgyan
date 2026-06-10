@@ -42,9 +42,9 @@ const HERO_COPY = [
 ];
 
 const HERO_IMAGES = [
-  "https://storage.readdy-site.link/project_files/4257ca71-ef26-4e34-8007-bb3dac023af4/a75b6e19-3739-4348-bdb9-56ca14838896_1.png?v=104ff9c417f00a65ccc49295919c0206",
-  "https://storage.readdy-site.link/project_files/4257ca71-ef26-4e34-8007-bb3dac023af4/652ac598-8021-4a56-8921-4a08c140cbcd_2.png?v=2a15272649a9dec1dd6d835c1d207ee0",
-  "https://storage.readdy-site.link/project_files/4257ca71-ef26-4e34-8007-bb3dac023af4/4568e5b5-6e35-44a8-9def-9e147fc79316_3.png?v=4e7f13c2f064331ffa123d61b28d297b",
+  "/img/hero-1.png",
+  "/img/hero-2.png",
+  "/img/hero-3.png",
 ];
 
 type Point = { x: number; y: number; sortAngle: number };
@@ -359,7 +359,11 @@ export default function HeroMaskSection() {
         ))}
 
         {/* Dark overlay for legibility */}
-        <div className="absolute inset-0 z-[20] bg-gradient-to-b from-black/5 via-transparent to-black/10 pointer-events-none" />
+        <div className="absolute inset-0 z-[20] bg-gradient-to-b from-black/40 via-black/20 to-black/45 pointer-events-none" />
+        <div
+          className="absolute inset-0 z-[20] pointer-events-none"
+          style={{ background: "radial-gradient(62% 46% at 50% 30%, rgba(0,0,0,0.55) 0%, transparent 72%)" }}
+        />
 
         {/* Animated copy */}
         <div className="absolute inset-0 z-[25] flex items-start justify-center px-6 pt-[92px] md:pt-[124px]">
@@ -373,7 +377,7 @@ export default function HeroMaskSection() {
                     : "opacity-0 translate-y-4 pointer-events-none"
                 }`}
               >
-                <span className="uppercase tracking-[0.4em] text-xs md:text-sm text-white/70 mb-5">
+                <span className="uppercase tracking-[0.4em] text-xs md:text-sm text-white mb-5 [text-shadow:_0_2px_10px_rgba(0,0,0,0.6)]">
                   {copy.eyebrow}
                 </span>
                 <h1
@@ -382,12 +386,12 @@ export default function HeroMaskSection() {
                     fontFamily: "'Fredoka', 'Bagel Fat One', cursive",
                     fontWeight: 600,
                     letterSpacing: "-0.01em",
-                    textShadow: "0 4px 0 rgba(0,0,0,0.08)",
+                    textShadow: "0 2px 18px rgba(0,0,0,0.6), 0 1px 2px rgba(0,0,0,0.5)",
                   }}
                 >
                   {copy.title}
                 </h1>
-                <p className="mt-6 text-base md:text-lg text-white/80 max-w-xl mx-auto leading-relaxed">
+                <p className="mt-6 text-base md:text-lg text-white/95 max-w-xl mx-auto leading-relaxed [text-shadow:_0_2px_10px_rgba(0,0,0,0.6)]">
                   {copy.subtitle}
                 </p>
               </div>

@@ -1,11 +1,11 @@
 "use client";
 const PROGRAMS = [
-  { icon: "ri-book-open-line", color: "#E63946", title: "CLEAR NOTES", desc: "Short, friendly notes for every chapter — in English and বাংলা.", highlight: false },
-  { icon: "ri-checkbox-circle-line", color: "#E63946", title: "INSTANT QUIZZES", desc: "Tap an answer and see if you're right straight away.", highlight: false },
-  { icon: "ri-file-list-3-line", color: "#E63946", title: "EXAM-STYLE Q&A", desc: "Short, long and HOTS questions like the real exam.", highlight: false },
-  { icon: "ri-fire-line", color: "#E63946", title: "DAILY CHALLENGE", desc: "One fresh question a day to keep your streak alive.", highlight: false },
-  { icon: "ri-government-line", color: "#FFD500", title: "TWO BOARDS", desc: "CBSE and West Bengal board, all in one place.", highlight: true },
-  { icon: "ri-gift-line", color: "#E63946", title: "FREE FOREVER", desc: "No login, no ads, no fees — just open and learn.", highlight: false },
+  { icon: "ri-book-open-line", color: "#E63946", title: "CLEAR NOTES", href: "/notes", desc: "Short, friendly notes for every chapter — in English and বাংলা.", highlight: false },
+  { icon: "ri-checkbox-circle-line", color: "#E63946", title: "INSTANT QUIZZES", href: "/mcqs", desc: "Tap an answer and see if you're right straight away.", highlight: false },
+  { icon: "ri-file-list-3-line", color: "#E63946", title: "EXAM-STYLE Q&A", href: "/cbse", desc: "Short, long and HOTS questions like the real exam.", highlight: false },
+  { icon: "ri-fire-line", color: "#E63946", title: "DAILY CHALLENGE", href: "/daily", desc: "One fresh question a day to keep your streak alive.", highlight: false },
+  { icon: "ri-government-line", color: "#FFD500", title: "TWO BOARDS", href: "/wbbpe", desc: "CBSE and West Bengal board, all in one place.", highlight: true },
+  { icon: "ri-gift-line", color: "#E63946", title: "FREE FOREVER", href: "/cbse", desc: "No login, no ads, no fees — just open and learn.", highlight: false },
 ];
 
 export default function ProgramsSection() {
@@ -39,9 +39,10 @@ export default function ProgramsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
           {PROGRAMS.map((p) => (
-            <div
+            <a
               key={p.title}
-              className={`rounded-2xl p-7 md:p-8 transition-colors cursor-pointer ${
+              href={p.href}
+              className={`block rounded-2xl p-7 md:p-8 transition-colors cursor-pointer ${
                 p.highlight
                   ? "bg-white/[0.04] border border-[#FFD500]/60"
                   : "bg-white/[0.04] border border-white/10 hover:border-white/25"
@@ -68,7 +69,7 @@ export default function ProgramsSection() {
               >
                 {p.desc}
               </p>
-            </div>
+            </a>
           ))}
         </div>
       </div>

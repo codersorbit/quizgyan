@@ -3,26 +3,29 @@ const STAGES = [
   {
     label: "Primary",
     age: "Class 1 – 5",
+    href: "/wbbpe",
     color: "#E63946",
     textColor: "#fff",
     img:
-      "https://readdy.ai/api/search-image?query=Adorable%20smiling%20toddler%20boy%20age%203%20standing%20wearing%20navy%20blue%20overall%20suspenders%20and%20light%20blue%20polo%20shirt%2C%20full%20body%20portrait%20standing%20pose%2C%20isolated%20cutout%20on%20solid%20pure%20clean%20white%20background%2C%20professional%20childhood%20studio%20portrait%20photography%20preschool%20kindergarten%20education%20theme%2C%20bright%20joyful%20expression%20sweet%20smile%2C%20natural%20soft%20studio%20lighting%2C%20sharp%20focus%2C%20minimalist%20clean%20simple%20background%2C%20vertical%20composition&width=900&height=1200&seq=stage-early-steps-2026a&orientation=portrait",
+      "/img/stage-1.jpg",
   },
   {
     label: "Middle",
     age: "Class 6 – 8",
+    href: "/cbse",
     color: "#FFD500",
     textColor: "#0F2A5C",
     img:
-      "https://static.readdy.ai/image/ef1aae41220ad17a1705abffff22a58b/ee6e8dbb2188080c06bb9bb80d5b65e5.png",
+      "/img/stage-2.jpg",
   },
   {
     label: "Board",
     age: "Class 9 – 10",
+    href: "/cbse",
     color: "#0F2A5C",
     textColor: "#fff",
     img:
-      "https://readdy.ai/api/search-image?query=Happy%20smiling%20school%20kid%20girl%20age%206%20holding%20bright%20yellow%20notebook%20book%20wearing%20grey%20shirt%20dark%20jeans%20and%20small%20red%20backpack%2C%20full%20body%20standing%20portrait%2C%20isolated%20cutout%20on%20solid%20pure%20clean%20white%20background%2C%20professional%20childhood%20studio%20portrait%20photography%20elementary%20school%20education%20theme%2C%20joyful%20confident%20expression%2C%20natural%20soft%20studio%20lighting%2C%20sharp%20focus%2C%20minimalist%20clean%20simple%20background%2C%20vertical%20composition&width=900&height=1200&seq=stage-little-explorers-2026a&orientation=portrait",
+      "/img/stage-3.jpg",
   },
 ];
 
@@ -54,9 +57,10 @@ export default function StagesSection() {
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-7">
           {STAGES.map((stage) => (
-            <div
+            <a
               key={stage.label}
-              className="relative rounded-[28px] overflow-hidden bg-white transition-transform hover:-translate-y-1 cursor-pointer"
+              href={stage.href}
+              className="block relative rounded-[28px] overflow-hidden bg-white transition-transform hover:-translate-y-1 cursor-pointer"
             >
               {/* Photo area */}
               <div className="relative h-[440px] md:h-[480px] bg-white overflow-hidden">
@@ -84,7 +88,7 @@ export default function StagesSection() {
                   {stage.label}
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>

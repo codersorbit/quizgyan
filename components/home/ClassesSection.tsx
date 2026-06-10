@@ -6,7 +6,7 @@ const CLASSES = [
     desc: "Maths, Science, Social Science & English",
     href: "/cbse",
     img:
-      "https://readdy.ai/api/search-image?query=Happy%20cheerful%20preschool%20kids%20children%20playing%20together%20with%20colorful%20wooden%20toys%20in%20kindergarten%20classroom%20with%20bright%20natural%20light%20windows%2C%20professional%20childhood%20education%20photography%2C%20cozy%20warm%20clean%20preschool%20classroom%20interior%20background%2C%20vibrant%20joyful%20atmosphere%2C%20sharp%20focus%2C%20documentary%20style%20photography&width=800&height=600&seq=class-morning-01&orientation=landscape",
+      "/img/board-cbse.jpg",
   },
   {
     label: "WBBPE · পশ্চিমবঙ্গ",
@@ -14,7 +14,7 @@ const CLASSES = [
     desc: "বাংলা, ইংরেজি, গণিত ও পরিবেশ",
     href: "/wbbpe",
     img:
-      "https://readdy.ai/api/search-image?query=Happy%20cheerful%20preschool%20kids%20children%20laughing%20and%20playing%20outdoor%20in%20kindergarten%20school%20playground%20garden%20with%20colorful%20toys%20on%20sunny%20day%2C%20professional%20childhood%20education%20photography%2C%20vibrant%20joyful%20natural%20outdoor%20background%2C%20warm%20golden%20afternoon%20light%2C%20sharp%20focus%2C%20documentary%20style%20photography&width=800&height=600&seq=class-afternoon-01&orientation=landscape",
+      "/img/board-wbbpe.jpg",
   },
 ];
 
@@ -57,7 +57,7 @@ export default function ClassesSection() {
                   alt={c.label}
                   className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0F2A5C]/75 via-[#0F2A5C]/15 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0F2A5C]/92 via-[#0F2A5C]/45 to-[#0F2A5C]/10" />
                 <span
                   className="absolute top-5 left-5 px-3 py-1 rounded-full text-xs"
                   style={{
@@ -69,7 +69,7 @@ export default function ClassesSection() {
                 >
                   {c.time}
                 </span>
-                <div className="absolute bottom-5 left-5 right-5 text-white">
+                <div className="absolute bottom-5 left-5 right-5 text-white [text-shadow:_0_1px_8px_rgba(0,0,0,0.55)]">
                   <h3
                     className="text-2xl mb-1"
                     style={{ fontFamily: "'Fredoka', sans-serif", fontWeight: 600 }}
