@@ -756,7 +756,91 @@ export const TOOLS: ReadonlyArray<ToolConfig> = [
         },
       },
     ],
-    related: [],
+    related: ["number-to-words"],
+    chapterLinks: [],
+  },
+
+  {
+    slug: "number-to-words",
+    name: { en: "Number to Words Converter", hi: "संख्या को शब्दों में बदलें", bn: "সংখ্যা থেকে কথায় রূপান্তর" },
+    category: "student-utilities",
+    icon: "🔢",
+    popular: true,
+    short: {
+      en: "Write any number in words — Indian (lakh, crore) or international, in three languages.",
+      hi: "किसी भी संख्या को शब्दों में लिखें — भारतीय (लाख, करोड़) या अंतरराष्ट्रीय, तीन भाषाओं में।",
+      bn: "যেকোনো সংখ্যা কথায় লেখো — ভারতীয় (লাখ, কোটি) বা আন্তর্জাতিক, তিনটি ভাষায়।",
+    },
+    intro: {
+      en: "Type a number and instantly see it written out in words. It uses the Indian numbering system (lakh and crore) by default, with a switch to the international system (million, billion). A currency mode writes amounts as Rupees and Paise for fee receipts and cheques, and a plain mode writes marks or counts in words. Output is in English, हिन्दी or বাংলা — whichever you choose.",
+      hi: "कोई संख्या टाइप करें और उसे तुरंत शब्दों में देखें। यह डिफ़ॉल्ट रूप से भारतीय प्रणाली (लाख और करोड़) का उपयोग करता है, और अंतरराष्ट्रीय प्रणाली (मिलियन, बिलियन) में बदलने का विकल्प देता है। मुद्रा मोड रसीद और चेक के लिए राशि को रुपये और पैसे में लिखता है, और सामान्य मोड अंक या गिनती को शब्दों में। आउटपुट अंग्रेज़ी, हिन्दी या বাংলা में।",
+      bn: "একটি সংখ্যা টাইপ করো আর সঙ্গে সঙ্গে কথায় দেখো। এটি ডিফল্টভাবে ভারতীয় পদ্ধতি (লাখ ও কোটি) ব্যবহার করে, আর আন্তর্জাতিক পদ্ধতিতে (মিলিয়ন, বিলিয়ন) বদলানোর সুযোগ দেয়। মুদ্রা মোডে রসিদ ও চেকের জন্য টাকা ও পয়সায় লেখা হয়, আর সাধারণ মোডে নম্বর বা গণনা কথায়। আউটপুট ইংরেজি, হিন্দি বা বাংলায়।",
+    },
+    how: {
+      en: "The number is split the Indian way — the last three digits, then groups of two for thousand, lakh and crore — and each group is named. Beyond a crore the count of crores is itself spelled out, so very large numbers still read naturally. The international mode groups in threes (thousand, million, billion). Calculation is exact even for huge numbers and runs entirely in your browser.",
+      hi: "संख्या को भारतीय तरीके से बाँटा जाता है — अंतिम तीन अंक, फिर हज़ार, लाख और करोड़ के लिए दो-दो अंक — और हर समूह का नाम लिखा जाता है। करोड़ से आगे करोड़ों की संख्या भी शब्दों में लिखी जाती है। अंतरराष्ट्रीय मोड तीन-तीन अंकों में बाँटता है। गणना बहुत बड़ी संख्याओं के लिए भी सटीक है और पूरी तरह आपके ब्राउज़र में होती है।",
+      bn: "সংখ্যাটি ভারতীয় নিয়মে ভাগ করা হয় — শেষ তিন অঙ্ক, তারপর হাজার, লাখ ও কোটির জন্য দুই-দুই অঙ্ক — এবং প্রতিটি দলের নাম লেখা হয়। কোটির পরে কোটির সংখ্যাও কথায় লেখা হয়। আন্তর্জাতিক মোড তিন-তিন অঙ্কে ভাগ করে। গণনা বড় সংখ্যার জন্যও নির্ভুল এবং পুরোপুরি তোমার ব্রাউজারে হয়।",
+    },
+    keywords: [
+      "number to words",
+      "12 lakh in words",
+      "rupees in words",
+      "amount in words",
+      "number to words in rupees",
+      "hindi number to words",
+      "bengali number in words",
+    ],
+    faq: [
+      {
+        q: { en: "How do I write 12,00,000 in words?", hi: "12,00,000 को शब्दों में कैसे लिखें?", bn: "12,00,000 কথায় কীভাবে লিখব?" },
+        a: {
+          en: "12,00,000 is “Twelve Lakh”. Type the number above to see it in English, हिन्दी or বাংলা, with or without Rupees.",
+          hi: "12,00,000 यानी “बारह लाख”। ऊपर संख्या टाइप करके इसे अंग्रेज़ी, हिन्दी या বাংলায় देखें।",
+          bn: "12,00,000 মানে “বারো লাখ”। উপরে সংখ্যা টাইপ করে ইংরেজি, হিন্দি বা বাংলায় দেখে নাও।",
+        },
+      },
+      {
+        q: { en: "Can it write amounts in Rupees and Paise?", hi: "क्या यह राशि को रुपये और पैसे में लिख सकता है?", bn: "এটি কি টাকা ও পয়সায় লিখতে পারে?" },
+        a: {
+          en: "Yes. Turn on Currency mode and it writes the amount as “Rupees … and … Paise Only”, ready for a receipt or cheque.",
+          hi: "हाँ। मुद्रा मोड चालू करें और यह राशि को “… रुपये और … पैसे मात्र” के रूप में लिखता है।",
+          bn: "হ্যাঁ। মুদ্রা মোড চালু করো, এটি “… টাকা এবং … পয়সা মাত্র” হিসেবে লিখবে।",
+        },
+      },
+      {
+        q: { en: "What is the difference between lakh and million?", hi: "लाख और मिलियन में क्या अंतर है?", bn: "লাখ ও মিলিয়নের মধ্যে পার্থক্য কী?" },
+        a: {
+          en: "A lakh is 1,00,000 and a million is 10,00,000 (ten lakh). Use the Indian/International switch to see either grouping.",
+          hi: "एक लाख = 1,00,000 और एक मिलियन = 10,00,000 (दस लाख)। भारतीय/अंतरराष्ट्रीय स्विच से दोनों देखें।",
+          bn: "এক লাখ = 1,00,000 আর এক মিলিয়ন = 10,00,000 (দশ লাখ)। ভারতীয়/আন্তর্জাতিক সুইচে দুটোই দেখো।",
+        },
+      },
+      {
+        q: { en: "Does it work in Hindi and Bengali?", hi: "क्या यह हिन्दी और बांग्ला में काम करता है?", bn: "এটি কি হিন্দি ও বাংলায় কাজ করে?" },
+        a: {
+          en: "Yes — switch the language and the words appear in हिन्दी or বাংলা with the correct forms, not just transliteration.",
+          hi: "हाँ — भाषा बदलें और शब्द सही रूप में हिन्दी या বাংলায় दिखेंगे, केवल लिप्यंतरण नहीं।",
+          bn: "হ্যাঁ — ভাষা বদলালে শব্দ সঠিক রূপে হিন্দি বা বাংলায় দেখা যাবে, শুধু প্রতিবর্ণীকরণ নয়।",
+        },
+      },
+      {
+        q: { en: "Can it handle decimals and very large numbers?", hi: "क्या यह दशमलव और बहुत बड़ी संख्याएँ संभाल सकता है?", bn: "এটি কি দশমিক ও খুব বড় সংখ্যা সামলাতে পারে?" },
+        a: {
+          en: "Yes. Decimals are read digit by digit after the point, and even numbers with many digits stay exact.",
+          hi: "हाँ। दशमलव को बिंदु के बाद अंक-दर-अंक पढ़ा जाता है, और कई अंकों वाली संख्याएँ भी सटीक रहती हैं।",
+          bn: "হ্যাঁ। দশমিক বিন্দুর পরে অঙ্ক ধরে ধরে পড়া হয়, আর অনেক অঙ্কের সংখ্যাও নির্ভুল থাকে।",
+        },
+      },
+      {
+        q: { en: "Is my number sent anywhere?", hi: "क्या मेरी संख्या कहीं भेजी जाती है?", bn: "আমার সংখ্যা কি কোথাও পাঠানো হয়?" },
+        a: {
+          en: "No. The conversion happens entirely in your browser — nothing is uploaded or stored.",
+          hi: "नहीं। रूपांतरण पूरी तरह आपके ब्राउज़र में होता है — कुछ भी अपलोड या संग्रहीत नहीं होता।",
+          bn: "না। রূপান্তর পুরোপুরি তোমার ব্রাউজারে হয় — কিছুই আপলোড বা সংরক্ষণ হয় না।",
+        },
+      },
+    ],
+    related: ["word-counter"],
     chapterLinks: [],
   },
 ];
