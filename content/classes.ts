@@ -668,6 +668,8 @@ export const WBBPE_CLASSES: ClassDef[] = [
           { order: 10, title: "আমাজনের জঙ্গলে", slug: "amazoner-jongole" },
           { order: 11, title: "আমি সাগর পাড়ি দেবো", slug: "ami-sagar-pari-debo" },
           { order: 12, title: "দক্ষিণমেরু অভিযান", slug: "dokkhinmeru-obhijan" },
+          { order: 13, title: "আলো", slug: "alo" },
+          { order: 14, title: "বর্ষার প্রার্থনা", slug: "borshar-prarthona" },
           { order: 50, title: "বিশেষ্য ও সর্বনাম", slug: "noun-pronoun" },
           { order: 51, title: "বিশেষণ ও ক্রিয়া", slug: "adjective-verb" },
           { order: 52, title: "লিঙ্গ ও বচন", slug: "gender-number" },
