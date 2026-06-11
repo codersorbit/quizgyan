@@ -919,6 +919,84 @@ export const TOOLS: ReadonlyArray<ToolConfig> = [
     related: ["number-to-words", "word-counter"],
     chapterLinks: [],
   },
+
+  {
+    slug: "scientific-calculator",
+    name: { en: "Scientific Calculator", hi: "वैज्ञानिक कैलकुलेटर", bn: "বৈজ্ঞানিক ক্যালকুলেটর" },
+    category: "student-utilities",
+    icon: "🧮",
+    popular: true,
+    short: {
+      en: "A full scientific calculator — trig, powers, roots, log, factorial, π, memory and history.",
+      hi: "पूरा वैज्ञानिक कैलकुलेटर — त्रिकोणमिति, घात, मूल, लॉग, फैक्टोरियल, π, मेमोरी और इतिहास।",
+      bn: "একটি পূর্ণ বৈজ্ঞানিক ক্যালকুলেটর — ত্রিকোণমিতি, ঘাত, মূল, লগ, ফ্যাক্টোরিয়াল, π, মেমরি ও ইতিহাস।",
+    },
+    intro: {
+      en: "A scientific calculator for class and home: addition to powers and roots, trigonometry with a degrees/radians switch, logarithms, factorials, percentages, π and e, parentheses, memory keys and a running history. You can tap the keys or type the whole expression and press Enter. Everything is worked out safely in your browser.",
+      hi: "कक्षा और घर के लिए वैज्ञानिक कैलकुलेटर: जोड़ से लेकर घात और मूल तक, डिग्री/रेडियन स्विच के साथ त्रिकोणमिति, लघुगणक, फैक्टोरियल, प्रतिशत, π और e, कोष्ठक, मेमोरी कुंजियाँ और चलता हुआ इतिहास। कुंजियाँ दबाएँ या पूरा व्यंजक टाइप करके Enter दबाएँ। सब कुछ आपके ब्राउज़र में सुरक्षित रूप से हल होता है।",
+      bn: "ক্লাস ও বাড়ির জন্য বৈজ্ঞানিক ক্যালকুলেটর: যোগ থেকে ঘাত ও মূল, ডিগ্রি/রেডিয়ান সুইচসহ ত্রিকোণমিতি, লগারিদম, ফ্যাক্টোরিয়াল, শতকরা, π ও e, বন্ধনী, মেমরি কী এবং চলমান ইতিহাস। কী চাপো বা পুরো রাশি টাইপ করে Enter চাপো। সবকিছু তোমার ব্রাউজারে নিরাপদে হিসাব হয়।",
+    },
+    how: {
+      en: "Type or tap an expression like sin(30) + 2^3 and press =. It follows normal maths order — brackets, powers, then × ÷, then + −, with powers reading right to left. Trig uses the degrees/radians switch. Errors like dividing by zero or the square root of a negative number are explained, never guessed.",
+      hi: "sin(30) + 2^3 जैसा व्यंजक टाइप या टैप करें और = दबाएँ। यह सामान्य गणित क्रम का पालन करता है — कोष्ठक, घात, फिर × ÷, फिर + −, घात दाएँ से बाएँ। त्रिकोणमिति डिग्री/रेडियन स्विच का उपयोग करती है। शून्य से भाग या ऋणात्मक का वर्गमूल जैसी त्रुटियाँ समझाई जाती हैं।",
+      bn: "sin(30) + 2^3-এর মতো রাশি টাইপ বা ট্যাপ করে = চাপো। এটি স্বাভাবিক গণিত নিয়ম মানে — বন্ধনী, ঘাত, তারপর × ÷, তারপর + −, ঘাত ডান থেকে বাঁ দিকে। ত্রিকোণমিতি ডিগ্রি/রেডিয়ান সুইচ ব্যবহার করে। শূন্য দিয়ে ভাগ বা ঋণাত্মকের বর্গমূলের মতো ভুল ব্যাখ্যা করা হয়।",
+    },
+    keywords: [
+      "scientific calculator",
+      "online calculator",
+      "trigonometry calculator",
+      "log calculator",
+      "factorial calculator",
+      "sin cos tan calculator",
+    ],
+    faq: [
+      {
+        q: { en: "How do I calculate sin, cos or tan?", hi: "sin, cos या tan कैसे निकालें?", bn: "sin, cos বা tan কীভাবে বের করব?" },
+        a: {
+          en: "Tap sin, cos or tan, enter the angle and a closing bracket, e.g. sin(30). Use the Degrees/Radians switch to set the unit.",
+          hi: "sin, cos या tan दबाएँ, कोण और बंद कोष्ठक डालें, जैसे sin(30)। इकाई के लिए डिग्री/रेडियन स्विच का उपयोग करें।",
+          bn: "sin, cos বা tan চাপো, কোণ ও বন্ধ বন্ধনী দাও, যেমন sin(30)। একক ঠিক করতে ডিগ্রি/রেডিয়ান সুইচ ব্যবহার করো।",
+        },
+      },
+      {
+        q: { en: "Does it follow correct order of operations?", hi: "क्या यह सही संक्रिया-क्रम का पालन करता है?", bn: "এটি কি সঠিক ক্রিয়া-ক্রম মানে?" },
+        a: {
+          en: "Yes — brackets first, then powers, then × ÷, then + −, exactly like BODMAS. Powers are read right to left, so 2^3^2 is 512.",
+          hi: "हाँ — पहले कोष्ठक, फिर घात, फिर × ÷, फिर + −, बिल्कुल BODMAS की तरह। घात दाएँ से बाएँ, इसलिए 2^3^2 = 512।",
+          bn: "হ্যাঁ — আগে বন্ধনী, তারপর ঘাত, তারপর × ÷, তারপর + −, ঠিক BODMAS-এর মতো। ঘাত ডান থেকে বাঁয়ে, তাই 2^3^2 = 512।",
+        },
+      },
+      {
+        q: { en: "Can I use the keyboard?", hi: "क्या मैं कीबोर्ड इस्तेमाल कर सकता हूँ?", bn: "আমি কি কীবোর্ড ব্যবহার করতে পারি?" },
+        a: {
+          en: "Yes. Type the whole expression and press Enter to calculate, or Escape to clear. The on-screen keys work too.",
+          hi: "हाँ। पूरा व्यंजक टाइप करें और गणना के लिए Enter दबाएँ, या साफ़ करने के लिए Escape। स्क्रीन की कुंजियाँ भी काम करती हैं।",
+          bn: "হ্যাঁ। পুরো রাশি টাইপ করে হিসাবের জন্য Enter চাপো, বা মুছতে Escape। স্ক্রিনের কী-ও কাজ করে।",
+        },
+      },
+      {
+        q: { en: "What do the memory keys do?", hi: "मेमोरी कुंजियाँ क्या करती हैं?", bn: "মেমরি কী কী করে?" },
+        a: {
+          en: "M+ adds the current result to memory, M− subtracts it, MR puts the stored value back into the expression, and MC clears the memory.",
+          hi: "M+ वर्तमान परिणाम को मेमोरी में जोड़ता है, M− घटाता है, MR संग्रहीत मान को व्यंजक में डालता है, और MC मेमोरी साफ़ करता है।",
+          bn: "M+ বর্তমান ফল মেমরিতে যোগ করে, M− বিয়োগ করে, MR সংরক্ষিত মান রাশিতে ফেরায়, আর MC মেমরি মুছে দেয়।",
+        },
+      },
+      {
+        q: { en: "How does the percent key work?", hi: "प्रतिशत कुंजी कैसे काम करती है?", bn: "শতকরা কী কীভাবে কাজ করে?" },
+        a: {
+          en: "The % key divides the value before it by 100, so 50% becomes 0.5 and 50%×200 gives 100.",
+          hi: "% कुंजी उससे पहले के मान को 100 से भाग देती है, इसलिए 50% = 0.5 और 50%×200 = 100।",
+          bn: "% কী তার আগের মানকে ১০০ দিয়ে ভাগ করে, তাই 50% = 0.5 এবং 50%×200 = 100।",
+        },
+      },
+    ],
+    related: ["fraction-calculator", "simple-interest-calculator", "number-to-words"],
+    chapterLinks: [
+      { classId: "9", subject: "maths", slug: "statistics", board: "cbse", label: { en: "Class 9 Maths — Statistics", hi: "कक्षा 9 गणित — सांख्यिकी", bn: "নবম অঙ্ক — পরিসংখ্যান" } },
+      { classId: "6", subject: "science", slug: "measurement-of-length-and-motion", board: "cbse", label: { en: "Class 6 Science — Measurement", hi: "कक्षा 6 विज्ञान — मापन", bn: "ষষ্ঠ বিজ্ঞান — পরিমাপ" } },
+    ],
+  },
 ];
 
 /* ------------------------------- Helpers -------------------------------- */

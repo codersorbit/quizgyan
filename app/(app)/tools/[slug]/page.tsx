@@ -22,6 +22,7 @@ import WorksheetIsland from "@/components/tools/islands/WorksheetIsland";
 import WordCounterIsland from "@/components/tools/islands/WordCounterIsland";
 import NumberToWordsIsland from "@/components/tools/islands/NumberToWordsIsland";
 import MultiplicationTableIsland from "@/components/tools/islands/MultiplicationTableIsland";
+import CalculatorIsland from "@/components/tools/islands/CalculatorIsland";
 
 export function generateStaticParams() {
   return TOOLS.map((t) => ({ slug: t.slug }));
@@ -80,6 +81,8 @@ function island(slug: string) {
       return <NumberToWordsIsland />;
     case "multiplication-table":
       return <MultiplicationTableIsland />;
+    case "scientific-calculator":
+      return <CalculatorIsland />;
     default:
       return null;
   }
