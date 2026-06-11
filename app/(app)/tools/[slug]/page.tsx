@@ -23,6 +23,10 @@ import WordCounterIsland from "@/components/tools/islands/WordCounterIsland";
 import NumberToWordsIsland from "@/components/tools/islands/NumberToWordsIsland";
 import MultiplicationTableIsland from "@/components/tools/islands/MultiplicationTableIsland";
 import CalculatorIsland from "@/components/tools/islands/CalculatorIsland";
+import PhotoSignatureResizerIsland from "@/components/tools/islands/PhotoSignatureResizerIsland";
+import ImageToPdfIsland from "@/components/tools/islands/ImageToPdfIsland";
+import TypingTestIsland from "@/components/tools/islands/TypingTestIsland";
+import RandomPickerIsland from "@/components/tools/islands/RandomPickerIsland";
 
 export function generateStaticParams() {
   return TOOLS.map((t) => ({ slug: t.slug }));
@@ -83,6 +87,14 @@ function island(slug: string) {
       return <MultiplicationTableIsland />;
     case "scientific-calculator":
       return <CalculatorIsland />;
+    case "photo-signature-resizer":
+      return <PhotoSignatureResizerIsland />;
+    case "image-to-pdf":
+      return <ImageToPdfIsland />;
+    case "typing-speed-test":
+      return <TypingTestIsland />;
+    case "random-picker":
+      return <RandomPickerIsland />;
     default:
       return null;
   }

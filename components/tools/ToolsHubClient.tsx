@@ -62,7 +62,7 @@ export default function ToolsHub() {
             if (tools.length === 0) return null;
             const isUtil = cat.key === "student-utilities";
             return (
-              <section key={cat.key} className={isUtil ? "mt-2 border-t-2 border-dashed border-line pt-8" : ""}>
+              <section key={cat.key} id={cat.key === "student-utilities" ? "student-utilities" : undefined} className={isUtil ? "mt-2 scroll-mt-24 border-t-2 border-dashed border-line pt-8" : ""}>
                 {isUtil && (
                   <span className="chip bg-amber/20 text-ink">
                     🧰 {tri(lang, "For students & teachers", "छात्रों और शिक्षकों के लिए", "শিক্ষার্থী ও শিক্ষকদের জন্য")}

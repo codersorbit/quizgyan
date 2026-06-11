@@ -997,6 +997,314 @@ export const TOOLS: ReadonlyArray<ToolConfig> = [
       { classId: "6", subject: "science", slug: "measurement-of-length-and-motion", board: "cbse", label: { en: "Class 6 Science — Measurement", hi: "कक्षा 6 विज्ञान — मापन", bn: "ষষ্ঠ বিজ্ঞান — পরিমাপ" } },
     ],
   },
+
+  {
+    slug: "photo-signature-resizer",
+    name: { en: "Exam Photo & Signature Resizer", hi: "परीक्षा फ़ोटो और हस्ताक्षर रिसाइज़र", bn: "পরীক্ষার ছবি ও স্বাক্ষর রিসাইজার" },
+    category: "student-utilities",
+    icon: "🖼️",
+    popular: true,
+    short: {
+      en: "Resize a photo or signature to exact pixels/cm and a KB size band for online forms — in your browser.",
+      hi: "फ़ोटो या हस्ताक्षर को सटीक पिक्सेल/सेमी और KB सीमा में बदलें — आपके ब्राउज़र में।",
+      bn: "ছবি বা স্বাক্ষরকে নির্দিষ্ট পিক্সেল/সেমি ও KB সীমায় বদলাও — তোমার ব্রাউজারেই।",
+    },
+    intro: {
+      en: "Indian exam, scholarship and admission forms often demand a photo or signature at an exact size and within a KB limit. Upload yours, crop it to the right shape, and the tool resizes and compresses it to land inside the size band — all in your browser, so the file is never uploaded anywhere. Use a common preset or, best of all, type the exact size and KB limit straight from your form.",
+      hi: "भारतीय परीक्षा, छात्रवृत्ति और दाखिले के फ़ॉर्म अक्सर सटीक आकार और KB सीमा में फ़ोटो या हस्ताक्षर माँगते हैं। अपनी फ़ाइल अपलोड करें, सही आकार में क्रॉप करें, और टूल इसे आकार-सीमा के भीतर रिसाइज़ व कंप्रेस कर देता है — सब आपके ब्राउज़र में, इसलिए फ़ाइल कहीं अपलोड नहीं होती। सामान्य प्रीसेट चुनें या सबसे अच्छा — अपने फ़ॉर्म से सटीक आकार और KB सीमा टाइप करें।",
+      bn: "ভারতীয় পরীক্ষা, বৃত্তি ও ভর্তির ফর্মে প্রায়ই নির্দিষ্ট আকার ও KB সীমায় ছবি বা স্বাক্ষর চাওয়া হয়। তোমার ফাইল আপলোড করো, সঠিক আকারে ক্রপ করো, আর টুলটি আকার-সীমার মধ্যে রিসাইজ ও কম্প্রেস করে দেয় — সবই তোমার ব্রাউজারে, তাই ফাইল কোথাও আপলোড হয় না। সাধারণ প্রিসেট বেছে নাও বা সবচেয়ে ভালো — নিজের ফর্ম থেকে সঠিক আকার ও KB সীমা টাইপ করো।",
+    },
+    how: {
+      en: "The image is read with its correct orientation (phone photos are often rotated), cropped to the target shape with a drag-or-keyboard crop box, then drawn to the exact pixel size on a canvas. For JPG/WEBP it tries different quality levels to land inside your KB band; if it cannot, it tells you the closest it reached instead of giving you an out-of-spec file. cm sizes use a DPI you can set (300 by default).",
+      hi: "छवि सही दिशा में पढ़ी जाती है (फ़ोन की तस्वीरें अक्सर घूमी होती हैं), क्रॉप बॉक्स से लक्ष्य आकार में काटी जाती है, फिर कैनवास पर सटीक पिक्सेल आकार में बनाई जाती है। JPG/WEBP के लिए यह विभिन्न क्वालिटी स्तर आज़माकर KB सीमा में लाने की कोशिश करता है; न हो पाने पर निकटतम परिणाम बताता है। cm आकार एक DPI (डिफ़ॉल्ट 300) से बनते हैं।",
+      bn: "ছবিটি সঠিক দিকে পড়া হয় (ফোনের ছবি প্রায়ই ঘোরানো থাকে), ক্রপ বক্স দিয়ে লক্ষ্য আকারে কাটা হয়, তারপর ক্যানভাসে নির্দিষ্ট পিক্সেল আকারে আঁকা হয়। JPG/WEBP-র জন্য এটি বিভিন্ন কোয়ালিটি চেষ্টা করে KB সীমায় আনে; না পারলে নিকটতম ফল জানায়। cm আকার একটি DPI (ডিফল্ট ৩০০) দিয়ে হয়।",
+    },
+    keywords: [
+      "photo resizer",
+      "resize photo to 20 kb",
+      "signature resizer for online forms",
+      "passport size photo resizer",
+      "image resize in kb",
+      "photo size converter",
+    ],
+    faq: [
+      {
+        q: { en: "How do I resize a photo to 20 KB for a form?", hi: "फ़ॉर्म के लिए फ़ोटो को 20 KB में कैसे बदलें?", bn: "ফর্মের জন্য ছবি ২০ KB-তে কীভাবে বদলাব?" },
+        a: {
+          en: "Choose Custom, type the required pixel size and set Max KB to 20, then Resize & compress. The tool lowers the quality until the file fits under 20 KB.",
+          hi: "कस्टम चुनें, आवश्यक पिक्सेल आकार टाइप करें और Max KB को 20 रखें, फिर रिसाइज़ व कंप्रेस करें। टूल फ़ाइल को 20 KB के नीचे लाने तक क्वालिटी घटाता है।",
+          bn: "কাস্টম বেছে নাও, প্রয়োজনীয় পিক্সেল আকার লেখো আর Max KB ২০ দাও, তারপর রিসাইজ ও কম্প্রেস করো। টুলটি ফাইল ২০ KB-র নিচে আনা পর্যন্ত কোয়ালিটি কমায়।",
+        },
+      },
+      {
+        q: { en: "Are the presets the official exam sizes?", hi: "क्या प्रीसेट आधिकारिक परीक्षा आकार हैं?", bn: "প্রিসেটগুলো কি অফিসিয়াল পরীক্ষার আকার?" },
+        a: {
+          en: "No — they are common, typical values to get you started. Official sizes change by year and portal, so always confirm against your own form and use Custom mode for the exact figures.",
+          hi: "नहीं — ये सामान्य मान हैं जो शुरुआत के लिए हैं। आधिकारिक आकार वर्ष और पोर्टल से बदलते हैं, इसलिए अपने फ़ॉर्म से मिलाएँ और सटीक मानों के लिए कस्टम मोड का उपयोग करें।",
+          bn: "না — এগুলো শুরু করার জন্য সাধারণ মান। অফিসিয়াল আকার বছর ও পোর্টাল ভেদে বদলায়, তাই নিজের ফর্মের সঙ্গে মিলিয়ে নাও আর সঠিক মানের জন্য কাস্টম মোড ব্যবহার করো।",
+        },
+      },
+      {
+        q: { en: "Is my photo uploaded to a server?", hi: "क्या मेरी फ़ोटो किसी सर्वर पर अपलोड होती है?", bn: "আমার ছবি কি কোনো সার্ভারে আপলোড হয়?" },
+        a: {
+          en: "No. The whole process runs in your browser using your device — your photo is never sent anywhere. That keeps it fully private.",
+          hi: "नहीं। पूरी प्रक्रिया आपके डिवाइस पर आपके ब्राउज़र में चलती है — आपकी फ़ोटो कहीं नहीं भेजी जाती। यह पूरी तरह निजी रहती है।",
+          bn: "না। পুরো প্রক্রিয়া তোমার ডিভাইসে তোমার ব্রাউজারে চলে — তোমার ছবি কোথাও পাঠানো হয় না। এটি সম্পূর্ণ গোপন থাকে।",
+        },
+      },
+      {
+        q: { en: "Can it remove or change the background?", hi: "क्या यह पृष्ठभूमि हटा या बदल सकता है?", bn: "এটি কি পটভূমি সরাতে বা বদলাতে পারে?" },
+        a: {
+          en: "No — it does not cut out the subject. It can place a transparent image on a plain white background (useful for forms), but it cannot remove an existing photo background.",
+          hi: "नहीं — यह विषय को नहीं काटता। यह पारदर्शी छवि को सादे सफ़ेद पृष्ठभूमि पर रख सकता है (फ़ॉर्म के लिए उपयोगी), पर मौजूदा फ़ोटो पृष्ठभूमि नहीं हटा सकता।",
+          bn: "না — এটি বিষয়কে কেটে আলাদা করে না। এটি স্বচ্ছ ছবিকে সাদা পটভূমিতে রাখতে পারে (ফর্মের জন্য উপযোগী), কিন্তু আগের ছবির পটভূমি সরাতে পারে না।",
+        },
+      },
+      {
+        q: { en: "Why does my phone photo come out the right way up?", hi: "मेरी फ़ोन फ़ोटो सही दिशा में क्यों आती है?", bn: "আমার ফোনের ছবি সঠিক দিকে কেন আসে?" },
+        a: {
+          en: "The tool reads the photo's orientation information and corrects rotated phone photos automatically before you crop.",
+          hi: "टूल फ़ोटो की ओरिएंटेशन जानकारी पढ़कर घूमी हुई फ़ोन तस्वीरों को क्रॉप से पहले अपने आप ठीक कर देता है।",
+          bn: "টুলটি ছবির ওরিয়েন্টেশন তথ্য পড়ে ঘোরানো ফোন ছবি ক্রপের আগেই নিজে থেকে ঠিক করে দেয়।",
+        },
+      },
+      {
+        q: { en: "It says it can't reach the KB limit — what now?", hi: "यह कहता है KB सीमा तक नहीं पहुँच सका — अब क्या?", bn: "এটি বলছে KB সীমায় পৌঁছাতে পারেনি — এখন কী?" },
+        a: {
+          en: "It shows the closest size it managed. Try a slightly smaller pixel size, raise the Max KB a little, or use JPG instead of PNG — PNG of a photo is usually much larger.",
+          hi: "यह निकटतम आकार दिखाता है। थोड़ा छोटा पिक्सेल आकार आज़माएँ, Max KB थोड़ा बढ़ाएँ, या PNG के बजाय JPG लें — फ़ोटो का PNG आम तौर पर बहुत बड़ा होता है।",
+          bn: "এটি নিকটতম আকার দেখায়। সামান্য ছোট পিক্সেল আকার চেষ্টা করো, Max KB একটু বাড়াও, বা PNG-র বদলে JPG নাও — ছবির PNG সাধারণত অনেক বড় হয়।",
+        },
+      },
+    ],
+    related: ["image-to-pdf", "word-counter"],
+    chapterLinks: [],
+  },
+
+  {
+    slug: "image-to-pdf",
+    name: { en: "Image to PDF for Submissions", hi: "सबमिशन के लिए छवि से PDF", bn: "জমা দেওয়ার জন্য ছবি থেকে PDF" },
+    category: "student-utilities",
+    icon: "📄",
+    popular: true,
+    short: {
+      en: "Turn photos of handwritten pages into one tidy PDF, ready to upload — in your browser.",
+      hi: "हाथ से लिखे पन्नों की तस्वीरों को एक साफ़ PDF में बदलें, अपलोड के लिए तैयार — आपके ब्राउज़र में।",
+      bn: "হাতে লেখা পাতার ছবিগুলোকে এক পরিষ্কার PDF-এ বদলাও, আপলোডের জন্য তৈরি — তোমার ব্রাউজারেই।",
+    },
+    intro: {
+      en: "Photograph or scan the pages of a handwritten assignment, add them here, drag them into the right order, and combine them into a single PDF you can upload or submit. Choose A4 or Letter, portrait or landscape, margins and quality. Everything is done in your browser — your pages are never uploaded.",
+      hi: "हाथ से लिखे असाइनमेंट के पन्नों की फ़ोटो या स्कैन यहाँ जोड़ें, सही क्रम में खींचें, और उन्हें एक PDF में मिलाएँ जिसे आप अपलोड या जमा कर सकें। A4 या Letter, पोर्ट्रेट या लैंडस्केप, हाशिये और गुणवत्ता चुनें। सब कुछ आपके ब्राउज़र में होता है — आपके पन्ने कभी अपलोड नहीं होते।",
+      bn: "হাতে লেখা অ্যাসাইনমেন্টের পাতার ছবি বা স্ক্যান এখানে যোগ করো, সঠিক ক্রমে টানো, আর একটি PDF-এ মেলাও যা আপলোড বা জমা দেওয়া যায়। A4 বা Letter, পোর্ট্রেট বা ল্যান্ডস্কেপ, মার্জিন ও মান বেছে নাও। সবকিছু তোমার ব্রাউজারে হয় — তোমার পাতা কখনও আপলোড হয় না।",
+    },
+    how: {
+      en: "Each image is read with its correct orientation, scaled down to a sensible resolution, and placed on its own page — either fitted whole inside the margins, or filled to cover the page. Pages are processed one by one with a progress bar, so even a long assignment works smoothly on a phone. The PDF is generated and downloaded entirely on your device.",
+      hi: "हर छवि सही दिशा में पढ़ी जाती है, उचित रिज़ॉल्यूशन में छोटी की जाती है, और अपने पन्ने पर रखी जाती है — या तो हाशिये के भीतर पूरी फ़िट, या पन्ने को भरते हुए। पन्ने एक-एक करके प्रोग्रेस बार के साथ बनते हैं, इसलिए लंबा असाइनमेंट भी फ़ोन पर आसानी से चलता है। PDF पूरी तरह आपके डिवाइस पर बनती और डाउनलोड होती है।",
+      bn: "প্রতিটি ছবি সঠিক দিকে পড়া হয়, উপযুক্ত রেজোলিউশনে ছোট করা হয়, এবং নিজের পাতায় রাখা হয় — হয় মার্জিনের মধ্যে পুরো ফিট, নয়তো পাতা ভরাট করে। পাতা একে একে প্রোগ্রেস বারসহ তৈরি হয়, তাই বড় অ্যাসাইনমেন্টও ফোনে সহজে চলে। PDF পুরোপুরি তোমার ডিভাইসে তৈরি ও ডাউনলোড হয়।",
+    },
+    keywords: [
+      "image to pdf",
+      "jpg to pdf",
+      "combine images into pdf",
+      "scan assignment to pdf",
+      "photo to pdf",
+      "handwritten notes to pdf",
+    ],
+    faq: [
+      {
+        q: { en: "How do I combine several photos into one PDF?", hi: "कई फ़ोटो को एक PDF में कैसे मिलाएँ?", bn: "কয়েকটি ছবি এক PDF-এ কীভাবে মেলাব?" },
+        a: {
+          en: "Add all the images, drag them (or use the arrows) into the order you want, then press Make PDF. They become one file, one image per page.",
+          hi: "सभी छवियाँ जोड़ें, उन्हें मनचाहे क्रम में खींचें (या तीर इस्तेमाल करें), फिर PDF बनाएँ दबाएँ। वे एक फ़ाइल बन जाती हैं, हर पन्ने पर एक छवि।",
+          bn: "সব ছবি যোগ করো, পছন্দের ক্রমে টানো (বা তীর ব্যবহার করো), তারপর PDF বানাও চাপো। সেগুলো এক ফাইল হয়ে যায়, প্রতি পাতায় একটি ছবি।",
+        },
+      },
+      {
+        q: { en: "Are my files uploaded anywhere?", hi: "क्या मेरी फ़ाइलें कहीं अपलोड होती हैं?", bn: "আমার ফাইল কি কোথাও আপলোড হয়?" },
+        a: {
+          en: "No. The PDF is built entirely in your browser on your own device, so your pages stay private and nothing is sent to a server.",
+          hi: "नहीं। PDF पूरी तरह आपके डिवाइस पर आपके ब्राउज़र में बनती है, इसलिए आपके पन्ने निजी रहते हैं और कुछ भी सर्वर पर नहीं जाता।",
+          bn: "না। PDF পুরোপুরি তোমার ডিভাইসে তোমার ব্রাউজারে তৈরি হয়, তাই তোমার পাতা গোপন থাকে আর কিছুই সার্ভারে যায় না।",
+        },
+      },
+      {
+        q: { en: "Can I reorder the pages?", hi: "क्या मैं पन्नों का क्रम बदल सकता हूँ?", bn: "আমি কি পাতার ক্রম বদলাতে পারি?" },
+        a: {
+          en: "Yes — drag a page to a new spot, or use the up/down arrows on each page. The numbers update so you can see the final order.",
+          hi: "हाँ — किसी पन्ने को नई जगह खींचें, या हर पन्ने पर ऊपर/नीचे तीर का उपयोग करें। संख्याएँ अपडेट होती हैं ताकि अंतिम क्रम दिखे।",
+          bn: "হ্যাঁ — কোনো পাতা টেনে নতুন জায়গায় নাও, বা প্রতিটি পাতার উপর/নিচ তীর ব্যবহার করো। সংখ্যা আপডেট হয় যাতে চূড়ান্ত ক্রম দেখা যায়।",
+        },
+      },
+      {
+        q: { en: "Should I choose Fit or Fill?", hi: "मुझे फ़िट या फ़िल चुनना चाहिए?", bn: "ফিট না ফিল বেছে নেব?" },
+        a: {
+          en: "Fit shows the whole page with white edges — best for assignments. Fill makes the image cover the page and may crop the edges.",
+          hi: "फ़िट पूरा पन्ना सफ़ेद किनारों के साथ दिखाता है — असाइनमेंट के लिए सबसे अच्छा। फ़िल छवि को पन्ने पर भर देता है और किनारे कट सकते हैं।",
+          bn: "ফিট পুরো পাতা সাদা কিনারাসহ দেখায় — অ্যাসাইনমেন্টের জন্য সেরা। ফিল ছবিকে পাতা ভরাট করে আর কিনারা কাটতে পারে।",
+        },
+      },
+      {
+        q: { en: "Can it handle many pages?", hi: "क्या यह कई पन्ने संभाल सकता है?", bn: "এটি কি অনেক পাতা সামলাতে পারে?" },
+        a: {
+          en: "Yes — pages are processed one at a time with a progress bar, and images are scaled down so the PDF stays a reasonable size even on a phone.",
+          hi: "हाँ — पन्ने एक-एक करके प्रोग्रेस बार के साथ बनते हैं, और छवियाँ छोटी की जाती हैं ताकि PDF का आकार फ़ोन पर भी उचित रहे।",
+          bn: "হ্যাঁ — পাতা একে একে প্রোগ্রেস বারসহ তৈরি হয়, আর ছবি ছোট করা হয় যাতে PDF-এর আকার ফোনেও যুক্তিসঙ্গত থাকে।",
+        },
+      },
+    ],
+    related: ["photo-signature-resizer", "word-counter"],
+    chapterLinks: [],
+  },
+
+  {
+    slug: "typing-speed-test",
+    name: { en: "Typing Speed Test (WPM)", hi: "टाइपिंग स्पीड टेस्ट (WPM)", bn: "টাইপিং স্পিড টেস্ট (WPM)" },
+    category: "student-utilities",
+    icon: "⌨️",
+    popular: true,
+    short: {
+      en: "Test your typing speed and accuracy in English, বাংলা or हिन्दी — timed or full passage.",
+      hi: "अंग्रेज़ी, বাংলা या हिन्दी में अपनी टाइपिंग गति और सटीकता जाँचें — समयबद्ध या पूरा गद्यांश।",
+      bn: "ইংরেজি, বাংলা বা हिन्दी-তে তোমার টাইপিং গতি ও নির্ভুলতা যাচাই করো — সময়সীমা বা পুরো অনুচ্ছেদ।",
+    },
+    intro: {
+      en: "Practise typing against a short passage and see your speed in words per minute, your accuracy, and your errors in real time. Choose a 1, 2 or 5 minute timed test, or type a full passage. Passages are offered in English, বাংলা and हिन्दी, so you can practise regional-language typing for government-exam tests too. Everything runs in your browser.",
+      hi: "एक छोटे गद्यांश पर टाइपिंग का अभ्यास करें और अपनी गति (शब्द प्रति मिनट), सटीकता और त्रुटियाँ वास्तविक समय में देखें। 1, 2 या 5 मिनट का समयबद्ध टेस्ट चुनें, या पूरा गद्यांश टाइप करें। गद्यांश अंग्रेज़ी, বাংলা और हिन्दी में हैं, ताकि आप सरकारी परीक्षाओं के लिए क्षेत्रीय भाषा टाइपिंग का भी अभ्यास कर सकें। सब कुछ आपके ब्राउज़र में चलता है।",
+      bn: "একটি ছোট অনুচ্ছেদে টাইপিং অনুশীলন করো আর তোমার গতি (মিনিটে শব্দ), নির্ভুলতা ও ভুল রিয়েল-টাইমে দেখো। ১, ২ বা ৫ মিনিটের সময়সীমার টেস্ট বেছে নাও, বা পুরো অনুচ্ছেদ টাইপ করো। অনুচ্ছেদ ইংরেজি, বাংলা ও हिन्दी-তে আছে, তাই সরকারি পরীক্ষার জন্য আঞ্চলিক ভাষার টাইপিংও অনুশীলন করতে পারো। সবকিছু তোমার ব্রাউজারে চলে।",
+    },
+    how: {
+      en: "As you type, each character turns green when correct and red when wrong, and the timer starts on your first keystroke. Speed is measured in WPM, where one word equals five characters. Gross WPM is your raw speed; net WPM subtracts your errors; accuracy is the share of characters you typed correctly.",
+      hi: "जैसे-जैसे आप टाइप करते हैं, सही होने पर हर वर्ण हरा और गलत होने पर लाल हो जाता है, और पहले कीस्ट्रोक पर टाइमर शुरू होता है। गति WPM में मापी जाती है, जहाँ एक शब्द = पाँच वर्ण। ग्रॉस WPM आपकी कुल गति है; नेट WPM त्रुटियाँ घटाता है; सटीकता सही टाइप किए वर्णों का अनुपात है।",
+      bn: "টাইপ করার সময় প্রতিটি অক্ষর সঠিক হলে সবুজ আর ভুল হলে লাল হয়, আর প্রথম কীস্ট্রোকে টাইমার শুরু হয়। গতি WPM-এ মাপা হয়, যেখানে এক শব্দ = পাঁচ অক্ষর। গ্রস WPM তোমার মোট গতি; নেট WPM ভুল বাদ দেয়; নির্ভুলতা সঠিক টাইপ করা অক্ষরের অনুপাত।",
+    },
+    keywords: [
+      "typing speed test",
+      "wpm test",
+      "typing test online",
+      "bengali typing test",
+      "hindi typing test",
+      "words per minute test",
+    ],
+    faq: [
+      {
+        q: { en: "How is WPM calculated?", hi: "WPM कैसे निकाला जाता है?", bn: "WPM কীভাবে হিসাব হয়?" },
+        a: {
+          en: "A word is counted as five characters. Gross WPM is total characters ÷ 5 ÷ minutes; net WPM subtracts your errors from that.",
+          hi: "एक शब्द को पाँच वर्ण गिना जाता है। ग्रॉस WPM = कुल वर्ण ÷ 5 ÷ मिनट; नेट WPM उसमें से त्रुटियाँ घटाता है।",
+          bn: "এক শব্দ পাঁচ অক্ষর ধরা হয়। গ্রস WPM = মোট অক্ষর ÷ ৫ ÷ মিনিট; নেট WPM তা থেকে ভুল বাদ দেয়।",
+        },
+      },
+      {
+        q: { en: "Can I practise Hindi or Bengali typing?", hi: "क्या मैं हिन्दी या बांग्ला टाइपिंग का अभ्यास कर सकता हूँ?", bn: "আমি কি হিন্দি বা বাংলা টাইপিং অনুশীলন করতে পারি?" },
+        a: {
+          en: "Yes. Switch the language and the passage changes to that script, so you can practise हिन्दी or বাংলা typing, useful for many government typing tests.",
+          hi: "हाँ। भाषा बदलें और गद्यांश उस लिपि में बदल जाता है, ताकि आप हिन्दी या বাংলা टाइपिंग का अभ्यास कर सकें।",
+          bn: "হ্যাঁ। ভাষা বদলালে অনুচ্ছেদ সেই লিপিতে বদলায়, তাই হিন্দি বা বাংলা টাইপিং অনুশীলন করা যায়।",
+        },
+      },
+      {
+        q: { en: "What is a good typing speed?", hi: "अच्छी टाइपिंग गति क्या है?", bn: "ভালো টাইপিং গতি কত?" },
+        a: {
+          en: "Around 35–40 WPM is a common requirement for many clerical and government typing tests; 20–30 WPM is a solid start for students.",
+          hi: "कई लिपिक और सरकारी टाइपिंग टेस्ट के लिए लगभग 35–40 WPM आम आवश्यकता है; छात्रों के लिए 20–30 WPM अच्छी शुरुआत है।",
+          bn: "অনেক কেরানি ও সরকারি টাইপিং টেস্টের জন্য প্রায় ৩৫–৪০ WPM সাধারণ প্রয়োজন; শিক্ষার্থীদের জন্য ২০–৩০ WPM ভালো শুরু।",
+        },
+      },
+      {
+        q: { en: "Does the timer start straight away?", hi: "क्या टाइमर तुरंत शुरू होता है?", bn: "টাইমার কি সঙ্গে সঙ্গে শুরু হয়?" },
+        a: {
+          en: "No — it starts the moment you type your first character, so you are not rushed before you begin.",
+          hi: "नहीं — यह आपके पहले वर्ण टाइप करते ही शुरू होता है, इसलिए शुरू करने से पहले जल्दबाज़ी नहीं।",
+          bn: "না — তুমি প্রথম অক্ষর টাইপ করার মুহূর্তেই এটি শুরু হয়, তাই শুরুর আগে তাড়াহুড়ো নেই।",
+        },
+      },
+      {
+        q: { en: "Are the passages copied from somewhere?", hi: "क्या गद्यांश कहीं से लिए गए हैं?", bn: "অনুচ্ছেদগুলো কি কোথাও থেকে নেওয়া?" },
+        a: {
+          en: "No. They are original, neutral passages written for this tool, so they are safe and free to practise with.",
+          hi: "नहीं। ये इस टूल के लिए लिखे गए मौलिक, तटस्थ गद्यांश हैं, इसलिए अभ्यास के लिए सुरक्षित और मुफ़्त हैं।",
+          bn: "না। এগুলো এই টুলের জন্য লেখা মৌলিক, নিরপেক্ষ অনুচ্ছেদ, তাই অনুশীলনের জন্য নিরাপদ ও বিনামূল্যে।",
+        },
+      },
+    ],
+    related: ["word-counter", "number-to-words"],
+    chapterLinks: [],
+  },
+
+  {
+    slug: "random-picker",
+    name: { en: "Random Student Picker & Group Maker", hi: "रैंडम छात्र चयनकर्ता और समूह निर्माता", bn: "র‍্যান্ডম শিক্ষার্থী নির্বাচক ও দল নির্মাতা" },
+    category: "student-utilities",
+    icon: "🎲",
+    popular: true,
+    short: {
+      en: "Pick a random student fairly, or split your class into balanced groups in one tap.",
+      hi: "किसी छात्र को निष्पक्ष रूप से चुनें, या एक टैप में अपनी कक्षा को संतुलित समूहों में बाँटें।",
+      bn: "একজন শিক্ষার্থীকে ন্যায্যভাবে বাছো, বা এক ট্যাপে ক্লাসকে সুষম দলে ভাগ করো।",
+    },
+    intro: {
+      en: "Paste your class list and let the tool pick a random student — with an option not to repeat anyone until the whole class has had a turn. Switch to group mode to split the class into a set number of groups, or into groups of a chosen size, all balanced. Copy or print the group lists. The list stays in your browser.",
+      hi: "अपनी कक्षा सूची पेस्ट करें और टूल को किसी छात्र को यादृच्छिक रूप से चुनने दें — इस विकल्प के साथ कि पूरी कक्षा की बारी आने तक किसी को न दोहराया जाए। समूह मोड में जाकर कक्षा को निश्चित संख्या में समूहों, या चुने हुए आकार के समूहों में बाँटें, सभी संतुलित। समूह सूची कॉपी या प्रिंट करें। सूची आपके ब्राउज़र में रहती है।",
+      bn: "তোমার ক্লাসের তালিকা পেস্ট করো আর টুলকে একজন শিক্ষার্থী র‍্যান্ডমভাবে বাছতে দাও — পুরো ক্লাসের পালা আসার আগে কাউকে পুনরাবৃত্তি না করার সুযোগসহ। দল মোডে গিয়ে ক্লাসকে নির্দিষ্ট সংখ্যক দলে, বা বেছে নেওয়া আকারের দলে ভাগ করো, সবই সুষম। দলের তালিকা কপি বা প্রিন্ট করো। তালিকা তোমার ব্রাউজারেই থাকে।",
+    },
+    how: {
+      en: "Names are read one per line (commas work too). The picker chooses at random; with 'don't repeat' on, each chosen name leaves the pool until you reset it. The group maker shuffles the names and deals them out round-robin, so every group ends up within one member of the same size.",
+      hi: "नाम प्रति पंक्ति एक पढ़े जाते हैं (अल्पविराम भी चलते हैं)। चयनकर्ता यादृच्छिक रूप से चुनता है; 'न दोहराएँ' चालू होने पर हर चुना नाम पूल से हट जाता है जब तक आप रीसेट न करें। समूह निर्माता नामों को फेंटकर बारी-बारी से बाँटता है, ताकि हर समूह एक सदस्य के भीतर समान आकार का हो।",
+      bn: "নাম প্রতি লাইনে একটি পড়া হয় (কমাও চলে)। নির্বাচক র‍্যান্ডমভাবে বাছে; 'পুনরাবৃত্তি নয়' চালু থাকলে প্রতিটি বাছা নাম পুল থেকে সরে যায় যতক্ষণ না রিসেট করো। দল নির্মাতা নাম শাফল করে পালাক্রমে বিলি করে, তাই প্রতিটি দল একই আকারের এক সদস্যের মধ্যে থাকে।",
+    },
+    keywords: [
+      "random name picker",
+      "random student picker",
+      "group maker",
+      "team generator",
+      "class group maker",
+      "random group generator",
+    ],
+    faq: [
+      {
+        q: { en: "Will it pick the same student twice?", hi: "क्या यह एक ही छात्र को दो बार चुनेगा?", bn: "এটি কি একই শিক্ষার্থীকে দুবার বাছবে?" },
+        a: {
+          en: "Only if you turn off 'don't repeat'. With it on, each name is removed after being picked until everyone has had a turn, then you can reset the pool.",
+          hi: "केवल तभी जब आप 'न दोहराएँ' बंद करें। चालू होने पर हर नाम चुने जाने के बाद हटा दिया जाता है जब तक सभी की बारी न आ जाए, फिर आप पूल रीसेट कर सकते हैं।",
+          bn: "শুধু যদি 'পুনরাবৃত্তি নয়' বন্ধ করো। চালু থাকলে প্রতিটি নাম বাছার পর সরিয়ে দেওয়া হয় যতক্ষণ না সবার পালা আসে, তারপর পুল রিসেট করতে পারো।",
+        },
+      },
+      {
+        q: { en: "Are the groups balanced?", hi: "क्या समूह संतुलित होते हैं?", bn: "দলগুলো কি সুষম?" },
+        a: {
+          en: "Yes. Names are shuffled and dealt out evenly, so group sizes never differ by more than one student.",
+          hi: "हाँ। नाम फेंटकर समान रूप से बाँटे जाते हैं, इसलिए समूह आकार एक छात्र से अधिक अलग नहीं होते।",
+          bn: "হ্যাঁ। নাম শাফল করে সমানভাবে বিলি হয়, তাই দলের আকার এক শিক্ষার্থীর বেশি আলাদা হয় না।",
+        },
+      },
+      {
+        q: { en: "Can I set groups by size instead of number?", hi: "क्या मैं संख्या के बजाय आकार से समूह बना सकता हूँ?", bn: "সংখ্যার বদলে আকার দিয়ে দল বানাতে পারি?" },
+        a: {
+          en: "Yes — choose 'Students per group' and the tool makes as many balanced groups of about that size as your class needs.",
+          hi: "हाँ — 'प्रति समूह छात्र' चुनें और टूल उस आकार के उतने संतुलित समूह बनाता है जितने आपकी कक्षा को चाहिए।",
+          bn: "হ্যাঁ — 'প্রতি দলে শিক্ষার্থী' বেছে নাও, টুলটি সেই আকারের যত সুষম দল দরকার তত বানায়।",
+        },
+      },
+      {
+        q: { en: "Is my class list saved or shared?", hi: "क्या मेरी कक्षा सूची सहेजी या साझा होती है?", bn: "আমার ক্লাসের তালিকা কি সংরক্ষিত বা শেয়ার হয়?" },
+        a: {
+          en: "No. The names stay in your browser only and are never uploaded. Closing the tab clears them.",
+          hi: "नहीं। नाम केवल आपके ब्राउज़र में रहते हैं और कभी अपलोड नहीं होते। टैब बंद करते ही वे मिट जाते हैं।",
+          bn: "না। নাম শুধু তোমার ব্রাউজারে থাকে আর কখনও আপলোড হয় না। ট্যাব বন্ধ করলে মুছে যায়।",
+        },
+      },
+      {
+        q: { en: "Can I print the groups for class?", hi: "क्या मैं कक्षा के लिए समूह प्रिंट कर सकता हूँ?", bn: "ক্লাসের জন্য দল প্রিন্ট করতে পারি?" },
+        a: {
+          en: "Yes — use Copy to paste them into a message, or Print to get a clean sheet of the group lists.",
+          hi: "हाँ — संदेश में चिपकाने के लिए कॉपी का उपयोग करें, या समूह सूची की साफ़ शीट के लिए प्रिंट करें।",
+          bn: "হ্যাঁ — বার্তায় পেস্ট করতে কপি ব্যবহার করো, বা দলের তালিকার পরিষ্কার শিটের জন্য প্রিন্ট করো।",
+        },
+      },
+    ],
+    related: ["worksheet-generator", "result-calculator"],
+    chapterLinks: [],
+  },
 ];
 
 /* ------------------------------- Helpers -------------------------------- */

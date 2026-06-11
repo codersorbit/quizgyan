@@ -14,12 +14,18 @@ function tint(value: number, max: number): string {
   return `hsl(214 72% ${light}%)`;
 }
 
-export default function MultiplicationTableIsland() {
+export default function MultiplicationTableIsland({
+  initialN,
+  initialMode,
+}: {
+  initialN?: number;
+  initialMode?: Mode;
+} = {}) {
   const [lang, setLang] = useLang();
-  const [mode, setMode] = useState<Mode>("single");
+  const [mode, setMode] = useState<Mode>(initialMode ?? "single");
   const [display, setDisplay] = useState<Display>("grid");
 
-  const [n, setN] = useState(7);
+  const [n, setN] = useState(initialN ?? 7);
   const [upTo, setUpTo] = useState(10);
   const [chartSize, setChartSize] = useState(10);
   const [from, setFrom] = useState(2);

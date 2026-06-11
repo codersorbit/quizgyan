@@ -72,6 +72,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
+  // Programmatic multiplication pages: table-of-2 … table-of-30 (29) + chart.
+  const multiplicationVariantPages: MetadataRoute.Sitemap = [];
+  for (let n = 2; n <= 30; n++) {
+    multiplicationVariantPages.push({
+      url: u(`${toolUrl("multiplication-table")}/table-of-${n}`),
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.5,
+    });
+  }
+  multiplicationVariantPages.push({
+    url: u(`${toolUrl("multiplication-table")}/printable-chart`),
+    lastModified: now,
+    changeFrequency: "yearly",
+    priority: 0.55,
+  });
+  console.log(`[sitemap] multiplication variant pages: ${multiplicationVariantPages.length}`);
+
+  // Programmatic resizer landing pages: resize-to-{10,20,50,100,200,500}kb + passport.
+  const resizerVariantPages: MetadataRoute.Sitemap = [];
+  for (const kb of [10, 20, 50, 100, 200, 500]) {
+    resizerVariantPages.push({
+      url: u(`${toolUrl("photo-signature-resizer")}/resize-to-${kb}kb`),
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.5,
+    });
+  }
+  resizerVariantPages.push({
+    url: u(`${toolUrl("photo-signature-resizer")}/passport-size-photo`),
+    lastModified: now,
+    changeFrequency: "yearly",
+    priority: 0.55,
+  });
+  console.log(`[sitemap] resizer variant pages: ${resizerVariantPages.length}`);
+
   // Programmatic worksheet landing pages (one per qualifying chapter) and the
   // per-subject roll-ups. Counts are logged below for the Phase-3 report.
   const worksheetChapterPages: MetadataRoute.Sitemap = worksheetLandingParams().map((p) => ({
@@ -97,6 +133,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...chapterPages,
     ...toolsPages,
     ...cgpaVariantPages,
+    ...multiplicationVariantPages,
+    ...resizerVariantPages,
     ...worksheetChapterPages,
     ...worksheetSubjectPages,
   ];

@@ -30,6 +30,8 @@ export default function FooterSection() {
                 { label: "Revision notes", href: "/notes" },
                 { label: "MCQ quizzes", href: "/mcqs" },
                 { label: "Tools", href: "/tools" },
+                { label: "Study utilities", href: "/tools#student-utilities" },
+                { label: "Photo & PDF tools", href: "/tools/photo-signature-resizer" },
                 { label: "Daily challenge", href: "/daily" },
               ].map((l) => (
                 <li key={l.label}><a href={l.href} className="hover:text-[#FF6FB5] transition-colors cursor-pointer">{l.label}</a></li>

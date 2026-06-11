@@ -10,6 +10,7 @@
     "prebuild": "tsx scripts/gen-data.ts"
   },
   "dependencies": {
+    "jspdf": "^4.2.1",
     "next": "^16.2.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
@@ -21,7 +22,7 @@
     "@types/react-dom": "^19.2.0",
     "postcss": "^8.4.0",
     "tailwindcss": "^4.1.0",
-    "typescript": "^5.6.0",
-    "tsx": "^4.19.0"
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
   }
 }
