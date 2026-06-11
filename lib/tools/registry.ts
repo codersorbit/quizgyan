@@ -843,6 +843,82 @@ export const TOOLS: ReadonlyArray<ToolConfig> = [
     related: ["word-counter"],
     chapterLinks: [],
   },
+
+  {
+    slug: "multiplication-table",
+    name: { en: "Multiplication Table Generator", hi: "पहाड़ा (गुणन सारणी) जनरेटर", bn: "নামতা (গুণন সারণি) জেনারেটর" },
+    category: "student-utilities",
+    icon: "✖️",
+    popular: true,
+    short: {
+      en: "Make and print any times table, a full chart, or a 2–20 booklet on clean A4.",
+      hi: "कोई भी पहाड़ा, पूरा चार्ट, या 2–20 की पुस्तिका बनाएँ और साफ़ A4 पर प्रिंट करें।",
+      bn: "যেকোনো নামতা, পুরো চার্ট, বা ২–২০ পুস্তিকা তৈরি করো ও পরিষ্কার A4-তে প্রিন্ট করো।",
+    },
+    intro: {
+      en: "Generate a single times table (for example the table of 17, up to 30), a full multiplication chart (10×10 up to 20×20), or a printable booklet of tables from one number to another. Choose a simple list or a colourful grid, then print on tidy A4 — a table is never split across two pages. Ideal for parents and teachers making practice sheets.",
+      hi: "एक पहाड़ा (जैसे 17 का पहाड़ा, 30 तक), पूरा गुणन चार्ट (10×10 से 20×20 तक), या एक संख्या से दूसरी तक पहाड़ों की प्रिंट-योग्य पुस्तिका बनाएँ। सरल सूची या रंगीन ग्रिड चुनें, फिर साफ़ A4 पर प्रिंट करें — कोई पहाड़ा दो पन्नों में नहीं बँटता। अभ्यास पत्रक बनाने वाले अभिभावकों और शिक्षकों के लिए आदर्श।",
+      bn: "একটি নামতা (যেমন ১৭-এর নামতা, ৩০ পর্যন্ত), পুরো গুণন চার্ট (১০×১০ থেকে ২০×২০), বা এক সংখ্যা থেকে আরেক সংখ্যা পর্যন্ত নামতার প্রিন্টযোগ্য পুস্তিকা তৈরি করো। সরল তালিকা বা রঙিন গ্রিড বেছে নাও, তারপর পরিষ্কার A4-তে প্রিন্ট করো — কোনো নামতা দুই পাতায় ভাগ হয় না। অনুশীলন শিট তৈরির জন্য অভিভাবক ও শিক্ষকদের আদর্শ।",
+    },
+    how: {
+      en: "A single table lists N×1 up to N×(your chosen limit, max 30). The chart multiplies 1…size down the side by 1…size across the top. The booklet repeats the single-table layout for every number in your range. Printing isolates just the tables on A4 and keeps each whole table together.",
+      hi: "एक पहाड़ा N×1 से N×(आपकी चुनी सीमा, अधिकतम 30) तक दिखाता है। चार्ट बाएँ 1…आकार को ऊपर 1…आकार से गुणा करता है। पुस्तिका आपकी सीमा की हर संख्या के लिए पहाड़ा दोहराती है। प्रिंट केवल पहाड़ों को A4 पर दिखाता है और हर पहाड़ा एक साथ रखता है।",
+      bn: "একটি নামতা N×১ থেকে N×(তোমার বেছে নেওয়া সীমা, সর্বোচ্চ ৩০) পর্যন্ত দেখায়। চার্ট পাশে ১…আকারকে উপরে ১…আকার দিয়ে গুণ করে। পুস্তিকা তোমার সীমার প্রতিটি সংখ্যার জন্য নামতা পুনরাবৃত্তি করে। প্রিন্টে শুধু নামতাগুলো A4-তে আসে আর প্রতিটি নামতা একসঙ্গে থাকে।",
+    },
+    keywords: [
+      "multiplication table",
+      "table of 17",
+      "times table printable",
+      "multiplication chart 1 to 12",
+      "tables 2 to 20",
+      "pahada",
+      "namta",
+    ],
+    faq: [
+      {
+        q: { en: "How do I make the table of 17?", hi: "17 का पहाड़ा कैसे बनाएँ?", bn: "১৭-এর নামতা কীভাবে বানাব?" },
+        a: {
+          en: "Choose Single table, set “Table of” to 17 and “Up to” to 20 (or 30), then print. You can switch between a list and a colourful grid.",
+          hi: "एक पहाड़ा चुनें, “पहाड़ा” में 17 और “तक” में 20 (या 30) रखें, फिर प्रिंट करें। सूची और रंगीन ग्रिड में बदल सकते हैं।",
+          bn: "একটি নামতা বেছে নাও, “নামতা”-তে ১৭ আর “পর্যন্ত”-এ ২০ (বা ৩০) দাও, তারপর প্রিন্ট করো। তালিকা ও রঙিন গ্রিডের মধ্যে বদলাতে পারো।",
+        },
+      },
+      {
+        q: { en: "Can I print a 1 to 12 multiplication chart?", hi: "क्या मैं 1 से 12 का गुणन चार्ट प्रिंट कर सकता हूँ?", bn: "১ থেকে ১২ গুণন চার্ট প্রিন্ট করতে পারি?" },
+        a: {
+          en: "Yes. Choose Chart and pick the 12 × 12 size — it prints as a clean grid that fits on one A4 page.",
+          hi: "हाँ। चार्ट चुनें और 12 × 12 आकार लें — यह एक साफ़ ग्रिड के रूप में एक A4 पन्ने पर प्रिंट होता है।",
+          bn: "হ্যাঁ। চার্ট বেছে নাও আর ১২ × ১২ আকার নাও — এটি একটি পরিষ্কার গ্রিড হিসেবে এক A4 পাতায় প্রিন্ট হয়।",
+        },
+      },
+      {
+        q: { en: "Can I print tables 2 to 20 together?", hi: "क्या 2 से 20 तक के पहाड़े एक साथ प्रिंट हो सकते हैं?", bn: "২ থেকে ২০ নামতা একসঙ্গে প্রিন্ট করা যায়?" },
+        a: {
+          en: "Yes — choose Booklet, set From 2 and To 20. Each table stays whole on the page; none is split in half.",
+          hi: "हाँ — पुस्तिका चुनें, से 2 और तक 20 रखें। हर पहाड़ा पन्ने पर पूरा रहता है; कोई आधा नहीं कटता।",
+          bn: "হ্যাঁ — পুস্তিকা বেছে নাও, থেকে ২ আর পর্যন্ত ২০ দাও। প্রতিটি নামতা পাতায় পুরো থাকে; কোনোটি অর্ধেক কাটে না।",
+        },
+      },
+      {
+        q: { en: "What is the largest table I can make?", hi: "सबसे बड़ा पहाड़ा कितना बन सकता है?", bn: "সবচেয়ে বড় নামতা কত পর্যন্ত বানানো যায়?" },
+        a: {
+          en: "Any number, going up to ×30. For example the table of 25 up to 25×30.",
+          hi: "कोई भी संख्या, ×30 तक। जैसे 25 का पहाड़ा 25×30 तक।",
+          bn: "যেকোনো সংখ্যা, ×৩০ পর্যন্ত। যেমন ২৫-এর নামতা ২৫×৩০ পর্যন্ত।",
+        },
+      },
+      {
+        q: { en: "Is the colour grid good for printing?", hi: "क्या रंगीन ग्रिड प्रिंट के लिए ठीक है?", bn: "রঙিন গ্রিড কি প্রিন্টের জন্য ভালো?" },
+        a: {
+          en: "Yes — the tints are light, so they print clearly without using much ink. Prefer the List view for the most ink-light result.",
+          hi: "हाँ — रंग हल्के हैं, इसलिए कम स्याही में साफ़ प्रिंट होते हैं। सबसे कम स्याही के लिए सूची दृश्य चुनें।",
+          bn: "হ্যাঁ — রং হালকা, তাই কম কালিতে পরিষ্কার প্রিন্ট হয়। সবচেয়ে কম কালির জন্য তালিকা ভিউ বেছে নাও।",
+        },
+      },
+    ],
+    related: ["number-to-words", "word-counter"],
+    chapterLinks: [],
+  },
 ];
 
 /* ------------------------------- Helpers -------------------------------- */

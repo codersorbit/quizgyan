@@ -21,6 +21,7 @@ import PaperPlannerIsland from "@/components/tools/islands/PaperPlannerIsland";
 import WorksheetIsland from "@/components/tools/islands/WorksheetIsland";
 import WordCounterIsland from "@/components/tools/islands/WordCounterIsland";
 import NumberToWordsIsland from "@/components/tools/islands/NumberToWordsIsland";
+import MultiplicationTableIsland from "@/components/tools/islands/MultiplicationTableIsland";
 
 export function generateStaticParams() {
   return TOOLS.map((t) => ({ slug: t.slug }));
@@ -77,6 +78,8 @@ function island(slug: string) {
       return <WordCounterIsland />;
     case "number-to-words":
       return <NumberToWordsIsland />;
+    case "multiplication-table":
+      return <MultiplicationTableIsland />;
     default:
       return null;
   }

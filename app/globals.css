@@ -169,6 +169,27 @@ h1, h2, h3, h4, .font-display {
   body {
     background: #fff !important;
   }
+  /* Multiplication Table Generator: isolate the printable output and never
+     split a single table across a page break. */
+  body[data-print-tool="mtable"] * {
+    visibility: hidden;
+  }
+  body[data-print-tool="mtable"] .mt-print-area,
+  body[data-print-tool="mtable"] .mt-print-area * {
+    visibility: visible;
+  }
+  body[data-print-tool="mtable"] .mt-print-area {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+  }
+  .mt-table {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .mt-table + .mt-table {
+    margin-top: 8mm;
+  }
 }
 
 /* ---------------------------------------------------------------------------
