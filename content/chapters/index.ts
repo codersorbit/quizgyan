@@ -407,6 +407,9 @@ import w4banCBD from "./class-4-bengali-chelebelar-dinguli";
 import w4banMAL from "./class-4-bengali-malgari";
 import w4banBKH from "./class-4-bengali-boner-khobor";
 import w4banBSA from "./class-4-bengali-bichitra-sadh";
+import w4banAMZ from "./class-4-bengali-amazoner-jongole";
+import w4banASP from "./class-4-bengali-ami-sagar-pari-debo";
+import w4banDOM from "./class-4-bengali-dokkhinmeru-obhijan";
 
 // ===================== WBBPE Class 4 — ইংরেজি (Butterfly) =====================
 import w4engNouns from "./class-4-english-nouns";
@@ -846,6 +849,9 @@ export const CHAPTERS: Chapter[] = [
   w4banMAL,
   w4banBKH,
   w4banBSA,
+  w4banAMZ,
+  w4banASP,
+  w4banDOM,
   w4engNouns,
   w4engPoss,
   w4engAdj,
