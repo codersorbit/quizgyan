@@ -6,7 +6,7 @@ const chapter: Chapter = {
   subject: "bengali",
   slug: "noun-pronoun",
   title: "বিশেষ্য ও সর্বনাম",
-  order: 1,
+  order: 50,
   seoTitle: "বিশেষ্য ও সর্বনাম — WBBPE চতুর্থ শ্রেণি বাংলা (পাতাবাহার) | StudyMatic",
   metaDescription:
     "WBBPE চতুর্থ শ্রেণির বাংলা: বিশেষ্য (নাম বোঝানো শব্দ) ও সর্বনাম (নামের বদলে বসা শব্দ)। সহজ ব্যাখ্যা, উদাহরণ ও MCQ কুইজ।",

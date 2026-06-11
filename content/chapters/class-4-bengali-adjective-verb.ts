@@ -6,7 +6,7 @@ const chapter: Chapter = {
   subject: "bengali",
   slug: "adjective-verb",
   title: "বিশেষণ ও ক্রিয়া",
-  order: 2,
+  order: 51,
   seoTitle: "বিশেষণ ও ক্রিয়া — WBBPE চতুর্থ শ্রেণি বাংলা (পাতাবাহার) | StudyMatic",
   metaDescription:
     "WBBPE চতুর্থ শ্রেণির বাংলা: বিশেষণ (গুণ/বৈশিষ্ট্য বোঝায়) ও ক্রিয়া (কাজ বোঝায়)। সহজ ব্যাখ্যা, উদাহরণ ও MCQ কুইজ।",

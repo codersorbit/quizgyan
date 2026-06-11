@@ -6,7 +6,7 @@ const chapter: Chapter = {
   subject: "bengali",
   slug: "synonyms-antonyms",
   title: "সমার্থক ও বিপরীত শব্দ",
-  order: 4,
+  order: 53,
   seoTitle: "সমার্থক ও বিপরীত শব্দ — WBBPE চতুর্থ শ্রেণি বাংলা (পাতাবাহার) | StudyMatic",
   metaDescription:
     "WBBPE চতুর্থ শ্রেণির বাংলা: সমার্থক শব্দ (একই অর্থ) ও বিপরীত শব্দ (উলটো অর্থ)। সহজ ব্যাখ্যা, উদাহরণ ও MCQ কুইজ।",

@@ -6,7 +6,7 @@ const chapter: Chapter = {
   subject: "bengali",
   slug: "reading-comprehension",
   title: "পড়ে বুঝি",
-  order: 8,
+  order: 57,
   seoTitle: "পড়ে বুঝি — WBBPE চতুর্থ শ্রেণি বাংলা (পাতাবাহার) | StudyMatic",
   metaDescription:
     "WBBPE চতুর্থ শ্রেণির বাংলা: অনুচ্ছেদ পড়ে কে, কী, কোথায়, কখন প্রশ্নের উত্তর খোঁজা। সহজ ব্যাখ্যা ও MCQ কুইজ।",

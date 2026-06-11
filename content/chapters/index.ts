@@ -398,6 +398,9 @@ import w4banIdioms from "./class-4-bengali-idioms";
 import w4banConj from "./class-4-bengali-conjuncts-spelling";
 import w4banSentTypes from "./class-4-bengali-sentence-types";
 import w4banComp from "./class-4-bengali-reading-comprehension";
+import w4banSAC from "./class-4-bengali-shobar-ami-chhatro";
+import w4banNRD from "./class-4-bengali-narahari-das";
+import w4banKOA from "./class-4-bengali-kothao-amar";
 
 // ===================== WBBPE Class 4 — ইংরেজি (Butterfly) =====================
 import w4engNouns from "./class-4-english-nouns";
@@ -472,10 +475,6 @@ import w5evsHealth from "./class-5-evs-health-and-disease";
 import w5evsSoil from "./class-5-evs-soil";
 import w5evsWater from "./class-5-evs-water-and-wetlands";
 import w5evsBiodiv from "./class-5-evs-biodiversity";
-import w5evsPollution from "./class-5-evs-pollution-conservation";
-import w5evsState from "./class-5-evs-our-state";
-import w5evsAgri from "./class-5-evs-agriculture-fishery";
-import w5evsForest from "./class-5-evs-forests-wildlife";
 
 // Register every authored chapter here. Adding a new chapter is a 2-step job:
 // 1) create content/chapters/<file>.ts exporting a Chapter
@@ -832,6 +831,9 @@ export const CHAPTERS: Chapter[] = [
   w4banConj,
   w4banSentTypes,
   w4banComp,
+  w4banSAC,
+  w4banNRD,
+  w4banKOA,
   w4engNouns,
   w4engPoss,
   w4engAdj,
@@ -892,8 +894,4 @@ export const CHAPTERS: Chapter[] = [
   w5evsSoil,
   w5evsWater,
   w5evsBiodiv,
-  w5evsPollution,
-  w5evsState,
-  w5evsAgri,
-  w5evsForest,
 ];

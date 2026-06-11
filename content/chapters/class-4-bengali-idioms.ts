@@ -6,7 +6,7 @@ const chapter: Chapter = {
   subject: "bengali",
   slug: "idioms",
   title: "বাগধারা",
-  order: 5,
+  order: 54,
   seoTitle: "বাগধারা — WBBPE চতুর্থ শ্রেণি বাংলা (পাতাবাহার) | StudyMatic",
   metaDescription:
     "WBBPE চতুর্থ শ্রেণির বাংলা: বাগধারা — যে শব্দগুচ্ছের অর্থ আক্ষরিক নয় (যেমন চোখের মণি = খুব প্রিয়)। সহজ ব্যাখ্যা ও কুইজ।",

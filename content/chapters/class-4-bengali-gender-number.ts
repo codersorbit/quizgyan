@@ -6,7 +6,7 @@ const chapter: Chapter = {
   subject: "bengali",
   slug: "gender-number",
   title: "লিঙ্গ ও বচন",
-  order: 3,
+  order: 52,
   seoTitle: "লিঙ্গ ও বচন — WBBPE চতুর্থ শ্রেণি বাংলা (পাতাবাহার) | StudyMatic",
   metaDescription:
     "WBBPE চতুর্থ শ্রেণির বাংলা: লিঙ্গ (পুংলিঙ্গ/স্ত্রীলিঙ্গ) ও বচন (একবচন/বহুবচন)। সহজ ব্যাখ্যা, উদাহরণ ও MCQ কুইজ।",

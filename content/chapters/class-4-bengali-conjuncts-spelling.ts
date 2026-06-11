@@ -6,7 +6,7 @@ const chapter: Chapter = {
   subject: "bengali",
   slug: "conjuncts-spelling",
   title: "যুক্তবর্ণ ও বানান",
-  order: 6,
+  order: 55,
   seoTitle: "যুক্তবর্ণ ও বানান — WBBPE চতুর্থ শ্রেণি বাংলা (পাতাবাহার) | StudyMatic",
   metaDescription:
     "WBBPE চতুর্থ শ্রেণির বাংলা: যুক্তবর্ণ (দুই বা তার বেশি ব্যঞ্জন জুড়ে) ও সঠিক বানান। সহজ ব্যাখ্যা, উদাহরণ ও MCQ কুইজ।",

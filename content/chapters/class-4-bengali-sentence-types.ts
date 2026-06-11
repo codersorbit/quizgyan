@@ -6,7 +6,7 @@ const chapter: Chapter = {
   subject: "bengali",
   slug: "sentence-types",
   title: "বাক্যের প্রকার",
-  order: 7,
+  order: 56,
   seoTitle: "বাক্যের প্রকার — WBBPE চতুর্থ শ্রেণি বাংলা (পাতাবাহার) | StudyMatic",
   metaDescription:
     "WBBPE চতুর্থ শ্রেণির বাংলা: ভাব অনুযায়ী বাক্যের প্রকার — বিবৃতি, প্রশ্ন, আদেশ ও বিস্ময়বাচক বাক্য। সহজ ব্যাখ্যা ও কুইজ।",
