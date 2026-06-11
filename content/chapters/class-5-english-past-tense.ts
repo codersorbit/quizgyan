@@ -6,7 +6,7 @@ const chapter: Chapter = {
   subject: "english",
   slug: "past-tense",
   title: "Simple Past Tense",
-  order: 4,
+  order: 16,
   seoTitle: "Simple Past Tense — WBBPE Class 5 English (Butterfly) | StudyMatic",
   metaDescription:
     "WBBPE Class 5 English: the simple past tense shows a finished action — most verbs add -ed; some are irregular (go→went). Notes and a quiz.",

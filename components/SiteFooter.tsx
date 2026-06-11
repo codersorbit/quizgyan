@@ -17,6 +17,7 @@ export function SiteFooter() {
           <Link href="/cbse" className="hover:text-white">All classes</Link>
           <Link href="/notes" className="hover:text-white">Revision notes</Link>
           <Link href="/mcqs" className="hover:text-white">MCQ quizzes</Link>
+          <Link href="/tools" className="hover:text-white">Tools</Link>
           <Link href="/daily" className="hover:text-white">Daily challenge</Link>
         </nav>
 

@@ -6,7 +6,7 @@ const chapter: Chapter = {
   subject: "english",
   slug: "future-tense",
   title: "Simple Future Tense",
-  order: 5,
+  order: 17,
   seoTitle: "Simple Future Tense — WBBPE Class 5 English (Butterfly) | StudyMatic",
   metaDescription:
     "WBBPE Class 5 English: the simple future tense shows an action that will happen later — will + verb. Notes and a quiz.",

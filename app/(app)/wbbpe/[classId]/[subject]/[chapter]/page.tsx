@@ -110,6 +110,15 @@ export default async function WbbpeChapterPage({ params }: { params: Params }) {
             {ch.title}
           </h1>
           <p className="mt-3 max-w-2xl text-lg leading-relaxed text-muted">{ch.overview}</p>
+          {ch.lessonPlanPdf && (
+            <a
+              href={ch.lessonPlanPdf}
+              download
+              className="btn-candy sun mt-4 text-sm"
+            >
+              📄 শিক্ষকের লেসন প্ল্যান (PDF) ডাউনলোড
+            </a>
+          )}
         </div>
       </header>
 

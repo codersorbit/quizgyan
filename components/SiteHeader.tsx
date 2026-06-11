@@ -19,7 +19,7 @@ export function SiteHeader() {
             · {site.tagline}
           </span>
         </Link>
-        <nav className="mt-1.5 flex items-center justify-center gap-1 text-sm font-semibold text-muted">
+        <nav className="mt-1.5 flex flex-wrap items-center justify-center gap-1 text-sm font-semibold text-muted">
           <Link href="/#boards" className="rounded-full px-3 py-1.5 transition hover:bg-white/70 hover:text-cobalt">
             Boards
           </Link>
@@ -32,6 +32,9 @@ export function SiteHeader() {
           </Link>
           <Link href="/mcqs" className="rounded-full px-3 py-1.5 transition hover:bg-white/70 hover:text-cobalt">
             MCQs
+          </Link>
+          <Link href="/tools" className="rounded-full px-3 py-1.5 transition hover:bg-white/70 hover:text-cobalt">
+            Tools
           </Link>
         </nav>
       </div>

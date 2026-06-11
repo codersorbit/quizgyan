@@ -27,7 +27,7 @@ export const BOARDS: Board[] = [
     status: "available",
     blurb:
       "NCERT-aligned notes, MCQ quizzes and a daily challenge for Class 1 and Classes 6–10.",
-    accent: "#3257f0",
+    accent: "#0f2a5c",
     emoji: "📘",
   },
   {

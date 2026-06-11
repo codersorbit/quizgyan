@@ -6,7 +6,7 @@ const chapter: Chapter = {
   subject: "english",
   slug: "conjunctions",
   title: "Conjunctions",
-  order: 7,
+  order: 19,
   seoTitle: "Conjunctions — WBBPE Class 5 English (Butterfly) | StudyMatic",
   metaDescription:
     "WBBPE Class 5 English: conjunctions join words or sentences — and, but, or, because. Notes, examples and a quiz.",

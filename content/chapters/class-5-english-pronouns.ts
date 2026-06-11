@@ -6,7 +6,7 @@ const chapter: Chapter = {
   subject: "english",
   slug: "pronouns",
   title: "Subject & Object Pronouns",
-  order: 3,
+  order: 15,
   seoTitle: "Subject & Object Pronouns — WBBPE Class 5 English (Butterfly) | StudyMatic",
   metaDescription:
     "WBBPE Class 5 English: subject pronouns (I, he, she, we, they) do the action; object pronouns (me, him, her, us, them) receive it. Notes and a quiz.",

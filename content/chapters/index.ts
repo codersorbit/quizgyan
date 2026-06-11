@@ -452,6 +452,18 @@ import w5engFuture from "./class-5-english-future-tense";
 import w5engArticles from "./class-5-english-articles";
 import w5engConj from "./class-5-english-conjunctions";
 import w5engComp from "./class-5-english-reading-comprehension";
+import w5engL1 from "./class-5-english-india-superpower-in-cricket";
+import w5engL2 from "./class-5-english-a-feat-on-feet";
+import w5engL3 from "./class-5-english-phulmanis-india";
+import w5engL4 from "./class-5-english-memory-in-marble";
+import w5engL5 from "./class-5-english-my-school-days";
+import w5engL6 from "./class-5-english-the-clever-monkey";
+import w5engL7 from "./class-5-english-the-rebel-poet";
+import w5engL8 from "./class-5-english-buildings-to-remember";
+import w5engL9 from "./class-5-english-birds-eye";
+import w5engL10 from "./class-5-english-a-great-social-reformer";
+import w5engL11 from "./class-5-english-the-finishing-point";
+import w5engL12 from "./class-5-english-beyond-barriers";
 
 // ===================== WBBPE Class 5 — গণিত (Amar Gonit) =====================
 import w5ganitLarge from "./class-5-maths-large-numbers";
@@ -876,6 +888,18 @@ export const CHAPTERS: Chapter[] = [
   w5engArticles,
   w5engConj,
   w5engComp,
+  w5engL1,
+  w5engL2,
+  w5engL3,
+  w5engL4,
+  w5engL5,
+  w5engL6,
+  w5engL7,
+  w5engL8,
+  w5engL9,
+  w5engL10,
+  w5engL11,
+  w5engL12,
   w5ganitLarge,
   w5ganitAddSub,
   w5ganitMul,

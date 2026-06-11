@@ -3,8 +3,8 @@ import type { ClassDef, SubjectDef, ChapterStub } from "@/lib/types";
 import { classUrl, subjectUrl, chapterUrl, getAuthoredInSubject } from "@/lib/content";
 
 const GRADIENTS = [
-  "from-cobalt to-[#5b7bff]",
-  "from-coral to-[#ff8aa0]",
+  "from-cobalt to-[#2a4a8c]",
+  "from-coral to-[#f06a75]",
   "from-green to-[#42c98a]",
   "from-amber to-[#e0a64a]",
   "from-[#7b54d3] to-[#a07ee8]",

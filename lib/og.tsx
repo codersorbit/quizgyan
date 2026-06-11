@@ -1,13 +1,13 @@
 import { site } from "@/lib/site";
 
 const C = {
-  cream: "#fbf6ee",
+  cream: "#faf6ee",
   ink: "#1f1b18",
-  muted: "#5b554f",
-  cobalt: "#3257f0",
-  cobaltSoft: "#e8edff",
+  muted: "#5b6a85",
+  cobalt: "#0f2a5c",
+  cobaltSoft: "#eaeef6",
   amber: "#ffb300",
-  coral: "#ff5d73",
+  coral: "#e63946",
   green: "#1faf6b",
   greenSoft: "#e7f6ef",
 };
